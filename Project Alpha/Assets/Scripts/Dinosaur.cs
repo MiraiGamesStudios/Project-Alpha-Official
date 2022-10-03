@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dinosaur : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Dinosaur : MonoBehaviour
     public bool anim2 = false;
     public bool anim3 = false;
     public bool anim4 = false;
+
+    public Slider s;
 
     // Start is called before the first frame update
     void Start()

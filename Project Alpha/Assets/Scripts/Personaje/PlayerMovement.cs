@@ -5,17 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController characterController;
-    //private Animator animator;
+    private Animator animator;
 
     public new Transform camera;
-    public float speed = 4;
+    public float speed = 10;
     public float gravity = -9.8f;
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,6 +48,26 @@ public class PlayerMovement : MonoBehaviour
         movement.y += gravity * Time.deltaTime;
 
         characterController.Move(movement);
-        //animator.SetFloat("Speed", movementSpeed);
+
+        if (Input.GetKey("w"))
+        {
+            animator.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            if (Input.GetKey("left shift"))
+            {
+                speed = 20;
+                animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+                animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            }
+            else
+            {
+                speed = 10;
+            }
+        }
+        else
+        {
+            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+        }
     }
 }

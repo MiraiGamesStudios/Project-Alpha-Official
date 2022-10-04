@@ -631,7 +631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242729822}
-  m_LocalRotation: {x: 0.055776067, y: -0.000000017313289, z: 9.671729e-10, w: 0.9984433}
+  m_LocalRotation: {x: 0.055776067, y: 0.000000017313289, z: -9.671729e-10, w: 0.9984433}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1384,7 +1384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635832492}
   m_LocalRotation: {x: 0.012415807, y: -0.000000034410114, z: 4.2726225e-10, w: 0.99992293}
-  m_LocalPosition: {x: 6.39363, y: 2.5864425, z: 10.662717}
+  m_LocalPosition: {x: 6.394, y: 2.5864425, z: 10.655324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2283,7 +2283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15d40279cf00f7c49b321079cb65b19c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.59363
+      value: 4.594
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15d40279cf00f7c49b321079cb65b19c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2291,7 +2291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15d40279cf00f7c49b321079cb65b19c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.124393
+      value: 20.117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15d40279cf00f7c49b321079cb65b19c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2341,7 +2341,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011671046}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 15d40279cf00f7c49b321079cb65b19c, type: 3}
   m_Controller: {fileID: 9100000, guid: 0c84c5399ebb6d74f96b8f18c7733d75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -2373,10 +2373,9 @@ MonoBehaviour:
   staminaSlide: {fileID: 1060208638}
   vidaMaxima: 100
   staminaMaxima: 20
-  perderVida: 0
   cantidadVida: 10
-  perderStamina: 0
-  cantidadStamina: 10
+  outStamina: 0
+  death: 0
 --- !u!114 &1011671051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2392,6 +2391,8 @@ MonoBehaviour:
   camera: {fileID: 635832495}
   speed: 10
   gravity: -9.8
+  VidaStamina: {fileID: 1011671050}
+  panelDeath: {fileID: 1374814146}
 --- !u!143 &1011671052
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2403,13 +2404,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.46
+  m_Height: 2.97
   m_Radius: 1.04
   m_SlopeLimit: 45
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0.21, y: 1.74, z: 0.28}
+  m_Center: {x: 0.21, y: 1.5, z: 0.28}
 --- !u!1 &1029573126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3844,7 +3845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517485290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.59363, y: 1.000001, z: 14.124393}
+  m_LocalPosition: {x: 4.594, y: 1.000001, z: 14.117001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

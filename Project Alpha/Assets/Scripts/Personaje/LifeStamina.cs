@@ -12,11 +12,10 @@ public class LifeStamina : MonoBehaviour
     public float vidaMaxima;
     public float staminaMaxima;
 
-    public bool perderVida;
     public float cantidadVida;
 
-    public bool perderStamina;
-    public float cantidadStamina;
+    public bool outStamina = false;
+    public bool death = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +53,12 @@ public class LifeStamina : MonoBehaviour
         {
 
             lifeSlide.value -= i;
+
+            if(lifeSlide.value == 0)
+            {
+                death = true;
+            }
+
             cantidadPerdida += i;
             i+=0.01f;
 
@@ -71,6 +76,10 @@ public class LifeStamina : MonoBehaviour
         float i = 0.01f;
         staminaSlide.value -= i;
 
+        if (staminaSlide.value == 0)
+        {
+            outStamina = true;
+        }
         yield return null;
 
         
@@ -79,10 +88,14 @@ public class LifeStamina : MonoBehaviour
     IEnumerator staminaRecover()
     {
 
-        
+        while (outStamina == true)
+        {
+            yield return new WaitForSeconds(4);
+            outStamina = false;
+        }
 
         float i = 0.005f;
-        staminaSlide.value += i;
+        staminaSlide.value += i;    
 
         yield return null;
 

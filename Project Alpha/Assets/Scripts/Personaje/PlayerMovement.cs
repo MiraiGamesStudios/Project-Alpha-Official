@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10;
     public float gravity = -9.8f;
 
+    public LifeStamina VidaStamina;
+    public GameObject panelDeath;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,23 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        if(VidaStamina.death == true)
+        {
+            characterController.center.Set(0.21f, 0.7f, 0.28f);
+            animator.SetBool("Morir", true);
+            panelDeath.SetActive(true);
+            
+
+        }
+        else
+        {
+            calculateMovement();
+            move();
+        }
+    }
+
+    void calculateMovement()
     {
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
@@ -42,36 +62,44 @@ public class PlayerMovement : MonoBehaviour
 
             movement = direction * speed * movementSpeed * Time.deltaTime;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.2f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camera.forward), 0.2f);
         }
 
         movement.y += gravity * Time.deltaTime;
-
         characterController.Move(movement);
+    }
 
-        if (Input.GetKeyDown("w"))
+    void move()
+    {
+        if (Input.GetKey("w"))
         {
-            animator.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
-            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
-
-            if (Input.GetKeyDown("left shift"))
+            if (VidaStamina.outStamina == false)
             {
-                speed = 20;
-                animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-                animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (Input.GetKey("left shift"))
+                {
+                    speed = 20;
+                    animator.SetFloat("Xaxis", 3.0f, 0.1f, Time.deltaTime);
+                }
+                else
+                {
+                    animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
+                    speed = 10;
+                }
             }
             else
             {
-                speed = 10;
+                speed = 1;
+                //ANIMACION CANSADO
             }
-
+        }
+        else if (Input.GetKey("s"))
+        {
+            speed = 5;
+            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
         }
         else
         {
-            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
         }
-
-        
     }
 }

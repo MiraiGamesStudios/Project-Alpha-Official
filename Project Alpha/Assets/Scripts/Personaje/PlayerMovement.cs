@@ -49,11 +49,12 @@ public class PlayerMovement : MonoBehaviour
 
         characterController.Move(movement);
 
-        if (Input.GetKey("w"))
+        if (Input.GetKeyDown("w"))
         {
             animator.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
-            if (Input.GetKey("left shift"))
+
+            if (Input.GetKeyDown("left shift"))
             {
                 speed = 20;
                 animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
@@ -63,11 +64,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 speed = 10;
             }
+
         }
         else
         {
             animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
         }
+
+        
     }
 }

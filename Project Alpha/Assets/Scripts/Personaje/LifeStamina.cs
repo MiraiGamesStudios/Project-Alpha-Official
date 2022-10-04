@@ -33,32 +33,22 @@ public class LifeStamina : MonoBehaviour
         {
             StartCoroutine(lifeLost(cantidadVida)); 
         }
-        
-        
 
-        if (perderStamina)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            staminaLost(cantidadStamina);
+            StartCoroutine(staminaLost());
         }
+        else
+        {
+            StartCoroutine(staminaRecover());
+        }
+
     }
 
     IEnumerator lifeLost(float vida)
     {
-        /*float resta = 0;
-        while (resta < vida / 2)
-        {
-            lifeSlide.value -= resta;
-            resta += 0.01f;
-        }
-
-        while (resta <= vida)
-        {
-            lifeSlide.value -= resta;
-            resta -= 0.01f;
-        }*/
-
         float cantidadPerdida = 0;
-        float i = 0.1f;
+        float i = 0.2f;
 
         while (cantidadPerdida <= vida)
         {
@@ -73,27 +63,29 @@ public class LifeStamina : MonoBehaviour
         
         yield return null;
 
-
-
     }
 
-    void staminaLost(float stamina)
+    IEnumerator staminaLost()
     {
-        /*float resta = 0;
-        while (resta < vida / 2)
-        {
-            lifeSlide.value -= resta;
-            resta += 0.01f;
-        }
 
-        while (resta <= vida)
-        {
-            lifeSlide.value -= resta;
-            resta -= 0.01f;
-        }*/
-        staminaSlide.value -= stamina;
+        float i = 0.01f;
+        staminaSlide.value -= i;
 
-        perderStamina = false;
+        yield return null;
+
+        
+    }
+
+    IEnumerator staminaRecover()
+    {
+
+        
+
+        float i = 0.005f;
+        staminaSlide.value += i;
+
+        yield return null;
+
 
     }
 }

@@ -28,10 +28,13 @@ public class LifeStamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (perderVida)
+
+        if (Input.GetKeyDown("space"))
         {
-            lifeLost(cantidadVida);
+            StartCoroutine(lifeLost(cantidadVida)); 
         }
+        
+        
 
         if (perderStamina)
         {
@@ -39,7 +42,7 @@ public class LifeStamina : MonoBehaviour
         }
     }
 
-    void lifeLost(float vida)
+    IEnumerator lifeLost(float vida)
     {
         /*float resta = 0;
         while (resta < vida / 2)
@@ -54,22 +57,23 @@ public class LifeStamina : MonoBehaviour
             resta -= 0.01f;
         }*/
 
-        /*float cantidadPerdida = 0;
-       
+        float cantidadPerdida = 0;
+        float i = 0.1f;
+
         while (cantidadPerdida <= vida)
         {
-            float i = 0;
 
             lifeSlide.value -= i;
-
             cantidadPerdida += i;
+            i+=0.01f;
 
-            i++;
-        }*/
+            yield return new WaitForSeconds(0.01f);
+        }
 
-        lifeSlide.value -= vida;
+        
+        yield return null;
 
-        perderVida = false;
+
 
     }
 

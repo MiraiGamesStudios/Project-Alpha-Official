@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     public new Transform camera;
-    public float speed = 10;
+    public float speed = 4;
     public float gravity = -9.8f;
 
     public LifeStamina VidaStamina;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        animator.SetFloat("ArmaElegida", 0f);
     }
 
     // Update is called once per frame
@@ -67,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
         movement.y += gravity * Time.deltaTime;
         characterController.Move(movement);
+
+        animator.SetFloat("Multiplicador", speed);
     }
 
     void move()
@@ -77,13 +80,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetKey("left shift"))
                 {
-                    speed = 20;
+                    speed = 7;
                     animator.SetFloat("Xaxis", 3.0f, 0.1f, Time.deltaTime);
                 }
                 else
                 {
                     animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
-                    speed = 10;
+                    speed = 4;
                 }
             }
             else
@@ -101,5 +104,11 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
         }
+
+        if (Input.GetKey(KeyCode.Mouse0)){
+            animator.SetBool("Atacar", true);
+        }
     }
+
+    
 }

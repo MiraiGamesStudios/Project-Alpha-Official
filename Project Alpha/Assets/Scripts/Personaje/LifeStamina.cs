@@ -33,9 +33,11 @@ public class LifeStamina : MonoBehaviour
             StartCoroutine(lifeLost(cantidadVida)); 
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
         {
+
             StartCoroutine(staminaLost());
+            
         }
         else
         {

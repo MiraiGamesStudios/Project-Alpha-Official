@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         movement.y += gravity * Time.deltaTime;
         characterController.Move(movement);
 
-        animator.SetFloat("Multiplicador", speed);
+        animator.SetFloat("Multiplicador", speed/2);
     }
 
     void move()
@@ -80,18 +80,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetKey("left shift"))
                 {
-                    speed = 7;
+                    speed = 8;
                     animator.SetFloat("Xaxis", 3.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 }
                 else
                 {
                     animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                     speed = 4;
                 }
             }
             else
             {
-                speed = 1;
+                speed = 2;
+                animator.SetFloat("Xaxis", 4.0f, 0.1f, Time.deltaTime);
                 //ANIMACION CANSADO
             }
         }
@@ -100,9 +103,21 @@ public class PlayerMovement : MonoBehaviour
             speed = 5;
             animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
         }
+        else if (Input.GetKey("d"))
+        {
+            speed = 5;
+            animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
+        }
+        else if (Input.GetKey("a"))
+        {
+            speed = 5;
+            animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+        }
         else
         {
             animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+
         }
 
         if (Input.GetKey(KeyCode.Mouse0)){

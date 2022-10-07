@@ -28,7 +28,7 @@ public class LifeStamina : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.AltGr))
         {
             StartCoroutine(lifeLost(cantidadVida)); 
         }

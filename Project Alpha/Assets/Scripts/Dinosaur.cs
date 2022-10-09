@@ -66,22 +66,39 @@ public class Dinosaur : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name == "TORCH")
-        {
-            quemadura.SetActive(true);
-            for (int i = 0; i <= 10; i++)
-            {
-
-                life--;
-                Debug.Log(name + "Quemandose: " + life);
-            }
-            //quemadura.SetActive(false);
-
-
-        }/*else if(collider.gameObject.tag == "Weapon")
+        if (collider.gameObject.name == "TORCH" && quemadura.active == false)
         {
             life -= 10;
-            Debug.Log("Vida del dinosaurio: " + life);
-        }*/
+            quemadura.SetActive(true);
+            StartCoroutine(quemarse());
+
+
+        }else if(collider.gameObject.tag == "Weapon")
+        {
+            life -= 10;
+            Debug.Log(name + "Vida del dinosaurio: " + life);
+        }
+
+        if(collider.gameObject.tag == "Dinosaur" && collider.transform.GetChild(2).gameObject.active == true && quemadura.active == false)
+        {
+            quemadura.SetActive(true);
+            StartCoroutine(quemarse());
+        }
     }
+
+    IEnumerator quemarse()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            life--;
+            Debug.Log(name + "Quemandose: " + life);
+            yield return new WaitForSeconds(1f);
+        }
+
+        quemadura.SetActive(false);
+
+
+        yield return null;
+    }
+
 }

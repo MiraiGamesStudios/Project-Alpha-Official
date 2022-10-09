@@ -241,10 +241,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Atacar", true);
         }
 
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    animator.SetBool("Saltar", true);
-        //}
+        if (Input.GetKey(KeyCode.Space))
+        {
+            animator.SetBool("Saltar", true);
+        }
     }
 
     

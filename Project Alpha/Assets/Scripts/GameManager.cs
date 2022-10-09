@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviour
 
     public static Dinosaur[] enemigos;
 
-    //public Variable<Status> status = new Variable<Status>(Status.Mainmenu);
+
 
     // Start is called before the first frame update
     void Start()
     {
         SpawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints");
         Instance = this;
-        //status = new Status(Status.Mainmenu);
+        status = Status.Mainmenu;
     }
 
     // Update is called once per frame

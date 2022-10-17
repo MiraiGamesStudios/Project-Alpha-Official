@@ -93,24 +93,24 @@ namespace CartoonFX
 
 				if (light != null)
 				{
-					//if (animateIntensity)
-					//{
-					//	float delta = loop ? Mathf.Clamp01((time % intensityDuration)/intensityDuration) : Mathf.Clamp01(time/intensityDuration);
-					//	delta = perlinIntensity ? Mathf.PerlinNoise(Time.time * perlinIntensitySpeed, 0f) : intensityCurve.Evaluate(delta);
-					//	light.intensity = Mathf.LerpUnclamped(intensityEnd, intensityStart, delta);
+					if (animateIntensity)
+					{
+						float delta = loop ? Mathf.Clamp01((time % intensityDuration)/intensityDuration) : Mathf.Clamp01(time/intensityDuration);
+						delta = perlinIntensity ? Mathf.PerlinNoise(Time.time * perlinIntensitySpeed, 0f) : intensityCurve.Evaluate(delta);
+						light.intensity = Mathf.LerpUnclamped(intensityEnd, intensityStart, delta);
 
-					//	if (fadeIn && time < fadeInDuration)
-					//	{
-					//		light.intensity *= Mathf.Clamp01(time / fadeInDuration);
-					//	}
-					//}
+						if (fadeIn && time < fadeInDuration)
+						{
+							light.intensity *= Mathf.Clamp01(time / fadeInDuration);
+						}
+					}
 
-					//if (animateRange)
-					//{
-					//	float delta = loop ? Mathf.Clamp01((time % rangeDuration)/rangeDuration) : Mathf.Clamp01(time/rangeDuration);
-					//	delta = perlinRange ? Mathf.PerlinNoise(Time.time * perlinRangeSpeed, 10f) : rangeCurve.Evaluate(delta);
-					//	light.range = Mathf.LerpUnclamped(rangeEnd, rangeStart, delta);
-					//}
+					if (animateRange)
+					{
+						float delta = loop ? Mathf.Clamp01((time % rangeDuration)/rangeDuration) : Mathf.Clamp01(time/rangeDuration);
+						delta = perlinRange ? Mathf.PerlinNoise(Time.time * perlinRangeSpeed, 10f) : rangeCurve.Evaluate(delta);
+						light.range = Mathf.LerpUnclamped(rangeEnd, rangeStart, delta);
+					}
 
 					if (animateColor)
 					{

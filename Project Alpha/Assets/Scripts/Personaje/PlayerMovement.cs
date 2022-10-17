@@ -83,12 +83,6 @@ public class PlayerMovement : MonoBehaviour
             right.Normalize();
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            up.y = 0.1f;
-            
-        }
-
         //up.y += up.y + gravity * Time.deltaTime;
         //up.y = Mathf.Clamp(up.y, 0);
         movementInput = forward + right;
@@ -241,10 +235,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Atacar", true);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            animator.SetBool("Saltar", true);
-        }
     }
 
     

@@ -8,60 +8,116 @@ public class Dinosaur : MonoBehaviour
     public float speed = 4;
     public float life;
     private Animator anim;
-    public bool anim0 = false;
-    public bool anim1 = false;
-    public bool anim2 = false;
-    public bool anim3 = false;
-    public bool anim4 = false;
+
+    private float avancePersonaje = 0.0f;
+    [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
+    private float m_currentV = 0;                   // Posicion de avance actual 
+    private readonly float m_interpolation = 10;    // Multiplicador para el paso de integracion
+    [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
     public GameObject quemadura;
+
+    private enum Status { quieto, deambulando, corriendo, atacando, muerto};
+    Status statusDinosaur = Status.deambulando;
+
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         quemadura = transform.GetChild(2).gameObject;
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-      
-        if (anim0 == true)
+        if (life <= 0)
         {
-            //andar
-            anim.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
-        }else if (anim1 == true)
-        {
-            //correr
-            anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            statusDinosaur = Status.muerto;
         }
-        else if (anim2 == true)
+
+        // Integrar posicion en avance
+        m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
+        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+
+        FSMDinosaur();
+    }
+
+    void FSMDinosaur()
+    {
+        switch (statusDinosaur)
         {
-            //saltar
+            case Status.quieto:
+                //idle
+                anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                break;
+
+            case Status.deambulando:
+                //andar
+                anim.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (Vector3.Distance(this.transform.position, player.transform.position)<30)
+                {
+                    statusDinosaur = Status.corriendo;
+                }
+                break;
+
+            case Status.corriendo:
+                //correr
+                Avanzar(player.transform.position);
+                anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (this.EstaEnObjetivo(player.transform.position))
+                {
+                    avancePersonaje = 0.0f;
+                    statusDinosaur = Status.atacando;
+                }
+                break;
+
+            case Status.atacando:
+                //atacar
+                anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                if (!this.EstaEnObjetivo(player.transform.position))
+                {
+                    avancePersonaje = 1.0f;
+                    statusDinosaur = Status.corriendo;
+                }
+                break;
+
+            case Status.muerto:
+                //morir
+                anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                avancePersonaje = 0.0f;
+
+                break;
+        }
+
+        /*saltar
             anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 0.5f, 0.1f, Time.deltaTime);
-        }
-        else if (anim3 == true)
-        {
-            //atacar
-            anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
-        }
-        else if (anim4 == true)
-        {
-            //morir
-            anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
-        }
-        else 
-        {
-            //idle
-            anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
-        }
+            anim.SetFloat("Yaxis", 0.5f, 0.1f, Time.deltaTime);*/
+    }
+
+    ///  Activa el avance del personaje hacia un objetivo. 
+    ///  Si no estaba mirando hacia el objetivo, primero se alineara de forma automatica.
+    ///  
+    void Alinear(Vector3 _objetivo)
+    {
+        transform.LookAt(_objetivo);
+    }
+    public void Avanzar(Vector3 _objetivo)
+    {
+        Alinear(_objetivo);
+        avancePersonaje = 1.0f;
+    }
+    public bool EstaEnObjetivo(Vector3 _objetivo)
+    {
+        return Vector3.Distance(transform.position, _objetivo) < epsilonDistancia;
     }
 
     void OnTriggerEnter(Collider collider)

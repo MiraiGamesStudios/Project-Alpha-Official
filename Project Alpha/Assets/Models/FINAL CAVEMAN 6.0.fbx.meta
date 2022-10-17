@@ -5,25 +5,25 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1264057481281999460
-    second: Armature|41_WalkCansado
+    second: WalkCansado
   - first:
       74: 4287229412355949933
-    second: Armature|Armature|Armature|01_IdleLanza|Armature|01_IdleLanza
+    second: IdleLanza
   - first:
       74: -7747281858020922420
-    second: Armature|Armature|Armature|02_AttackLanza|Armature|02_AttackLanza
+    second: AttackLanza
   - first:
       74: -1373793758711967458
     second: Armature|Armature|Armature|03_SaltoLanza|Armature|03_SaltoLanza
   - first:
       74: -3199091919849651325
-    second: Armature|Armature|Armature|04_AndarAtrasLanza|Armature|04_AndarAtrasLanz
+    second: AndarAtrasLanza
   - first:
       74: -3229959067263278409
-    second: Armature|Armature|Armature|05_CorrerLanza|Armature|05_CorrerLanza
+    second: CorrerLanza
   - first:
       74: -2372918790242949275
-    second: Armature|Armature|Armature|06_AndarAlanteLanza|Armature|06_AndarAlanteLa
+    second: AndarAlanteLanza
   - first:
       74: 431826722950149017
     second: Armature|Armature|Armature|07_Giro90IzqdaLanza|Armature|07_Giro90IzqdaLa
@@ -38,22 +38,22 @@ ModelImporter:
     second: Armature|Armature|Armature|10_MorirLanza|Armature|10_MorirLanza
   - first:
       74: -9109542609038281541
-    second: Armature|Armature|Armature|11_IdlePorra|Armature|11_IdlePorra
+    second: IdlePorra
   - first:
       74: 4453928415718912256
-    second: Armature|Armature|Armature|12_AttackPorra|Armature|12_AttackPorra
+    second: AttackPorra
   - first:
       74: -5217404665362405904
     second: Armature|Armature|Armature|13_SaltoPorra|Armature|13_SaltoPorra
   - first:
       74: 1373399065867514135
-    second: Armature|Armature|Armature|14_AndarAtrasPorra|Armature|14_AndarAtrasPorr
+    second: AndarAtrasPorra
   - first:
       74: 2656367837692710874
-    second: Armature|Armature|Armature|15_CorrerPorra|Armature|15_CorrerPorra
+    second: CorrerPorra
   - first:
       74: -4016424312075310490
-    second: Armature|Armature|Armature|16_AndarAlantePorra|Armature|16_AndarAlantePo
+    second: AndarAlantePorra
   - first:
       74: 2091674644660586145
     second: Armature|Armature|Armature|17_Giro90IzqdaPorra|Armature|17_Giro90IzqdaPo
@@ -71,19 +71,19 @@ ModelImporter:
     second: Armature|Armature|Armature|21_EncenderAntorcha|Armature|21_EncenderAntor
   - first:
       74: 1631359185013765741
-    second: Armature|Armature|Armature|22_IdleAntorcha|Armature|22_IdleAntorcha
+    second: IdleAntorcha
   - first:
       74: -2912876146179638162
-    second: Armature|Armature|Armature|23_AttackAntorcha|Armature|23_AttackAntorcha
+    second: AttackAntorcha
   - first:
       74: 933813288622001295
     second: Armature|Armature|Armature|24_SaltoAntorcha|Armature|24_SaltoAntorcha
   - first:
       74: 1824001952589224634
-    second: Armature|Armature|Armature|25_AndarAtrasAnorcha|Armature|25_AndarAtrasAn
+    second: AndarAtrasAnorcha
   - first:
       74: -3676700507179815672
-    second: Armature|Armature|Armature|26_CorrerAntorcha|Armature|26_CorrerAntorcha
+    second: CorrerAntorcha
   - first:
       74: 8145215550462311014
     second: Armature|Armature|Armature|27_AndarAlanteAntorcha|Armature|27_AndarAlant
@@ -104,7 +104,7 @@ ModelImporter:
     second: Armature|Armature|Armature|32_InteraccionQuemarAntorcha|Armature|32_Inte
   - first:
       74: -8178564241529131377
-    second: Armature|Armature|Armature|33_IdleNormal|Armature|33_IdleNormal
+    second: Idle
   - first:
       74: -5356995921317915071
     second: Armature|Armature|Armature|34_JumpNormal|Armature|34_JumpNormal
@@ -113,22 +113,34 @@ ModelImporter:
     second: Armature|Armature|Armature|35_AttackNormal|Armature|35_AttackNormal
   - first:
       74: -5040559578485075333
-    second: Armature|Armature|Armature|36_WalkNormal|Armature|36_WalkNormal
+    second: Walk
   - first:
       74: 2586119491006562725
-    second: Armature|Armature|Armature|37_LateralWalk|Armature|37_LateralWalk
+    second: LateralWalk
   - first:
       74: 2596614682166932604
-    second: Armature|Armature|Armature|38_RunWalk|Armature|38_RunWalk
+    second: Run
   - first:
       74: -5222013905924951423
-    second: Armature|Armature|Armature|39_WalkBAck|Armature|39_WalkBAck
+    second: WalkBack
   - first:
       74: -7058763548141358156
     second: Armature|Armature|Armature|40_Die|Armature|40_Die
   - first:
       74: 9214085626343797599
-    second: Armature|SAD WALKK
+    second: TiredWalk
+  - first:
+      74: 6023012229617399345
+    second: "RecibirDa\xF1o"
+  - first:
+      74: -9192867593545523506
+    second: MorirPorra
+  - first:
+      74: -5517220236643136271
+    second: InteraccionQuemarAntorcha
+  - first:
+      74: -4630339522487117836
+    second: Die
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -168,7 +180,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|41_WalkCansado
+      name: WalkCansado
       takeName: Armature|41_WalkCansado
       internalID: 0
       firstFrame: 0
@@ -179,8 +191,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -197,7 +209,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|01_IdleLanza|Armature|01_IdleLanza
+      name: IdleLanza
       takeName: Armature|Armature|Armature|01_IdleLanza|Armature|01_IdleLanza
       internalID: 0
       firstFrame: 0
@@ -208,8 +220,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -226,7 +238,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|02_AttackLanza|Armature|02_AttackLanza
+      name: AttackLanza
       takeName: Armature|Armature|Armature|02_AttackLanza|Armature|02_AttackLanza
       internalID: 0
       firstFrame: 0
@@ -237,8 +249,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -284,7 +296,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|04_AndarAtrasLanza|Armature|04_AndarAtrasLanz
+      name: AndarAtrasLanza
       takeName: Armature|Armature|Armature|04_AndarAtrasLanza|Armature|04_AndarAtrasLanz
       internalID: 0
       firstFrame: 0
@@ -295,8 +307,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -313,7 +325,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|05_CorrerLanza|Armature|05_CorrerLanza
+      name: CorrerLanza
       takeName: Armature|Armature|Armature|05_CorrerLanza|Armature|05_CorrerLanza
       internalID: 0
       firstFrame: 0
@@ -324,8 +336,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -342,7 +354,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|06_AndarAlanteLanza|Armature|06_AndarAlanteLa
+      name: AndarAlanteLanza
       takeName: Armature|Armature|Armature|06_AndarAlanteLanza|Armature|06_AndarAlanteLa
       internalID: 0
       firstFrame: 0
@@ -353,8 +365,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -487,7 +499,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|11_IdlePorra|Armature|11_IdlePorra
+      name: IdlePorra
       takeName: Armature|Armature|Armature|11_IdlePorra|Armature|11_IdlePorra
       internalID: 0
       firstFrame: 0
@@ -498,8 +510,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -516,7 +528,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|12_AttackPorra|Armature|12_AttackPorra
+      name: AttackPorra
       takeName: Armature|Armature|Armature|12_AttackPorra|Armature|12_AttackPorra
       internalID: 0
       firstFrame: 0
@@ -527,8 +539,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -574,7 +586,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|14_AndarAtrasPorra|Armature|14_AndarAtrasPorr
+      name: AndarAtrasPorra
       takeName: Armature|Armature|Armature|14_AndarAtrasPorra|Armature|14_AndarAtrasPorr
       internalID: 0
       firstFrame: 0
@@ -585,8 +597,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -603,7 +615,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|15_CorrerPorra|Armature|15_CorrerPorra
+      name: CorrerPorra
       takeName: Armature|Armature|Armature|15_CorrerPorra|Armature|15_CorrerPorra
       internalID: 0
       firstFrame: 0
@@ -614,8 +626,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -632,7 +644,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|16_AndarAlantePorra|Armature|16_AndarAlantePo
+      name: AndarAlantePorra
       takeName: Armature|Armature|Armature|16_AndarAlantePorra|Armature|16_AndarAlantePo
       internalID: 0
       firstFrame: 0
@@ -643,8 +655,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -806,7 +818,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|22_IdleAntorcha|Armature|22_IdleAntorcha
+      name: IdleAntorcha
       takeName: Armature|Armature|Armature|22_IdleAntorcha|Armature|22_IdleAntorcha
       internalID: 0
       firstFrame: 0
@@ -817,8 +829,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -835,7 +847,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|23_AttackAntorcha|Armature|23_AttackAntorcha
+      name: AttackAntorcha
       takeName: Armature|Armature|Armature|23_AttackAntorcha|Armature|23_AttackAntorcha
       internalID: 0
       firstFrame: 0
@@ -846,8 +858,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -893,7 +905,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|25_AndarAtrasAnorcha|Armature|25_AndarAtrasAn
+      name: AndarAtrasAnorcha
       takeName: Armature|Armature|Armature|25_AndarAtrasAnorcha|Armature|25_AndarAtrasAn
       internalID: 0
       firstFrame: 0
@@ -904,8 +916,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -922,7 +934,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|26_CorrerAntorcha|Armature|26_CorrerAntorcha
+      name: CorrerAntorcha
       takeName: Armature|Armature|Armature|26_CorrerAntorcha|Armature|26_CorrerAntorcha
       internalID: 0
       firstFrame: 0
@@ -933,8 +945,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -1038,7 +1050,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: "Armature|Armature|Armature|30_RecibirDa\xF1oAntorcha|Armature|30_RecibirDa"
+      name: "RecibirDa\xF1o"
       takeName: "Armature|Armature|Armature|30_RecibirDa\xF1oAntorcha|Armature|30_RecibirDa"
       internalID: 0
       firstFrame: 0
@@ -1067,7 +1079,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|31_MorirPorra|Armature|31_MorirPorra
+      name: MorirPorra
       takeName: Armature|Armature|Armature|31_MorirPorra|Armature|31_MorirPorra
       internalID: 0
       firstFrame: 0
@@ -1096,7 +1108,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|32_InteraccionQuemarAntorcha|Armature|32_Inte
+      name: InteraccionQuemarAntorcha
       takeName: Armature|Armature|Armature|32_InteraccionQuemarAntorcha|Armature|32_Inte
       internalID: 0
       firstFrame: 0
@@ -1125,7 +1137,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|33_IdleNormal|Armature|33_IdleNormal
+      name: Idle
       takeName: Armature|Armature|Armature|33_IdleNormal|Armature|33_IdleNormal
       internalID: 0
       firstFrame: 0
@@ -1136,8 +1148,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -1212,7 +1224,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|36_WalkNormal|Armature|36_WalkNormal
+      name: Walk
       takeName: Armature|Armature|Armature|36_WalkNormal|Armature|36_WalkNormal
       internalID: 0
       firstFrame: 0
@@ -1223,8 +1235,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -1241,7 +1253,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|37_LateralWalk|Armature|37_LateralWalk
+      name: LateralWalk
       takeName: Armature|Armature|Armature|37_LateralWalk|Armature|37_LateralWalk
       internalID: 0
       firstFrame: 0
@@ -1252,8 +1264,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -1270,7 +1282,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|38_RunWalk|Armature|38_RunWalk
+      name: Run
       takeName: Armature|Armature|Armature|38_RunWalk|Armature|38_RunWalk
       internalID: 0
       firstFrame: 0
@@ -1281,8 +1293,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -1299,7 +1311,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|39_WalkBAck|Armature|39_WalkBAck
+      name: WalkBack
       takeName: Armature|Armature|Armature|39_WalkBAck|Armature|39_WalkBAck
       internalID: 0
       firstFrame: 0
@@ -1310,8 +1322,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -1328,7 +1340,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|40_Die|Armature|40_Die
+      name: Die
       takeName: Armature|Armature|Armature|40_Die|Armature|40_Die
       internalID: 0
       firstFrame: 0
@@ -1357,7 +1369,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|SAD WALKK
+      name: TiredWalk
       takeName: Armature|SAD WALKK
       internalID: 0
       firstFrame: 0

@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetFloat("ArmaElegida", 0f);
+        animator.SetInteger("ArmaElegida", 0);
 
         Physics.gravity *= gravity;
     }

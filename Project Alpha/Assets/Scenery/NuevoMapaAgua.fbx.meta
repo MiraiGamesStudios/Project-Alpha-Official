@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: 5c751980fc8a01142baba6f2319ecd30
+guid: e048c28f797e5c7428bdc8e57c19a31b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Agua
-    second: {fileID: 2100000, guid: 4c9e4f8a221505845a60226839b2f8f3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Arena
-    second: {fileID: 2100000, guid: ffb0b6bcadae5b545992a6ab4c850422, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Camino
-    second: {fileID: 2100000, guid: 3bf84706a6aff5e45beffb10a6b5a94b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "Camino monta\xF1a"
-    second: {fileID: 2100000, guid: f00afefcdedd01d4abf69557a4e2a103, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cesped
-    second: {fileID: 2100000, guid: fff77dfcec76d2e4a85cc60d0fe7465d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cesped oscuro
-    second: {fileID: 2100000, guid: 9c53fb261a5b39940a932831fbc20978, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "Monta\xF1a"
-    second: {fileID: 2100000, guid: eb717242236d91046ba4a9f45ff85da2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nieve
-    second: {fileID: 2100000, guid: 7154209bd931618429c6d685ffd08f54, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

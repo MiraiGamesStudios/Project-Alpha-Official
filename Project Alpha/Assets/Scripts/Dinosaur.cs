@@ -24,6 +24,7 @@ public class Dinosaur : MonoBehaviour
     GameObject player;
 
     public GameObject damageText;
+    public GameObject posDaño;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +97,7 @@ public class Dinosaur : MonoBehaviour
                 //morir
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                Destroy(this.gameObject, 2);
                 avancePersonaje = 0.0f;
 
                 break;
@@ -129,9 +131,7 @@ public class Dinosaur : MonoBehaviour
         {
             life -= 10;
 
-            GameObject textGO = Instantiate(damageText, transform.position, Quaternion.identity);
-            //textGO.GetComponent<TextMeshPro>().SetText(10);
-            Destroy(textGO, 5);
+            numerosPantalla(10, "10");
 
             quemadura.SetActive(true);
             StartCoroutine(quemarse());
@@ -140,6 +140,9 @@ public class Dinosaur : MonoBehaviour
         }else if(collider.gameObject.tag == "Weapon")
         {
             life -= 10;
+
+            numerosPantalla(10, "10");
+
             Debug.Log(name + "Vida del dinosaurio: " + life);
         }
 
@@ -150,11 +153,15 @@ public class Dinosaur : MonoBehaviour
         }
     }
 
+
     IEnumerator quemarse()
     {
         for (int i = 0; i < 10; i++)
         {
             life--;
+
+            numerosPantalla(3, "1");
+
             Debug.Log(name + "Quemandose: " + life);
             yield return new WaitForSeconds(1f);
         }
@@ -163,6 +170,14 @@ public class Dinosaur : MonoBehaviour
 
 
         yield return null;
+    }
+
+    void numerosPantalla(float tamaño, string daño)
+    {
+        GameObject textGO = Instantiate(damageText, posDaño.transform.position, Quaternion.LookRotation(player.transform.forward));
+        textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
+        textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
+        Destroy(textGO, 1);
     }
 
 }

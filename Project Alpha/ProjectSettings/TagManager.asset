@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Dinosaur
   - Weapon
-  - SpawnPoints
+  - SpawnVelo
+  - SpawnTrice
+  - SpawnAlpha
   layers:
   - Default
   - TransparentFX

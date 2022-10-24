@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public Status status;
     public static GameManager Instance;
-    public static GameObject[] SpawnPoints;
+    public static GameObject[] SpawnVelo;
+    public static GameObject[] SpawnTrice;
+    public static GameObject[] SpawnAlpha;
     public static Player player;
 
     public int round = 0;
@@ -18,16 +20,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints");
+        SpawnVelo = GameObject.FindGameObjectsWithTag("SpawnVelo");
         Instance = this;
         status = Status.Mainmenu;
 
         //Generamos dinosaurios en los spawns de la primero area. 
-        for(int i =0; i< 3; i++)
-        {
-            GameObject newDinosaur = Instantiate(enemys[Random.Range(0, 3)]);
-            newDinosaur.transform.position = SpawnPoints[i].transform.position;
-        }
+        GameObject newDinosaur = Instantiate(enemys[0]);
+        newDinosaur.transform.position = SpawnVelo[0].transform.position;
+        
     }
 
     // Update is called once per frame
@@ -36,12 +36,12 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public static Vector3 GetSpawnPoint()
-    {
-        int aux = Random.Range(0, SpawnPoints.Length - 1);
-        Vector3 pos = SpawnPoints[aux].transform.position;
-        return pos;
-    }
+    //public static Vector3 GetSpawnPoint()
+    //{
+    //    int aux = Random.Range(0, SpawnPoints.Length - 1);
+    //    Vector3 pos = SpawnPoints[aux].transform.position;
+    //    return pos;
+    //}
 
     public void FinishedCondition()
     {

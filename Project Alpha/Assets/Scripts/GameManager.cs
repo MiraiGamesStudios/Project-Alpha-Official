@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameObject[] SpawnPoints;
     public static Player player;
 
-    public static Dinosaur[] enemigos;
+    public int round = 0;
+
+    public List<GameObject> enemys;
 
 
 
@@ -19,6 +21,13 @@ public class GameManager : MonoBehaviour
         SpawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoints");
         Instance = this;
         status = Status.Mainmenu;
+
+        //Generamos dinosaurios en los spawns de la primero area. 
+        for(int i =0; i< 3; i++)
+        {
+            GameObject newDinosaur = Instantiate(enemys[Random.Range(0, 3)]);
+            newDinosaur.transform.position = SpawnPoints[i].transform.position;
+        }
     }
 
     // Update is called once per frame

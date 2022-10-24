@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Dinosaur : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Dinosaur : MonoBehaviour
     Status statusDinosaur = Status.deambulando;
 
     GameObject player;
+
+    public GameObject damageText;
 
     // Start is called before the first frame update
     void Start()
@@ -125,6 +128,11 @@ public class Dinosaur : MonoBehaviour
         if (collider.gameObject.name == "TORCH" && quemadura.active == false)
         {
             life -= 10;
+
+            GameObject textGO = Instantiate(damageText, transform.position, Quaternion.identity);
+            //textGO.GetComponent<TextMeshPro>().SetText(10);
+            Destroy(textGO, 5);
+
             quemadura.SetActive(true);
             StartCoroutine(quemarse());
 

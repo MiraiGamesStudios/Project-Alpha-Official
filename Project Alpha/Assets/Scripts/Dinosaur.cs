@@ -103,9 +103,6 @@ public class Dinosaur : MonoBehaviour
                 break;
         }
 
-        /*saltar
-            anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Yaxis", 0.5f, 0.1f, Time.deltaTime);*/
     }
 
     ///  Activa el avance del personaje hacia un objetivo. 
@@ -125,37 +122,29 @@ public class Dinosaur : MonoBehaviour
         return Vector3.Distance(transform.position, _objetivo) < epsilonDistancia;
     }
 
-    void OnTriggerEnter(Collider collider)
+    public void perderVida()
     {
-        if (collider.gameObject.name == "TORCH" && quemadura.active == false)
-        {
             life -= 10;
-
             numerosPantalla(10, "10");
-
-            quemadura.SetActive(true);
-            StartCoroutine(quemarse());
-
-
-        }else if(collider.gameObject.tag == "Weapon")
-        {
-            life -= 10;
-
-            numerosPantalla(10, "10");
-
+            
             Debug.Log(name + "Vida del dinosaurio: " + life);
-        }
+    }
 
-        if(collider.gameObject.tag == "Dinosaur" && collider.transform.GetChild(2).gameObject.active == true && quemadura.active == false)
+    public void OnTriggerEnter(Collider collider)
+    {
+        //Contagio del fuego entre dinosaurios
+        if (collider.gameObject.tag == "Dinosaur" && collider.transform.GetChild(2).gameObject.active == true && quemadura.active == false)
         {
             quemadura.SetActive(true);
             StartCoroutine(quemarse());
         }
+
     }
 
 
     IEnumerator quemarse()
     {
+        quemadura.SetActive(true);
         for (int i = 0; i < 10; i++)
         {
             life--;
@@ -174,7 +163,9 @@ public class Dinosaur : MonoBehaviour
 
     void numerosPantalla(float tamaño, string daño)
     {
-        GameObject textGO = Instantiate(damageText, posDaño.transform.position, Quaternion.LookRotation(player.transform.forward));
+        Vector3 posicion = new Vector3(posDaño.transform.position.x + Random.Range(-2.0f, 2.0f), posDaño.transform.position.y + Random.Range(0f, 2.0f), posDaño.transform.position.z + Random.Range(-2.0f, 2.0f));
+
+        GameObject textGO = Instantiate(damageText, posicion, Quaternion.LookRotation(player.transform.forward));
         textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
         textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
         Destroy(textGO, 1);

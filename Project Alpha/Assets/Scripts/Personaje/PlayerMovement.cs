@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Start is called before the first frame update
@@ -146,6 +147,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetKey("left shift")) //Correr
                 {
+                    
                     speed = 8;
                     animator.SetFloat("Xaxis", 3.0f, 0.1f, Time.deltaTime);
 
@@ -159,11 +161,13 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else
                     {
+                       
                         animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                     }
                 }
                 else // Andar
                 {
+                    
                     speed = 4;
                     animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
 
@@ -183,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else //No tiene stamina, por lo tanto, esta cansado
             {
+                
                 speed = 1;
                 animator.SetFloat("Xaxis", 4.0f, 0.1f, Time.deltaTime);
             }

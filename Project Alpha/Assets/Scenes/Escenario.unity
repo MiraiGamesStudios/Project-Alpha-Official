@@ -3439,7 +3439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_Name
-      value: Bloqueo1 (1)
+      value: BloqueoLateral
       objectReference: {fileID: 0}
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4495,6 +4495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+--- !u!1 &689081069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+  m_PrefabInstance: {fileID: 793060039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &693953707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1621991540713508019, guid: c8134dd87be4906419f13922ddc5bf4f, type: 3}
@@ -5325,8 +5330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f341d0d416867ea4687e61d55b0dcd21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 0
   round: 0
+  round1: 150
+  barreras:
+  - {fileID: 689081069}
+  - {fileID: 2102594142}
   enemys:
   - {fileID: 1372411799906443984, guid: d28e9c18a68d2f248aab0b01d4442d09, type: 3}
   - {fileID: 9183912658923674830, guid: 3b66d1d10fe8c82408802239e21b332c, type: 3}
@@ -11511,6 +11519,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4, type: 3}
   m_PrefabInstance: {fileID: 1673877963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2102594142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+  m_PrefabInstance: {fileID: 1452651799}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2119529576
 PrefabInstance:

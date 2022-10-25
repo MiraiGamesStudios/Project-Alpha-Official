@@ -6,8 +6,11 @@ using UnityEngine.AI;
 
 public class DinosaurNavMesh : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
+    //[SerializeField] private List<Transform> movePositionTransform;
+    public List<Transform> movePositionTransform;
     private NavMeshAgent naveMeshAgent;
+
+    int i = 0;
 
     private void Awake()
     {
@@ -23,6 +26,10 @@ public class DinosaurNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        naveMeshAgent.destination = movePositionTransform.position;
+        naveMeshAgent.destination = movePositionTransform[i].position;
+        if(Vector3.Distance(this.transform.position, movePositionTransform[i].position) < 3) { 
+            i++;
+            if (i == 4) { i = 0; }
+        }
     }
 }

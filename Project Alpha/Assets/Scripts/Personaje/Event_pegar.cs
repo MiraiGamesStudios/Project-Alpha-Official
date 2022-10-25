@@ -13,7 +13,7 @@ public class Event_pegar : MonoBehaviour
     {
         while (guardarDinos)
         {
-            dinos.Add();
+            dinos.Add(arma.target);
         }
     }
 

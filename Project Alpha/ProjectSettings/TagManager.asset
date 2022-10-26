@@ -11,7 +11,6 @@ TagManager:
   - SpawnAlpha
   - TrexTarget
   - Area1Target
-  - Area2Target
   layers:
   - Default
   - TransparentFX

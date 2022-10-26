@@ -11,7 +11,6 @@ public class DinosaurNavMesh : MonoBehaviour
     private NavMeshAgent naveMeshAgent;
 
     int i = 0;
-    int j = 1;
     int areaDin;
 
     private void Awake()
@@ -23,10 +22,11 @@ public class DinosaurNavMesh : MonoBehaviour
     void Start()
     {
         areaDin = GetComponent<Dinosaur>().area;
+        //print(areaDin);
 
         if (this.gameObject.name == "Trex"){
             movePositionTransform = GameObject.FindGameObjectsWithTag("TrexTarget");
-        }else if (areaDin == 1)//velocirraptors del area 1
+        }else if (areaDin==1)//si el dinosaurio es del area 1 
         {
             movePositionTransform = GameObject.FindGameObjectsWithTag("Area1Target");
         }else if (areaDin==2)
@@ -38,7 +38,7 @@ public class DinosaurNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        naveMeshAgent.destination = movePositionTransform[i].transform.position;
+        //naveMeshAgent.destination = movePositionTransform[i].transform.position;
         if (this.gameObject.name == "Trex")
         {
             if (Vector3.Distance(this.transform.position, movePositionTransform[i].transform.position) < 3)
@@ -58,7 +58,7 @@ public class DinosaurNavMesh : MonoBehaviour
             if (Vector3.Distance(this.transform.position, movePositionTransform[i].transform.position) < 3)
             {
                 i++;
-                if (i == 7) { i = 0; }
+                if (i == 6) { i = 0; }
             }
         }
 

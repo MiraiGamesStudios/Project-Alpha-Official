@@ -9,6 +9,7 @@ public class Dinosaur : MonoBehaviour
     public float speed = 4;
     public float life;
     private Animator anim;
+    public List<Collider> colliders;
 
     private float avancePersonaje = 0.0f;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
@@ -25,6 +26,8 @@ public class Dinosaur : MonoBehaviour
 
     public GameObject damageText;
     public GameObject posDaño;
+
+    public int area = 0;
 
     // Start is called before the first frame update
     void Start()

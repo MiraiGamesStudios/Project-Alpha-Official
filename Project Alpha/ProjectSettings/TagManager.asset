@@ -9,6 +9,8 @@ TagManager:
   - SpawnVelo
   - SpawnTrice
   - SpawnAlpha
+  - TrexTarget
+  - Area1Target
   layers:
   - Default
   - TransparentFX

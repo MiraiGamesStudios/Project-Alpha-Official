@@ -790,7 +790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8c9d1113faaf241a96ab062681fab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Trex
   speed: 4
   life: 70
   colliders:
@@ -808,11 +807,14 @@ MonoBehaviour:
   - {fileID: 4985129575411788149}
   - {fileID: 4985129575606331485}
   - {fileID: 4985129574574741035}
+  quemadura: {fileID: 0}
+  "da\xF1andome": 0
+  quemandome: 0
+  muerto: 0
+  area: 0
+  tipo: 3
   epsilonDistancia: 3
   m_moveSpeed: 5
-  quemadura: {fileID: 0}
-  damageText: {fileID: 1717210598998809415, guid: 4684e6fd3c7a2ee42bb67aae6fd94654, type: 3}
-  "posDa\xF1o": {fileID: 0}
 --- !u!195 &-406670974502781044
 NavMeshAgent:
   m_ObjectHideFlags: 0

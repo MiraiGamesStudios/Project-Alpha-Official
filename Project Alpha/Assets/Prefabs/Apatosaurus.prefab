@@ -944,7 +944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8c9d1113faaf241a96ab062681fab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cuellilargo
   speed: 4
   life: 200
   colliders:
@@ -967,11 +966,14 @@ MonoBehaviour:
   - {fileID: 3883638812954934563}
   - {fileID: 3883638813296460545}
   - {fileID: 3883638813071529026}
+  quemadura: {fileID: 0}
+  "da\xF1andome": 0
+  quemandome: 0
+  muerto: 0
+  area: 0
+  tipo: 2
   epsilonDistancia: 5
   m_moveSpeed: 3
-  quemadura: {fileID: 0}
-  damageText: {fileID: 1717210598998809415, guid: 4684e6fd3c7a2ee42bb67aae6fd94654, type: 3}
-  "posDa\xF1o": {fileID: 0}
 --- !u!1 &4131516257709379602
 GameObject:
   m_ObjectHideFlags: 0

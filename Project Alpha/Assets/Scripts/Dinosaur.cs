@@ -8,12 +8,21 @@ public class Dinosaur : MonoBehaviour
     //public string name;
     public float speed = 4;
     public float life;
+
     private Animator anim;
     public List<Collider> colliders;
     public GameObject quemadura;
+
     public bool dañandome;
     public bool quemandome;
     public bool muerto;
+
+    public int area = 0;
+
+    GameObject player;
+
+    private enum Tipo {Velocirraptor, Triceratops, Alphasaurio, TRex };
+    [SerializeField] private Tipo tipo;
 
     private float avancePersonaje = 0.0f;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
@@ -24,9 +33,9 @@ public class Dinosaur : MonoBehaviour
     private enum Status { quieto, deambulando, corriendo, atacando, muerto};
     Status statusDinosaur = Status.deambulando;
 
-    GameObject player;
+    
 
-    public int area = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -111,9 +120,6 @@ public class Dinosaur : MonoBehaviour
 
     }
 
-    ///  Activa el avance del personaje hacia un objetivo. 
-    ///  Si no estaba mirando hacia el objetivo, primero se alineara de forma automatica.
-    ///  
     void Alinear(Vector3 _objetivo)
     {
         transform.LookAt(_objetivo);
@@ -128,41 +134,20 @@ public class Dinosaur : MonoBehaviour
         return Vector3.Distance(transform.position, _objetivo) < epsilonDistancia;
     }
 
-    public void perderVida()
-    {
-            life -= 10;
-            
-            Debug.Log(name + "Vida del dinosaurio: " + life);
-    }
-
-    [System.Obsolete]
+    
     public void OnTriggerEnter(Collider collider)
     {
-        //Contagio del fuego entre dinosaurios
-        if (collider.gameObject.tag == "Dinosaur" && collider.transform.GetChild(2).gameObject.active == true && quemadura.active == false)
+        
+        if(tipo == Tipo.Velocirraptor && collider.transform.root.gameObject.tag == "Player")
         {
-            quemadura.SetActive(true);
-            StartCoroutine(quemarse());
+            MorderVelocirraptor();
         }
 
     }
 
-
-    public IEnumerator quemarse()
+    void MorderVelocirraptor()
     {
-        quemadura.SetActive(true);
-        for (int i = 0; i < 10; i++)
-        {
-            life--;
 
-            Debug.Log(name + "Quemandose: " + life);
-            yield return new WaitForSeconds(1f);
-        }
-
-        quemadura.SetActive(false);
-
-
-        yield return null;
     }
 
 }

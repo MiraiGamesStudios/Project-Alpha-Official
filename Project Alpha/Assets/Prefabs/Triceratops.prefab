@@ -1615,7 +1615,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8374477915050182260}
   - component: {fileID: 8336908613086346260}
-  - component: {fileID: 8336908613086346261}
   - component: {fileID: 8336908613086346258}
   - component: {fileID: 8336908613086346259}
   m_Layer: 0
@@ -1659,20 +1658,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &8336908613086346261
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9183912658923674830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 4.9042873
-  m_Height: 9.808575
-  m_Direction: 1
-  m_Center: {x: -0.25353813, y: 4.074934, z: 0}
 --- !u!95 &8336908613086346258
 Animator:
   serializedVersion: 4
@@ -1705,7 +1690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8c9d1113faaf241a96ab062681fab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Triceratops
   speed: 4
   life: 100
   colliders:
@@ -1724,11 +1708,14 @@ MonoBehaviour:
   - {fileID: 8336908612045729774}
   - {fileID: 8336908612915669489}
   - {fileID: 8336908611867225695}
-  epsilonDistancia: 3
-  m_moveSpeed: 3
   quemadura: {fileID: 0}
-  damageText: {fileID: 1717210598998809415, guid: 4684e6fd3c7a2ee42bb67aae6fd94654, type: 3}
-  "posDa\xF1o": {fileID: 0}
+  "da\xF1andome": 0
+  quemandome: 0
+  muerto: 0
+  area: 0
+  tipo: 1
+  epsilonDistancia: 4
+  m_moveSpeed: 3
 --- !u!1001 &8336908612121636019
 PrefabInstance:
   m_ObjectHideFlags: 0

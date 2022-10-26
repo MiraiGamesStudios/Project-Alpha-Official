@@ -341,8 +341,8 @@ MonoBehaviour:
   "da\xF1andome": 0
   quemandome: 0
   muerto: 0
-  epsilonDistancia: 3
-  m_moveSpeed: 4
+  epsilonDistancia: 4
+  m_moveSpeed: 5
   area: 0
 --- !u!195 &473172298619861125
 NavMeshAgent:

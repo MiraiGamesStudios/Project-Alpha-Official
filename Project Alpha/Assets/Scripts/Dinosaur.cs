@@ -5,11 +5,15 @@ using TMPro;
 
 public class Dinosaur : MonoBehaviour
 {
-    public string name;
+    //public string name;
     public float speed = 4;
     public float life;
     private Animator anim;
     public List<Collider> colliders;
+    public GameObject quemadura;
+    public bool dañandome;
+    public bool quemandome;
+    public bool muerto;
 
     private float avancePersonaje = 0.0f;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
@@ -17,15 +21,10 @@ public class Dinosaur : MonoBehaviour
     private readonly float m_interpolation = 10;    // Multiplicador para el paso de integracion
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
-    public GameObject quemadura;
-
     private enum Status { quieto, deambulando, corriendo, atacando, muerto};
     Status statusDinosaur = Status.deambulando;
 
     GameObject player;
-
-    public GameObject damageText;
-    public GameObject posDaño;
 
     public int area = 0;
 
@@ -36,6 +35,7 @@ public class Dinosaur : MonoBehaviour
         quemadura = transform.GetChild(2).gameObject;
 
         player = GameObject.FindGameObjectWithTag("Player");
+        muerto = false;
     }
 
     // Update is called once per frame
@@ -98,6 +98,9 @@ public class Dinosaur : MonoBehaviour
 
             case Status.muerto:
                 //morir
+
+                muerto = true;
+                quemadura.SetActive(false);
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                 Destroy(this.gameObject, 2);
@@ -128,11 +131,11 @@ public class Dinosaur : MonoBehaviour
     public void perderVida()
     {
             life -= 10;
-            numerosPantalla(10, "10");
             
             Debug.Log(name + "Vida del dinosaurio: " + life);
     }
 
+    [System.Obsolete]
     public void OnTriggerEnter(Collider collider)
     {
         //Contagio del fuego entre dinosaurios
@@ -145,14 +148,12 @@ public class Dinosaur : MonoBehaviour
     }
 
 
-    IEnumerator quemarse()
+    public IEnumerator quemarse()
     {
         quemadura.SetActive(true);
         for (int i = 0; i < 10; i++)
         {
             life--;
-
-            numerosPantalla(3, "1");
 
             Debug.Log(name + "Quemandose: " + life);
             yield return new WaitForSeconds(1f);
@@ -162,16 +163,6 @@ public class Dinosaur : MonoBehaviour
 
 
         yield return null;
-    }
-
-    void numerosPantalla(float tamaño, string daño)
-    {
-        Vector3 posicion = new Vector3(posDaño.transform.position.x + Random.Range(-2.0f, 2.0f), posDaño.transform.position.y + Random.Range(0f, 2.0f), posDaño.transform.position.z + Random.Range(-2.0f, 2.0f));
-
-        GameObject textGO = Instantiate(damageText, posicion, Quaternion.LookRotation(player.transform.forward));
-        textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
-        textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
-        Destroy(textGO, 1);
     }
 
 }

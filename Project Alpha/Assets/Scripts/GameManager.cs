@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
                 GameObject newDinosaur = Instantiate(enemys[0]);
                 newDinosaur.transform.position = SpawnVelo[0].transform.position;
                 newDinosaur.GetComponent<Dinosaur>().area = 1;
+                newDinosaur.name = "Velocirraptor" + i;
                 dinosVivos++;
             }
 

@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 
     public bool dañar = false;
     public GameObject target;
+    public string tipoArma;
 
 
     public void Update()
@@ -19,7 +20,7 @@ public class Weapon : MonoBehaviour
         if (collider.gameObject.tag == "Dinosaur")
         {
             dañar = false;
-            target = null;
+            //target = null;
         }
     }
 
@@ -27,14 +28,13 @@ public class Weapon : MonoBehaviour
     public void OnTriggerEnter(Collider collider)
     {
         //GameObject objeto1 = GameObject.Find("objeto1");
-        if (collider.gameObject.tag == "Dinosaur")
+        if (collider.transform.root.gameObject.tag == "Dinosaur")
         {
             dañar = true;
-            target = collider.gameObject;
+            target = collider.transform.root.gameObject;
         }
 
     }
-
     public void HacerDaño()
     {
         if (dañar)

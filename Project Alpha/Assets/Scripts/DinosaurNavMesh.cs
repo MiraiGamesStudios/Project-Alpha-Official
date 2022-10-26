@@ -22,7 +22,7 @@ public class DinosaurNavMesh : MonoBehaviour
     void Start()
     {
         areaDin = GetComponent<Dinosaur>().area;
-        print(areaDin);
+        //print(areaDin);
 
         if (this.gameObject.name == "Trex"){
             movePositionTransform = GameObject.FindGameObjectsWithTag("TrexTarget");
@@ -38,7 +38,7 @@ public class DinosaurNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        naveMeshAgent.destination = movePositionTransform[i].transform.position;
+        //naveMeshAgent.destination = movePositionTransform[i].transform.position;
         if (this.gameObject.name == "Trex")
         {
             if (Vector3.Distance(this.transform.position, movePositionTransform[i].transform.position) < 3)

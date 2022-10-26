@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
 
     public bool dañar = false;
-    public Dinosaur target;
+    public GameObject target;
 
 
     public void Update()

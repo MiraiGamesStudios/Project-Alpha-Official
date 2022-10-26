@@ -1068,6 +1068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c552827809d4e24c8d4aa99e9e688f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "da\xF1ar": 0
+  target: {fileID: 0}
 --- !u!1 &5808518283847268968
 GameObject:
   m_ObjectHideFlags: 0
@@ -15956,6 +15958,7 @@ GameObject:
   - component: {fileID: 5808518284078822600}
   - component: {fileID: 5808518284078822604}
   - component: {fileID: 5808518284078822607}
+  - component: {fileID: 269529791478777603}
   - component: {fileID: 4488321401255851238}
   - component: {fileID: 8556191719794868118}
   m_Layer: 0
@@ -16068,6 +16071,21 @@ MonoBehaviour:
   cantidadVida: 10
   outStamina: 0
   death: 0
+--- !u!114 &269529791478777603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655591595714422240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a895c68b0cd28645ae1c454aeef73d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arma: {fileID: 0}
+  dinos: []
+  guardarDinos: 0
 --- !u!114 &4488321401255851238
 MonoBehaviour:
   m_ObjectHideFlags: 0

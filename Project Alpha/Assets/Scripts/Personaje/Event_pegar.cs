@@ -5,21 +5,18 @@ using UnityEngine;
 public class Event_pegar : MonoBehaviour
 {
     public Weapon arma;
-    public List<Dinosaur> dinos;
+    public List<GameObject> dinos;
 
     public bool guardarDinos = false;
+    int i = 0;
 
     private void Update()
     {
-        while (guardarDinos)
-        {
-            dinos.Add(arma.target);
-        }
+        if (guardarDinos) añadirDinos();
     }
 
-    public void InicoPegar()
+    public void InicioPegar()
     {
-
         guardarDinos = true;
         //if (arma.dañar)
         //{
@@ -33,4 +30,23 @@ public class Event_pegar : MonoBehaviour
     {
         guardarDinos = false;
     }
+
+    void añadirDinos()
+    {
+        if(arma.target.tag == "Dinosaur")
+        {
+            if (dinos.Count == 0)
+            {
+                dinos.Add(arma.target);
+
+            }
+            else if(arma.target != dinos[dinos.Count - 1])
+            {
+                dinos.Add(arma.target);
+            }
+
+        }
+        
+    }
+
 }

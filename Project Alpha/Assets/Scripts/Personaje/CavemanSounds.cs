@@ -15,25 +15,21 @@ public class CavemanSounds : MonoBehaviour
 
     private void StepRTired()
     {
-        print("ej");
         audioManagement.PlayOneShot(sounds[1]);
     }
 
     private void StepLTired()
     {
-        print("ej");
         audioManagement.PlayOneShot(sounds[0]);
     }
 
     private void StepLWalking()
     {
-        print("ej");
         audioManagement.PlayOneShot(sounds[2]);
     }
 
     private void StepRWalking()
     {
-        print("ej");
         audioManagement.PlayOneShot(sounds[3]);
     }
 

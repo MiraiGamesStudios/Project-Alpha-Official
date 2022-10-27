@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour
             //Generamos dinosaurios en los spawns de la primera area.
             for (int i = 0; i < velo; i++)
             {
-                //if(dinosArea1.GetComponentInChildren(0) != null)
+                if (dinosArea1.transform.GetChild(0) != null && dinosArea1.transform.GetChild(0).gameObject.GetComponent<Dinosaur>().tipo == Dinosaur.Tipo.Velocirraptor)
+                {
+                    dinosArea1.transform.GetChild(i).gameObject.SetActive(true);
+                }
                 dinosVivos++;
             }
 

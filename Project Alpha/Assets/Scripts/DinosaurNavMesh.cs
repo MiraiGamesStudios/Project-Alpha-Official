@@ -8,7 +8,7 @@ public class DinosaurNavMesh : MonoBehaviour
 {
     //[SerializeField] private List<Transform> movePositionTransform;
     public GameObject[] movePositionTransform;
-    private NavMeshAgent naveMeshAgent;
+    public NavMeshAgent naveMeshAgent;
 
     int i = 0;
     int j = 1;
@@ -33,12 +33,12 @@ public class DinosaurNavMesh : MonoBehaviour
         {
             movePositionTransform = GameObject.FindGameObjectsWithTag("Area2Target");
         }
+        naveMeshAgent.destination = movePositionTransform[i].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        naveMeshAgent.destination = movePositionTransform[i].transform.position;
         if (this.gameObject.name == "Trex")
         {
             if (Vector3.Distance(this.transform.position, movePositionTransform[i].transform.position) < 3)

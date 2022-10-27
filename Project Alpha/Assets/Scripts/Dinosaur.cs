@@ -21,8 +21,8 @@ public class Dinosaur : MonoBehaviour
 
     GameObject player;
 
-    private enum Tipo {Velocirraptor, Triceratops, Alphasaurio, TRex };
-    [SerializeField] private Tipo tipo;
+    public enum Tipo {Velocirraptor, Triceratops, Alphasaurio, TRex };
+    [SerializeField] public Tipo tipo;
 
     private float avancePersonaje = 0.0f;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
@@ -79,6 +79,7 @@ public class Dinosaur : MonoBehaviour
                 if (Vector3.Distance(this.transform.position, player.transform.position)<30)
                 {
                     statusDinosaur = Status.corriendo;
+                    this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.destination = player.transform.position;
                 }
                 break;
 

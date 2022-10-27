@@ -1615,8 +1615,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8374477915050182260}
   - component: {fileID: 8336908613086346260}
+  - component: {fileID: 8336908613086346261}
   - component: {fileID: 8336908613086346258}
   - component: {fileID: 8336908613086346259}
+  - component: {fileID: 9048359270451246349}
+  - component: {fileID: -1593388850163214159}
   m_Layer: 0
   m_Name: Triceratops
   m_TagString: Dinosaur
@@ -1658,6 +1661,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &8336908613086346261
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183912658923674830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4.9042873
+  m_Height: 9.808575
+  m_Direction: 1
+  m_Center: {x: -0.25353813, y: 4.074934, z: 0}
 --- !u!95 &8336908613086346258
 Animator:
   serializedVersion: 4
@@ -1712,10 +1729,44 @@ MonoBehaviour:
   "da\xF1andome": 0
   quemandome: 0
   muerto: 0
-  area: 0
-  tipo: 1
-  epsilonDistancia: 4
+  epsilonDistancia: 3
   m_moveSpeed: 3
+  area: 0
+--- !u!195 &9048359270451246349
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183912658923674830}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-1593388850163214159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183912658923674830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f38ed335ddd664fb0173e606c8d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePositionTransform: []
 --- !u!1001 &8336908612121636019
 PrefabInstance:
   m_ObjectHideFlags: 0

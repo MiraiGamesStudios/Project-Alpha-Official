@@ -5,9 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public static GameObject[] SpawnVelo;
-    public static GameObject[] SpawnTrice;
-    public static GameObject[] SpawnAlpha;
     int velo;
     int trice;
     int alpha;
@@ -24,16 +21,15 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> barreras;
     public List<GameObject> enemys;
-
-
+    private GameObject dinosArea1;
+    private GameObject dinosArea2;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnVelo = GameObject.FindGameObjectsWithTag("SpawnVelo");
-        SpawnTrice = GameObject.FindGameObjectsWithTag("SpawnTrice");
-        SpawnAlpha = GameObject.FindGameObjectsWithTag("SpawnAlpha");
         Instance = this;
+        dinosArea1 = GameObject.Find("DinosArea1");
+        dinosArea2 = GameObject.Find("DinosArea2");
     }
 
     // Update is called once per frame
@@ -46,26 +42,17 @@ public class GameManager : MonoBehaviour
             //Generamos dinosaurios en los spawns de la primera area.
             for (int i = 0; i < velo; i++)
             {
-                GameObject newDinosaur = Instantiate(enemys[0]);
-                newDinosaur.transform.position = SpawnVelo[0].transform.position;
-                newDinosaur.GetComponent<Dinosaur>().area = 1;
-                newDinosaur.name = "Velocirraptor" + i;
+                //if(dinosArea1.GetComponentInChildren(0) != null)
                 dinosVivos++;
             }
 
             for (int i = 0; i < trice; i++)
             {
-                GameObject newTri = Instantiate(enemys[1]);
-                newTri.transform.position = SpawnTrice[0].transform.position;
-                newTri.GetComponent<Dinosaur>().area = 1;
                 dinosVivos++;
             }
 
             for (int i = 0; i < alpha; i++)
             {
-                GameObject newAlpha = Instantiate(enemys[2]);
-                newAlpha.transform.position = SpawnAlpha[0].transform.position;
-                newAlpha.GetComponent<Dinosaur>().area = 1;
                 dinosVivos++;
             }
             spawneados = true;
@@ -76,25 +63,16 @@ public class GameManager : MonoBehaviour
             //Generamos dinosaurios en los spawns de la primera area.
             for (int i = 0; i < velo; i++)
             {
-                GameObject newDinosaur = Instantiate(enemys[0]);
-                newDinosaur.transform.position = SpawnVelo[1].transform.position;
-                newDinosaur.GetComponent<Dinosaur>().area = 2;
                 dinosVivos++;
             }
 
             for (int i = 0; i < trice; i++)
             {
-                GameObject newTri = Instantiate(enemys[1]);
-                newTri.transform.position = SpawnTrice[1].transform.position;
-                newTri.GetComponent<Dinosaur>().area = 2;
                 dinosVivos++;
             }
 
             for (int i = 0; i < alpha; i++)
             {
-                GameObject newAlpha = Instantiate(enemys[2]);
-                newAlpha.transform.position = SpawnAlpha[1].transform.position;
-                newAlpha.GetComponent<Dinosaur>().area = 2;
                 dinosVivos++;
             }
 
@@ -123,18 +101,22 @@ public class GameManager : MonoBehaviour
             case 0:
                 velo = 2;
                 trice = 1;
+                alpha = 0;
                 break;
             case 1:
                 velo = 1;
                 trice = 2;
+                alpha = 0;
                 break;
             case 2:
                 velo = 5;
                 trice = 0;
+                alpha = 0;
                 break;
             case 3:
                 velo = 0;
                 trice = 4;
+                alpha = 0;
                 break;
             case 4:
                 velo = 1;
@@ -142,24 +124,24 @@ public class GameManager : MonoBehaviour
                 alpha = 1;
                 break;
             case 5:
-                velo = 1;
+                velo = 2;
                 trice = 1;
-                alpha = 1;
+                alpha = 0;
                 break;
             case 6:
                 velo = 1;
-                trice = 1;
-                alpha = 1;
+                trice = 2;
+                alpha = 0;
                 break;
             case 7:
-                velo = 1;
-                trice = 1;
-                alpha = 1;
+                velo = 5;
+                trice = 0;
+                alpha = 0;
                 break;
             case 8:
-                velo = 1;
-                trice = 1;
-                alpha = 1;
+                velo = 0;
+                trice = 4;
+                alpha = 0;
                 break;
             case 9:
                 velo = 1;
@@ -176,5 +158,11 @@ public class GameManager : MonoBehaviour
         {
             statusPartida = Status.Finished;
         }
+    }
+
+    public IEnumerator esperarSpawn()
+    {
+        yield return new WaitForSeconds(2f);
+        yield return null;
     }
 }

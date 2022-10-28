@@ -34,9 +34,9 @@ public class Dinosaur : MonoBehaviour
     private enum Status { quieto, deambulando, corriendo, atacando, muerto};
     Status statusDinosaur = Status.deambulando;
 
-    
+    int e = 0;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -184,6 +184,7 @@ public class Dinosaur : MonoBehaviour
 
     void MorderAlpha()
     {
+
         StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
         target = null;
     }

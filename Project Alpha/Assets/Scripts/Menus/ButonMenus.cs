@@ -35,4 +35,9 @@ public class ButonMenus : MonoBehaviour
     {
         SceneManager.LoadScene(indice);
     }
+
+    public void ReiniciarPartida(int indice)
+    {
+        SceneManager.LoadScene(indice);
+    }
 }

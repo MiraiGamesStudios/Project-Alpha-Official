@@ -16,10 +16,13 @@ public class LifeStamina : MonoBehaviour
 
     public bool outStamina = false;
     public bool death = false;
+    public bool recuperando = false;
 
     public List<GameObject> Lactiva;
     public List<GameObject> Lderecha;
     public List<GameObject> Lizquierda;
+
+    bool daño = false;
 
 
     // Start is called before the first frame update
@@ -35,10 +38,10 @@ public class LifeStamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.AltGr))
+        if (lifeSlide.value != vidaMaxima && recuperando == false)
         {
-            StartCoroutine(lifeLost(cantidadVida)); 
+            recuperando = true;
+            StartCoroutine(recoverLife());
         }
 
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
@@ -102,6 +105,8 @@ public class LifeStamina : MonoBehaviour
 
     public IEnumerator lifeLost(float vida)
     {
+        daño = true;
+
         float cantidadPerdida = 0;
         float i = 0.2f;
 
@@ -121,9 +126,9 @@ public class LifeStamina : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-        
-        yield return null;
+        daño = false;
 
+        yield return null;
     }
 
     IEnumerator staminaLost()
@@ -136,9 +141,7 @@ public class LifeStamina : MonoBehaviour
         {
             outStamina = true;
         }
-        yield return null;
-
-        
+        yield return null; 
     }
 
     IEnumerator staminaRecover()
@@ -155,6 +158,29 @@ public class LifeStamina : MonoBehaviour
 
         yield return null;
 
+    }
+
+    public IEnumerator recoverLife()
+    {
+        yield return new WaitForSeconds(4);
+        float i = 0.05f;
+
+        while (lifeSlide.value != vidaMaxima)
+        {
+
+            if (daño)
+            {
+                break;
+            }
+
+            lifeSlide.value += i;
+            yield return new WaitForSeconds(0.01f);
+
+        }
+
+        recuperando = false;
+
+        yield return null;
 
     }
 }

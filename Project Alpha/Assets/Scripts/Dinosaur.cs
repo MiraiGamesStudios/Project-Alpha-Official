@@ -81,7 +81,8 @@ public class Dinosaur : MonoBehaviour
                 if (Vector3.Distance(this.transform.position, player.transform.position)<30)
                 {
                     statusDinosaur = Status.corriendo;
-                    this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.destination = player.transform.position;
+                    this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled;
+                    this.gameObject.GetComponent<DinosaurNavMesh>().enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().enabled;
                 }
                 break;
 

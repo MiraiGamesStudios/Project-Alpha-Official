@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         switch (r)
         {
             case 0:
-                velo = 1;
+                velo = 2;
                 trice = 1;
                 alpha = 0;
                 break;

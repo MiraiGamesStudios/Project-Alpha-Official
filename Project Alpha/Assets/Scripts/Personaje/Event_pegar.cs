@@ -26,7 +26,7 @@ public class Event_pegar : MonoBehaviour
     }
     public void GolpeLanza()
     {
-        //print(lanza.targetL);
+        
         if (lanza.targetL.tag == "Dinosaur")
         {
             QuitarVida(lanza.targetL);
@@ -38,8 +38,8 @@ public class Event_pegar : MonoBehaviour
     {
         if (antorcha.targetA.tag == "Dinosaur")
         {
-            
             QuitarVida(antorcha.targetA);
+            StartCoroutine(quemarse(antorcha.targetA));
             antorcha.targetA = antorcha.noTarget;
         }
 

@@ -20,6 +20,7 @@ public class Dinosaur : MonoBehaviour
     public int area = 0;
 
     GameObject player;
+    GameObject target;
 
     public enum Tipo {Velocirraptor, Triceratops, Alphasaurio, TRex };
     [SerializeField] public Tipo tipo;
@@ -139,18 +140,51 @@ public class Dinosaur : MonoBehaviour
     
 
     public void OnTriggerEnter(Collider collider)
-    {
-        
+    {  
         if(tipo == Tipo.Velocirraptor && collider.transform.root.gameObject.tag == "Player")
         {
-            MorderVelocirraptor();
+            target = collider.transform.root.gameObject;
+        }
+
+        if (tipo == Tipo.Triceratops && collider.transform.root.gameObject.tag == "Player")
+        {
+            target = collider.transform.root.gameObject;
+        }
+
+        if (tipo == Tipo.Alphasaurio && collider.transform.root.gameObject.tag == "Player")
+        {
+            target = collider.transform.root.gameObject;
+        }
+
+        if (tipo == Tipo.TRex && collider.transform.root.gameObject.tag == "Player")
+        {
+            target = collider.transform.root.gameObject;
         }
 
     }
 
     void MorderVelocirraptor()
     {
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        target = null;
+    }
 
+    void MorderTriceratops()
+    {
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        target = null;
+    }
+
+    void MorderTRex()
+    {
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        target = null;
+    }
+
+    void MorderAlpha()
+    {
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        target = null;
     }
 
 }

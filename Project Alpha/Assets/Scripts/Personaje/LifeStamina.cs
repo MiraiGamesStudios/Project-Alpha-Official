@@ -17,10 +17,18 @@ public class LifeStamina : MonoBehaviour
     public bool outStamina = false;
     public bool death = false;
 
+    public List<GameObject> Lactiva;
+    public List<GameObject> Lderecha;
+    public List<GameObject> Lizquierda;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        lifeSlide.maxValue = vidaMaxima;
         lifeSlide.value = vidaMaxima;
+
+        staminaSlide.maxValue = staminaMaxima;
         staminaSlide.value = staminaMaxima;
     }
 
@@ -44,9 +52,55 @@ public class LifeStamina : MonoBehaviour
             StartCoroutine(staminaRecover());
         }
 
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            Lactiva[0].SetActive(true);
+            Lactiva[1].SetActive(false);
+            Lactiva[2].SetActive(false);
+
+            Lderecha[0].SetActive(false);
+            Lderecha[1].SetActive(true);
+            Lderecha[2].SetActive(false);
+
+            Lizquierda[0].SetActive(false);
+            Lizquierda[1].SetActive(false);
+            Lizquierda[2].SetActive(true);
+
+
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            Lactiva[0].SetActive(false);
+            Lactiva[1].SetActive(true);
+            Lactiva[2].SetActive(false);
+
+            Lderecha[0].SetActive(false);
+            Lderecha[1].SetActive(false);
+            Lderecha[2].SetActive(true);
+
+            Lizquierda[0].SetActive(true);
+            Lizquierda[1].SetActive(false);
+            Lizquierda[2].SetActive(false);
+
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            Lactiva[0].SetActive(false);
+            Lactiva[1].SetActive(false);
+            Lactiva[2].SetActive(true);
+
+            Lderecha[0].SetActive(true);
+            Lderecha[1].SetActive(false);
+            Lderecha[2].SetActive(false);
+
+            Lizquierda[0].SetActive(false);
+            Lizquierda[1].SetActive(true);
+            Lizquierda[2].SetActive(false);
+        }
+
     }
 
-    IEnumerator lifeLost(float vida)
+    public IEnumerator lifeLost(float vida)
     {
         float cantidadPerdida = 0;
         float i = 0.2f;

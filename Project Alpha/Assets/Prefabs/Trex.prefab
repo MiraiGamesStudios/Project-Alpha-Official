@@ -237,7 +237,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875864943775001431}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.002033712, y: 0.010175395, z: 0.003815327}
@@ -424,7 +424,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2771136577835791376}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.002033712, y: 0.010175395, z: 0.003815327}
@@ -750,7 +750,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5327711346598543933}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 250
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -808,8 +808,8 @@ MonoBehaviour:
   - {fileID: 4985129575606331485}
   - {fileID: 4985129574574741035}
   quemadura: {fileID: 6165686413761240314}
-  "da\xF1andome": 0
   quemandome: 0
+  quemazon: 0
   muerto: 0
   area: 0
   tipo: 3
@@ -851,6 +851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movePositionTransform:
   - {fileID: 0}
+  naveMeshAgent: {fileID: 0}
 --- !u!1 &5339268733220588590
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,11 +957,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5641652710780928426}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.012598271, y: 0.038185373, z: 0.01620087}
-  m_Center: {x: -0.00047030443, y: -0.0029360417, z: 0.000047184996}
+  m_Size: {x: 0.025145164, y: 0.033537578, z: 0.027298877}
+  m_Center: {x: 0.0058030807, y: -0.00525993, z: -0.005501768}
 --- !u!1 &5721209883594901425
 GameObject:
   m_ObjectHideFlags: 0

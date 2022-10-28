@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245927749143108277}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.039229132, z: 0.013309036}
@@ -338,8 +338,8 @@ MonoBehaviour:
   - {fileID: 2290819914068580722}
   - {fileID: 2290819914470394590}
   quemadura: {fileID: 1113786985892690326}
-  "da\xF1andome": 0
   quemandome: 0
+  quemazon: 0
   muerto: 0
   area: 0
   tipo: 0
@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!1 &1403377446876670548
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,11 +805,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2905185172402079627}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010850874, y: 0.023726301, z: 0.01}
-  m_Center: {x: -0.0004254368, y: -0.010190532, z: -6.33119e-11}
+  m_Size: {x: 0.012847327, y: 0.029666806, z: 0.013138589}
+  m_Center: {x: 0.00057278713, y: -0.0072203004, z: -0.0015692837}
 --- !u!1 &3101311312328682816
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +851,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3101311312328682816}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0075115794, y: 0.023797004, z: 0.010079321}
@@ -928,7 +929,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3598443598846682009}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0075115794, y: 0.023797004, z: 0.010079321}
@@ -1309,7 +1310,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728869030920164605}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.017529186, y: 0.035659023, z: 0.014216713}

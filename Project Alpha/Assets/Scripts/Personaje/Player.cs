@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public bool Dead;
     public string Name;
 
+    public int arma;
+
     public List<GameObject> weapons;
 
     private Animator animator;
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        arma = 0;
     }
 
     // Update is called once per frame
@@ -28,19 +31,24 @@ public class Player : MonoBehaviour
             weapons[1].SetActive(false);
             weapons[2].SetActive(false);
             animator.SetInteger("ArmaElegida", 0);
-        }else if (Input.GetKey(KeyCode.Alpha2))
+            arma = 0;
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
         {
             weapons[0].SetActive(false);
             weapons[1].SetActive(true);
             weapons[2].SetActive(false);
             animator.SetInteger("ArmaElegida", 1);
+            arma = 1;
 
-        }else if (Input.GetKey(KeyCode.Alpha3))
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
         {
             weapons[0].SetActive(false);
             weapons[1].SetActive(false);
             weapons[2].SetActive(true);
             animator.SetInteger("ArmaElegida", 0);
+            arma = 3;
         }
     }
 }

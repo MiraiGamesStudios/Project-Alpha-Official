@@ -11,7 +11,7 @@ public class DinosaurNavMesh : MonoBehaviour
     public NavMeshAgent naveMeshAgent;
 
     int i = 0;
-    int j = 1;
+    //int j = 1;
     int areaDin;
 
     private void Awake()

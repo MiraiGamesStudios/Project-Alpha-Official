@@ -337,13 +337,14 @@ MonoBehaviour:
   - {fileID: 2290819915067688246}
   - {fileID: 2290819914068580722}
   - {fileID: 2290819914470394590}
-  quemadura: {fileID: 0}
+  quemadura: {fileID: 1113786985892690326}
   "da\xF1andome": 0
   quemandome: 0
   muerto: 0
+  area: 0
+  tipo: 0
   epsilonDistancia: 3
   m_moveSpeed: 4
-  area: 0
 --- !u!195 &473172298619861125
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1713,6 +1714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
+--- !u!1 &1113786985892690326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1206498299807332555, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
+  m_PrefabInstance: {fileID: 2290819915431985501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1113786985892690331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1206498299807332550, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}

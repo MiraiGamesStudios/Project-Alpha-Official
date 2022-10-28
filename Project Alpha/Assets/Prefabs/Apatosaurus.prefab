@@ -966,7 +966,7 @@ MonoBehaviour:
   - {fileID: 3883638812954934563}
   - {fileID: 3883638813296460545}
   - {fileID: 3883638813071529026}
-  quemadura: {fileID: 0}
+  quemadura: {fileID: 2691783837357497294}
   "da\xF1andome": 0
   quemandome: 0
   muerto: 0
@@ -1846,5 +1846,10 @@ PrefabInstance:
 --- !u!4 &2691783837357497283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1206498299807332550, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
+  m_PrefabInstance: {fileID: 3883638814328234757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2691783837357497294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1206498299807332555, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
   m_PrefabInstance: {fileID: 3883638814328234757}
   m_PrefabAsset: {fileID: 0}

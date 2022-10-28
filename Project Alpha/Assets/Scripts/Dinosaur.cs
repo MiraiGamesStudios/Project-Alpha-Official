@@ -13,8 +13,8 @@ public class Dinosaur : MonoBehaviour
     public List<Collider> colliders;
     public GameObject quemadura;
 
-    public bool dañandome;
     public bool quemandome;
+    public bool quemazon;
     public bool muerto;
 
     public int area = 0;
@@ -60,6 +60,7 @@ public class Dinosaur : MonoBehaviour
         transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
 
         FSMDinosaur();
+
     }
 
     void FSMDinosaur()
@@ -136,6 +137,7 @@ public class Dinosaur : MonoBehaviour
     }
 
     
+
     public void OnTriggerEnter(Collider collider)
     {
         

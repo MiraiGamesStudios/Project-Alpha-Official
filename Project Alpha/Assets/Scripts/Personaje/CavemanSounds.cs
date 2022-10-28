@@ -20,7 +20,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") >= 3 && animate.GetFloat("Xaxis") < 4)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("RTired");
+            //print("RTired");
         }
 
     }
@@ -30,7 +30,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") >= 3 && animate.GetFloat("Xaxis") < 4)
         {
             audioManagement.PlayOneShot(sounds[0], 0.4f);
-            print("LTired");
+            //print("LTired");
         }
     }
 
@@ -59,7 +59,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") > 1.06 && animate.GetFloat("Xaxis") <= 2.05)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("LWalking");
+            //print("LWalking");
         }
     }
 
@@ -88,7 +88,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") > 1.06 && animate.GetFloat("Xaxis") <= 2.05)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("RWalking");
+            //print("RWalking");
         }
     }
 
@@ -97,7 +97,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") > 2.1 && animate.GetFloat("Xaxis") <= 3)
         {
             audioManagement.PlayOneShot(sounds[3], 0.4f);
-            print("LRunning");
+            //print("LRunning");
         }
     }
 
@@ -106,7 +106,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") > 2.1 && animate.GetFloat("Xaxis") <= 3)
         {
             audioManagement.PlayOneShot(sounds[3], 0.4f);
-            print("RRunning");
+            //print("RRunning");
         }
     }
 
@@ -115,7 +115,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") >= 0 && animate.GetFloat("Xaxis") < 0.90)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("RBack");
+            //print("RBack");
         }
     }
 
@@ -124,7 +124,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") >= 0 && animate.GetFloat("Xaxis") < 0.90)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("LBack");
+            //print("LBack");
         }
     }
 
@@ -133,7 +133,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") >= 0.95 && animate.GetFloat("Xaxis") < 1.05)
         {
             audioManagement.Stop();
-            print("LIdle");
+            //print("LIdle");
         }
     }
 
@@ -142,7 +142,7 @@ public class CavemanSounds : MonoBehaviour
         if (animate.GetFloat("Xaxis") >= 0.95 && animate.GetFloat("Xaxis") < 1.05)
         {
             audioManagement.Stop();
-            print("RIdle");
+            //print("RIdle");
         }
     }
 

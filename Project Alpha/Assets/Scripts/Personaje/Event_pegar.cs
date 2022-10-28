@@ -5,81 +5,50 @@ using TMPro;
 
 public class Event_pegar : MonoBehaviour
 {
-    public Weapon arma;
-    public List<GameObject> dinos;
+    public Lanza lanza;
+    public Porra porra;
+    public Antorcha antorcha;
+
+    public Player player;
 
     public GameObject damageText;
     public GameObject posDaño;
 
-    bool guardarDinos = false;
-    //int i = 0;
 
-    private void Update()
+    public void GolpePorra()
     {
-        if (guardarDinos) añadirDinos();
-    }
-
-    public void InicioPegar()
-    {
-        guardarDinos = true;
-    }
-
-    public void FinPegar()
-    {
-        guardarDinos = false;
-    }
-
-    void añadirDinos()
-    {
-
-        if (arma.target.tag == "Dinosaur")
+        if (porra.target.tag == "Dinosaur")
         {
-
-            if (dinos.Count == 0)
-            {
-                dinos.Add(arma.target);
-
-            }
-            else if (arma.target != dinos[dinos.Count - 1])
-            {
-                dinos.Add(arma.target);
-            }
-
-            for (int i = 0; i < dinos.Count; i++)
-            {
-                if (dinos[i].GetComponent<Dinosaur>().muerto)
-                {
-                    break;
-                }
-                StartCoroutine(QuitarVidaDino(dinos[i]));
-
-                if (arma.tipoArma == "Antorcha")
-                {
-                    StartCoroutine(quemarse(dinos[i]));
-                }
-            }
-
-            dinos.Clear();
-
+            QuitarVida(porra.target);
+            porra.target = porra.noTarget;
         }
+        
     }
-
-    IEnumerator QuitarVidaDino(GameObject target)
+    public void GolpeLanza()
     {
-
-        if (target.GetComponent<Dinosaur>().dañandome == false)
+        print("HOLA");
+        if (lanza.target.tag == "Dinosaur")
         {
-            target.GetComponent<Dinosaur>().dañandome = true;
-
-            target.GetComponent<Dinosaur>().life -= 10;
-            numerosPantalla(10, "10");
-
-            yield return new WaitForSeconds(0.2f);
-
-            target.GetComponent<Dinosaur>().dañandome = false;
+            QuitarVida(porra.target);
+            porra.target = porra.noTarget;
         }
 
-        yield return null;
+    }
+    public void GolpeAntorcha()
+    {
+        if (antorcha.target.tag == "Dinosaur")
+        {
+            print("HOLA");
+            QuitarVida(porra.target);
+            porra.target = porra.noTarget;
+        }
+
+    }
+
+    void QuitarVida(GameObject target)
+    {
+        target.GetComponent<Dinosaur>().life -= 10;
+        numerosPantalla(10, "10");
     }
 
     IEnumerator quemarse(GameObject target)
@@ -87,12 +56,12 @@ public class Event_pegar : MonoBehaviour
 
         if (!target.GetComponent<Dinosaur>().quemandome)
         {
-            target.GetComponent<Dinosaur>().quemadura.SetActive(true);
             target.GetComponent<Dinosaur>().quemandome = true;
+            target.GetComponent<Dinosaur>().quemadura.SetActive(true);
 
             for (int i = 0; i < 10; i++)
             {
-                if(target.GetComponent<Dinosaur>().muerto == true)
+                if (target.GetComponent<Dinosaur>().muerto == true)
                 {
                     yield return null;
                 }
@@ -106,10 +75,14 @@ public class Event_pegar : MonoBehaviour
 
             target.GetComponent<Dinosaur>().quemadura.SetActive(false);
             target.GetComponent<Dinosaur>().quemandome = false;
+
         }
 
         yield return null;
+        
+
     }
+
     void numerosPantalla(float tamaño, string daño)
     {
         Vector3 posicion = new Vector3(this.transform.position.x + 0.5f + Random.Range(-0.3f, 0.3f), this.transform.position.y + 2.8f + Random.Range(0f, 0.5f), this.transform.position.z + Random.Range(-0.5f, 0.5f));

@@ -5144,7 +5144,6 @@ GameObject:
   - component: {fileID: 3292774895518498807}
   - component: {fileID: 6280718995351278900}
   - component: {fileID: 8408569878433230631}
-  - component: {fileID: 1907462494681322182}
   m_Layer: 0
   m_Name: CLUB
   m_TagString: Weapon
@@ -5159,8 +5158,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3135934107325222051}
-  m_LocalRotation: {x: -0.800868, y: -0.18144491, z: 0.40969756, w: 0.39728606}
-  m_LocalPosition: {x: -0.042000003, y: 0.24800006, z: 0.13400002}
+  m_LocalRotation: {x: -0.75156546, y: 0.37231365, z: 0.11226636, w: 0.53284913}
+  m_LocalPosition: {x: 0.001, y: 0.24, z: 0.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5168,7 +5167,7 @@ Transform:
   - {fileID: 8434698380249383806}
   m_Father: {fileID: 6000631099315536693}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -29.188, y: -113.536, z: 135.108}
+  m_LocalEulerAnglesHint: {x: -62.195, y: -209.264, z: 250.604}
 --- !u!54 &6280718995351278900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5198,21 +5197,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32268414, y: 1.8601722, z: 0.2686134}
   m_Center: {x: 0.012626524, y: 0.8822222, z: 0.010284362}
---- !u!114 &1907462494681322182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3135934107325222051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c552827809d4e24c8d4aa99e9e688f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "da\xF1ar": 0
-  target: {fileID: 0}
-  tipoArma: 
 --- !u!1 &3218913662387594080
 GameObject:
   m_ObjectHideFlags: 0
@@ -16141,8 +16125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a895c68b0cd28645ae1c454aeef73d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arma: {fileID: 0}
-  dinos: []
+  lanza: {fileID: 0}
+  porra: {fileID: 0}
+  antorcha: {fileID: 0}
+  player: {fileID: 0}
   damageText: {fileID: 0}
   "posDa\xF1o": {fileID: 0}
 --- !u!114 &9020170041169302239
@@ -16269,6 +16255,7 @@ MonoBehaviour:
   Health: 0
   Dead: 0
   Name: 
+  arma: 0
   weapons:
   - {fileID: 3135934107325222051}
   - {fileID: 7434574108494313915}
@@ -16384,14 +16371,13 @@ GameObject:
   - component: {fileID: 314246838909538444}
   - component: {fileID: 3939742182646703121}
   - component: {fileID: 5769838902258734359}
-  - component: {fileID: 4718287112062973733}
   m_Layer: 0
   m_Name: TORCH
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7138810525044911806
 Transform:
   m_ObjectHideFlags: 0
@@ -16473,21 +16459,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0016637489, y: 0.0015239978, z: 0.009790358}
   m_Center: {x: -0.000019243918, y: 2.98938e-10, z: 0.0027723229}
---- !u!114 &4718287112062973733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7341759764475963229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c552827809d4e24c8d4aa99e9e688f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "da\xF1ar": 0
-  target: {fileID: 0}
-  tipoArma: 
 --- !u!1 &7689444432430329272
 GameObject:
   m_ObjectHideFlags: 0
@@ -16811,21 +16782,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 10.94862}
   m_Center: {x: 0.000000037899156, y: -0.000000011082569, z: -0.21771614}
---- !u!114 &94289145869949616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7434574108494313915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c552827809d4e24c8d4aa99e9e688f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "da\xF1ar": 0
-  target: {fileID: 0}
-  tipoArma: 
 --- !u!4 &7811275224979006209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 180eec81f4a976e4bbca8648ca5886b1, type: 3}

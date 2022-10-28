@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetInteger("ArmaElegida", 0);
 
         Physics.gravity *= gravity;
+        animator.SetBool("Atacar", true);
     }
 
     // Update is called once per frame
@@ -197,10 +198,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.Mouse0)){
-            animator.SetBool("Atacar", true);
         }
 
     }

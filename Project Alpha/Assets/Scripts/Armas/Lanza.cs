@@ -5,16 +5,16 @@ using UnityEngine;
 public class Lanza : MonoBehaviour
 {
     
-    public GameObject target;
+    public GameObject targetL;
     public GameObject noTarget;
     public string tipoArma;
 
     public void OnTriggerEnter(Collider collider)
     {
-        print(collider.GetComponentInParent<Dinosaur>().gameObject);
+        print(collider.gameObject);
         if (collider.GetComponentInParent<Dinosaur>().gameObject.tag == "Dinosaur")
         {
-            target = collider.GetComponentInParent<Dinosaur>().gameObject;
+            targetL = collider.GetComponentInParent<Dinosaur>().gameObject;
         }
     }
 }

@@ -1432,6 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!1 &118299644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &164951557
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2824,6 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!1001 &276301974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2981,6 +2984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &278158904
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4622,6 +4626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!4 &496671696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4, type: 3}
@@ -5335,7 +5340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3135934107325222051, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3939742182646703121, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_Enabled
@@ -5410,6 +5415,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 920312099}
     - target: {fileID: 6120908227932548135, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+      propertyPath: antorcha
+      value: 
+      objectReference: {fileID: 699465445}
+    - target: {fileID: 6120908227932548135, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: "posDa\xF1o"
       value: 
       objectReference: {fileID: 333077948}
@@ -5423,11 +5432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341759764475963229, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7434574108494313915, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7875247875034299886, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: camera
@@ -6407,6 +6416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &698835859
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6441,7 +6451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c552827809d4e24c8d4aa99e9e688f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1140502415}
+  targetA: {fileID: 1140502415}
   noTarget: {fileID: 1140502415}
   tipoArma: Antorcha
 --- !u!4 &711390597 stripped
@@ -6712,6 +6722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!4 &761661922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1778994357615247706, guid: ef62619642b0df743b22dd5120c6ac4d, type: 3}
@@ -6740,6 +6751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &767170456
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9306,6 +9318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!4 &1083600311 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1778994357615247706, guid: ef62619642b0df743b22dd5120c6ac4d, type: 3}
@@ -11772,7 +11785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c36784863cd8a844ad45eafe2a9bb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1140502415}
+  targetP: {fileID: 1140502415}
   noTarget: {fileID: 1140502415}
   tipoArma: Porra
 --- !u!1 &1397494128
@@ -12822,6 +12835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &1514477823
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13221,6 +13235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!1001 &1570901418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13392,6 +13407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &1604513737
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13447,6 +13463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &1620599982
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14103,6 +14120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &1716781802
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14956,6 +14974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!1001 &1832306643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16656,6 +16675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!1 &2034057775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7434574108494313915, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
@@ -16673,7 +16693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdf03f4a3e294d4daad2c947bff2caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1140502415}
+  targetL: {fileID: 1140502415}
   noTarget: {fileID: 1140502415}
   tipoArma: Lanza
 --- !u!1001 &2039553461
@@ -16975,6 +16995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!4 &2075766758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4, type: 3}
@@ -17096,6 +17117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: []
+  naveMeshAgent: {fileID: 0}
 --- !u!195 &2108048825
 NavMeshAgent:
   m_ObjectHideFlags: 0

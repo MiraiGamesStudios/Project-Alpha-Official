@@ -17,30 +17,30 @@ public class Event_pegar : MonoBehaviour
 
     public void GolpePorra()
     {
-        if (porra.target.tag == "Dinosaur")
+        if (porra.targetP.tag == "Dinosaur")
         {
-            QuitarVida(porra.target);
-            porra.target = porra.noTarget;
+            QuitarVida(porra.targetP);
+            porra.targetP = porra.noTarget;
         }
         
     }
     public void GolpeLanza()
     {
-        print("HOLA");
-        if (lanza.target.tag == "Dinosaur")
+        //print(lanza.targetL);
+        if (lanza.targetL.tag == "Dinosaur")
         {
-            QuitarVida(porra.target);
-            porra.target = porra.noTarget;
+            QuitarVida(lanza.targetL);
+            lanza.targetL = lanza.noTarget;
         }
 
     }
     public void GolpeAntorcha()
     {
-        if (antorcha.target.tag == "Dinosaur")
+        if (antorcha.targetA.tag == "Dinosaur")
         {
-            print("HOLA");
-            QuitarVida(porra.target);
-            porra.target = porra.noTarget;
+            
+            QuitarVida(antorcha.targetA);
+            antorcha.targetA = antorcha.noTarget;
         }
 
     }
@@ -79,8 +79,6 @@ public class Event_pegar : MonoBehaviour
         }
 
         yield return null;
-        
-
     }
 
     void numerosPantalla(float tamaño, string daño)

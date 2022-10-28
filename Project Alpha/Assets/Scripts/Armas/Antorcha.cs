@@ -5,16 +5,15 @@ using UnityEngine;
 public class Antorcha : MonoBehaviour
 {
     
-    public GameObject target;
+    public GameObject targetA;
     public GameObject noTarget;
     public string tipoArma;
 
     public void OnTriggerEnter(Collider collider)
     {
-        print(collider.GetComponentInParent<Dinosaur>().gameObject);
         if (collider.GetComponentInParent<Dinosaur>().gameObject.tag == "Dinosaur")
         {
-            target = collider.GetComponentInParent<Dinosaur>().gameObject;
+            targetA = collider.GetComponentInParent<Dinosaur>().gameObject;
         }
     }
 }

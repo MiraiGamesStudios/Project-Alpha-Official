@@ -8,21 +8,24 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     Vector3 movementInput = Vector3.zero;
-    Vector3 jumpInput = Vector3.zero;
-
-    public new Transform camera;
+    
+    public GameObject cam;
+    public GameObject cineMchine;
     public float speed;
     public float gravity;
 
     public LifeStamina VidaStamina;
     public GameObject panelDeath;
+    public GameObject HUD;
 
     Rigidbody rb;
+    CapsuleCollider capsule;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        
+
+        capsule = GetComponent<CapsuleCollider>();
     }
 
     // Start is called before the first frame update
@@ -39,9 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(VidaStamina.death == true)
         {
-            animator.SetBool("Morir", true);
-            panelDeath.SetActive(true);
-            
+            StartCoroutine(Morir());            
         }
         else
         {
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            forward = camera.forward;
+            forward = cam.transform.forward;
             forward.y = 0;
             forward.Normalize();
 
@@ -66,78 +67,40 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            forward = -camera.forward;
+            forward = -cam.transform.forward;
             forward.y = 0;
             forward.Normalize();
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            right = camera.right;
+            right = cam.transform.right;
             right.y = 0;
             right.Normalize();
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            right = -camera.right;
+            right = -cam.transform.right;
             right.y = 0;
             right.Normalize();
         }
 
-        //up.y += up.y + gravity * Time.deltaTime;
-        //up.y = Mathf.Clamp(up.y, 0);
         movementInput = forward + right;
-        jumpInput = up;
-
-      
 
     }
+
     private void FixedUpdate()
     {
-        Move(movementInput, jumpInput);
+        Move(movementInput);
     }
 
-    void Move(Vector3 direction, Vector3 up)
+    void Move(Vector3 direction)
     {
-        //rb.AddForce(direction.normalized * speed, ForceMode.Acceleration);
-        rb.MovePosition(rb.position + up + direction.normalized * speed * Time.fixedDeltaTime);
-        //transform.position += direction.normalized * speed * Time.deltaTime;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camera.forward), 0.2f);
+        rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
 
         animator.SetFloat("Multiplicador", speed / 2);
     }
-
-    //void calculateMovement()
-    //{
-    //    float hor = Input.GetAxis("Horizontal");
-    //    float ver = Input.GetAxis("Vertical");
-    //    Vector3 movement = Vector3.zero;
-    //    float movementSpeed = 0;
-
-    //    if (hor != 0 || ver != 0)
-    //    {
-    //        Vector3 forward = camera.forward;
-    //        forward.y = 0;
-    //        forward.Normalize();
-
-    //        Vector3 right = camera.right;
-    //        right.y = 0;
-    //        right.Normalize();
-
-    //        Vector3 direction = forward * ver + right * hor;
-    //        movementSpeed = Mathf.Clamp01(direction.magnitude);
-    //        direction.Normalize();
-
-    //        movement = direction * speed * movementSpeed * Time.deltaTime;
-
-    //        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camera.forward), 0.2f);
-    //    }
-
-    //    movement.y += gravity * Time.deltaTime;
-    //    characterController.Move(movement);
-
-    //    animator.SetFloat("Multiplicador", speed/2);
-    //}
 
     void move()
     {
@@ -242,5 +205,22 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    IEnumerator Morir()
+    {
+        Move(new Vector3(0, 0, 0));
+        cineMchine.SetActive(false);
+
+        animator.SetBool("Morir", true);
+
+        GetComponent<Event_pegar>().enabled = false;
+
+        yield return new WaitForSeconds(2.2f);
+
+        capsule.height = 1.0f;
+        HUD.SetActive(false);
+        panelDeath.SetActive(true);
+
+        yield return null;
+    }
     
 }

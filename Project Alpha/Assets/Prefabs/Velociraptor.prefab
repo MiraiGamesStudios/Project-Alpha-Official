@@ -323,8 +323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8c9d1113faaf241a96ab062681fab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   speed: 4
-  life: 40
+  life: 30
   colliders:
   - {fileID: 2290819913853790344}
   - {fileID: 2290819915811053877}

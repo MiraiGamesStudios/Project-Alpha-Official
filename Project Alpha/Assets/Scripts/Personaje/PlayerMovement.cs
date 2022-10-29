@@ -204,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Morir()
     {
-        Move(new Vector3(0, 0, 0));
+        movementInput = (new Vector3(0, 0, 0));
         cineMchine.SetActive(false);
 
         animator.SetBool("Morir", true);

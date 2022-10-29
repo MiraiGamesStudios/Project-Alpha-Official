@@ -5,6 +5,8 @@ using TMPro;
 
 public class Dinosaur : MonoBehaviour
 {
+    public GameManager gm;
+
     //public string name;
     public float speed = 4;
     public float life;
@@ -31,11 +33,11 @@ public class Dinosaur : MonoBehaviour
     private readonly float m_interpolation = 10;    // Multiplicador para el paso de integracion
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
-    private enum Status { quieto, deambulando, corriendo, atacando, muerto};
-    Status statusDinosaur = Status.deambulando;
+    public enum Status { quieto, deambulando, corriendo, atacando, muerto};
+    public Status statusDinosaur = Status.deambulando;
 
     int e = 0;
-
+    bool restado = true;
 
 
     // Start is called before the first frame update
@@ -54,6 +56,11 @@ public class Dinosaur : MonoBehaviour
         if (life <= 0)
         {
             statusDinosaur = Status.muerto;
+            if (restado) {
+                restado = false;
+                gm.dinosVivos--;
+            }
+           
         }
 
         // Integrar posicion en avance
@@ -61,10 +68,9 @@ public class Dinosaur : MonoBehaviour
         transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
 
         FSMDinosaur();
-
     }
 
-    void FSMDinosaur()
+    public void FSMDinosaur()
     {
         switch (statusDinosaur)
         {
@@ -111,9 +117,9 @@ public class Dinosaur : MonoBehaviour
 
             case Status.muerto:
                 //morir
-
                 muerto = true;
                 quemadura.SetActive(false);
+                eliminarme();
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                 Destroy(this.gameObject, 2);
@@ -122,6 +128,25 @@ public class Dinosaur : MonoBehaviour
                 break;
         }
 
+    }
+
+    void eliminarme(){
+        switch (tipo)
+        {
+            case Tipo.Velocirraptor:
+                gm.GetComponent<GameManager>().velosArea1.Remove(this.gameObject);
+                break;
+
+            case Tipo.Triceratops:
+                gm.GetComponent<GameManager>().tricesArea1.Remove(this.gameObject);
+                break;
+
+            case Tipo.Alphasaurio:
+                break;
+
+            case Tipo.TRex:
+                break;
+        }
     }
 
     void Alinear(Vector3 _objetivo)
@@ -166,19 +191,19 @@ public class Dinosaur : MonoBehaviour
 
     void MorderVelocirraptor()
     {
-        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(3));
         target = null;
     }
 
     void MorderTriceratops()
     {
-        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(5));
         target = null;
     }
 
     void MorderTRex()
     {
-        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
+        StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(15));
         target = null;
     }
 

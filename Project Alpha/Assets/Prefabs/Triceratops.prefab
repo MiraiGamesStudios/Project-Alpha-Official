@@ -1618,7 +1618,6 @@ GameObject:
   - component: {fileID: 8336908613086346258}
   - component: {fileID: 8336908613086346259}
   - component: {fileID: 9048359270451246349}
-  - component: {fileID: -1593388850163214159}
   m_Layer: 0
   m_Name: Triceratops
   m_TagString: Dinosaur
@@ -1692,8 +1691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8c9d1113faaf241a96ab062681fab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  life: 100
+  gm: {fileID: 0}
+  speed: 3
+  life: 50
   colliders:
   - {fileID: 8336908611339659774}
   - {fileID: 8336908612334048473}
@@ -1716,7 +1716,7 @@ MonoBehaviour:
   muerto: 0
   area: 0
   tipo: 1
-  epsilonDistancia: 4
+  epsilonDistancia: 5
   m_moveSpeed: 3
 --- !u!195 &9048359270451246349
 NavMeshAgent:
@@ -1728,7 +1728,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1740,20 +1740,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-1593388850163214159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9183912658923674830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f38ed335ddd664fb0173e606c8d1d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePositionTransform: []
-  naveMeshAgent: {fileID: 0}
 --- !u!1001 &8336908612121636019
 PrefabInstance:
   m_ObjectHideFlags: 0

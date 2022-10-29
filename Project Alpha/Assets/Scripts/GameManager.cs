@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     int velo;
     int trice;
     int alpha;
-    int dinosVivos = 0;
+    public int dinosVivos = 0;
     bool spawneados = false;
 
     public static Player player;
@@ -21,15 +21,20 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> barreras;
     public List<GameObject> enemys;
-    private GameObject dinosArea1;
-    private GameObject dinosArea2;
+
+
+    public List<GameObject> velosArea1;
+    public List<GameObject> tricesArea1;
+    public GameObject alphaArea1;
+
+    public List<GameObject> velosArea2;
+    public List<GameObject> tricesArea2;
+    public GameObject alphaArea2;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        dinosArea1 = GameObject.Find("DinosArea1");
-        dinosArea2 = GameObject.Find("DinosArea2");
     }
 
     // Update is called once per frame
@@ -42,20 +47,28 @@ public class GameManager : MonoBehaviour
             //Generamos dinosaurios en los spawns de la primera area.
             for (int i = 0; i < velo; i++)
             {
-                if (dinosArea1.transform.GetChild(0) != null && dinosArea1.transform.GetChild(0).gameObject.GetComponent<Dinosaur>().tipo == Dinosaur.Tipo.Velocirraptor)
+                if (velosArea1[0] != null)
                 {
-                    dinosArea1.transform.GetChild(i).gameObject.SetActive(true);
+                    velosArea1[i].SetActive(true);
+                    esperarSpawn();
                 }
                 dinosVivos++;
             }
 
             for (int i = 0; i < trice; i++)
             {
+                if (tricesArea1[0] != null)
+                {
+                    tricesArea1[i].SetActive(true);
+                    esperarSpawn();
+                }
                 dinosVivos++;
             }
 
             for (int i = 0; i < alpha; i++)
             {
+                alphaArea1.SetActive(true);
+                esperarSpawn();
                 dinosVivos++;
             }
             spawneados = true;
@@ -63,24 +76,34 @@ public class GameManager : MonoBehaviour
 
         if (zona == 1 && spawneados == false)
         {
-            //Generamos dinosaurios en los spawns de la primera area.
+            //Generamos dinosaurios en los spawns de la segunda area.
             for (int i = 0; i < velo; i++)
             {
+                
+                velosArea2[i].SetActive(true);
+                esperarSpawn();
+               
                 dinosVivos++;
             }
 
             for (int i = 0; i < trice; i++)
             {
+                tricesArea2[i].SetActive(true);
+                esperarSpawn();
                 dinosVivos++;
             }
 
             for (int i = 0; i < alpha; i++)
             {
+                alphaArea2.SetActive(true);
+                esperarSpawn();
                 dinosVivos++;
             }
 
             spawneados = true;
         }
+
+        print(dinosVivos);
 
         if (dinosVivos == 0) {round++; spawneados = false;}
             
@@ -94,7 +117,6 @@ public class GameManager : MonoBehaviour
             barreras[1].SetActive(false);
         }
 
-        //FinishedCondition();
     }
 
     public void enemysPerRound(int r)
@@ -151,15 +173,6 @@ public class GameManager : MonoBehaviour
                 trice = 1;
                 alpha = 1;
                 break;
-        }
-    }
-
-    public void FinishedCondition()
-    {
-        //Si el jugador pierde toda la vida se termina la partida
-        if (player.Health <=0)
-        {
-            statusPartida = Status.Finished;
         }
     }
 

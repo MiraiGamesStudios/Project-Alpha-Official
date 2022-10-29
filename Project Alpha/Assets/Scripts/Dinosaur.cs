@@ -134,12 +134,24 @@ public class Dinosaur : MonoBehaviour
         switch (tipo)
         {
             case Tipo.Velocirraptor:
-                gm.GetComponent<GameManager>().velosArea1.Remove(this.gameObject);
+                if(area == 1)
+                {
+                    gm.GetComponent<GameManager>().velosArea1.Remove(this.gameObject);
+                }else if(area == 2)
+                {
+                    gm.GetComponent<GameManager>().velosArea2.Remove(this.gameObject);
+                }
                 break;
 
             case Tipo.Triceratops:
-                gm.GetComponent<GameManager>().tricesArea1.Remove(this.gameObject);
-                break;
+                if (area == 1)
+                {
+                    gm.GetComponent<GameManager>().tricesArea1.Remove(this.gameObject);
+                }else if (area == 2)
+                {
+                    gm.GetComponent<GameManager>().tricesArea2.Remove(this.gameObject);
+                }
+                    break;
 
             case Tipo.Alphasaurio:
                 break;

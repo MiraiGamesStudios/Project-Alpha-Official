@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         enemysPerRound(round);
 
         if (zona == 0 && spawneados==false)
-        {
+        {       
             //Generamos dinosaurios en los spawns de la primera area.
             for (int i = 0; i < velo; i++)
             {
@@ -102,8 +102,6 @@ public class GameManager : MonoBehaviour
 
             spawneados = true;
         }
-
-        print(dinosVivos);
 
         if (dinosVivos == 0) {round++; spawneados = false;}
             

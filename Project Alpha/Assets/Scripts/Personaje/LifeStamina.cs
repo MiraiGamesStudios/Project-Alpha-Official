@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LifeStamina : MonoBehaviour
 {
 
     public Slider lifeSlide;
     public Slider staminaSlide;
+
+    public TMP_Text lifeNumber;
+    public TMP_Text staminaNumber;
 
     public float vidaMaxima;
     public float staminaMaxima;
@@ -114,8 +118,9 @@ public class LifeStamina : MonoBehaviour
         {
 
             lifeSlide.value -= i;
+            lifeNumber.SetText(lifeSlide.value.ToString("#."));
 
-            if(lifeSlide.value == 0)
+            if (lifeSlide.value == 0)
             {
                 death = true;
             }
@@ -136,6 +141,7 @@ public class LifeStamina : MonoBehaviour
 
         float i = 0.01f;
         staminaSlide.value -= i;
+        staminaNumber.SetText(staminaSlide.value.ToString("#."));
 
         if (staminaSlide.value == 0)
         {
@@ -154,7 +160,8 @@ public class LifeStamina : MonoBehaviour
         }
 
         float i = 0.005f;
-        staminaSlide.value += i;    
+        staminaSlide.value += i;
+        staminaNumber.SetText(staminaSlide.value.ToString("#."));
 
         yield return null;
 
@@ -174,6 +181,7 @@ public class LifeStamina : MonoBehaviour
             }
 
             lifeSlide.value += i;
+            lifeNumber.SetText(lifeSlide.value.ToString("#."));
             yield return new WaitForSeconds(0.01f);
 
         }

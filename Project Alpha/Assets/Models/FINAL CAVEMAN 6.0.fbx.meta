@@ -141,7 +141,37 @@ ModelImporter:
   - first:
       74: -4630339522487117836
     second: Die
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face.001
+    second: {fileID: 2100000, guid: d8be94b0be121bf4eadd6e11b4041db8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ojos.001
+    second: {fileID: 2100000, guid: 10b2866909319594998683e270978e35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pelo.001
+    second: {fileID: 2100000, guid: 4c753569bff4b344d8c1a6b7278d8599, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piel.001
+    second: {fileID: 2100000, guid: 18e89f5c6f85bc14491ba73050ca33bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.001
+    second: {fileID: 2100000, guid: 5f818636a0253f44ba0957484d68b7f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Traje.001
+    second: {fileID: 2100000, guid: 025dc9384c84f2243ab17e2b244a48b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

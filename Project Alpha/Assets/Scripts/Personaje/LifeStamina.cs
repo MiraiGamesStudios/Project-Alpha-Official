@@ -52,7 +52,7 @@ public class LifeStamina : MonoBehaviour
         {
 
             StartCoroutine(staminaLost());
-            
+
         }
         else
         {
@@ -109,6 +109,7 @@ public class LifeStamina : MonoBehaviour
 
     public IEnumerator lifeLost(float vida)
     {
+        StopCoroutine(recoverLife());
         daño = true;
 
         float cantidadPerdida = 0;
@@ -126,7 +127,7 @@ public class LifeStamina : MonoBehaviour
             }
 
             cantidadPerdida += i;
-            i+=0.01f;
+            i += 0.01f;
 
             yield return new WaitForSeconds(0.01f);
         }
@@ -147,7 +148,7 @@ public class LifeStamina : MonoBehaviour
         {
             outStamina = true;
         }
-        yield return null; 
+        yield return null;
     }
 
     IEnumerator staminaRecover()
@@ -167,14 +168,26 @@ public class LifeStamina : MonoBehaviour
 
     }
 
-    public IEnumerator recoverLife()
+    public IEnumerator wait()
     {
         yield return new WaitForSeconds(4);
+    }
+
+    public IEnumerator recoverLife()
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            yield return new WaitForSeconds(1);
+            if (daño)
+            {
+                break;
+            }
+        }
         float i = 0.05f;
 
         while (lifeSlide.value != vidaMaxima)
         {
-
+            
             if (daño)
             {
                 break;
@@ -186,8 +199,8 @@ public class LifeStamina : MonoBehaviour
 
         }
 
-        recuperando = false;
 
+        recuperando = false;
         yield return null;
 
     }

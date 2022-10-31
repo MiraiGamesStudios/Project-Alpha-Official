@@ -21,12 +21,16 @@ public class Event_pegar : MonoBehaviour
         {
             QuitarVida(porra.targetP);
             porra.targetP = porra.noTarget;
+            porra.espera = true;
+
         }
-        
+
+
+
     }
     public void GolpeLanza()
     {
-        
+
         if (lanza.targetL.tag == "Dinosaur")
         {
             QuitarVida(lanza.targetL);

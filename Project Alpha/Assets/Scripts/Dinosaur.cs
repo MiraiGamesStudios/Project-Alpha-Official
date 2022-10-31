@@ -209,6 +209,7 @@ public class Dinosaur : MonoBehaviour
 
     void MorderTriceratops()
     {
+        StopCoroutine(target.GetComponent<LifeStamina>().recoverLife());
         StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(5));
         target = null;
     }

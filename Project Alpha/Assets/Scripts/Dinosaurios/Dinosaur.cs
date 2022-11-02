@@ -5,9 +5,11 @@ using TMPro;
 
 public class Dinosaur : MonoBehaviour
 {
+    public delegate void _dañoRecibido();
+    public static event _dañoRecibido dañoRecibido;
+
     public GameManager gm;
 
-    //public string name;
     public float speed = 4;
     public float life;
 
@@ -36,7 +38,6 @@ public class Dinosaur : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto};
     public Status statusDinosaur = Status.deambulando;
 
-    int e = 0;
     bool restado = true;
 
 
@@ -209,9 +210,12 @@ public class Dinosaur : MonoBehaviour
 
     void MorderTriceratops()
     {
-        StopCoroutine(target.GetComponent<LifeStamina>().recoverLife());
         StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(5));
         target = null;
+        if(dañoRecibido != null)
+        {
+            dañoRecibido();
+        }
     }
 
     void MorderTRex()

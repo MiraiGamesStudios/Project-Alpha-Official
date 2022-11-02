@@ -1518,7 +1518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4117448107298281622, guid: 345ff4a0f89e3f040a1e708a5c7bcbe0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 345ff4a0f89e3f040a1e708a5c7bcbe0, type: 3}
@@ -3529,6 +3529,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1048425559}
   - {fileID: 2003358997}
   m_Father: {fileID: 1068650260}
   m_RootOrder: 0
@@ -5416,6 +5417,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 481064900}
     - target: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+      propertyPath: sangrePantalla
+      value: 
+      objectReference: {fileID: 1048425561}
+    - target: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: Lactiva.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -5550,7 +5555,7 @@ PrefabInstance:
     - target: {fileID: 6180043362155611590, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 9fdfff39f65172740953218c8d5f09f1, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c753569bff4b344d8c1a6b7278d8599, type: 2}
     - target: {fileID: 6180043362155611590, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
@@ -9615,6 +9620,79 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1048425558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048425559}
+  - component: {fileID: 1048425560}
+  - component: {fileID: 1048425561}
+  m_Layer: 5
+  m_Name: Sangre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1048425559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048425558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 21.23712, y: 11.959153, z: 1.1061}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 361191556}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1048425560
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048425558}
+  m_CullTransparentMesh: 1
+--- !u!114 &1048425561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048425558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 67851f3528f4c0d4590146b62c94de84, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!4 &1048645760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8888962708408251084, guid: d28e9c18a68d2f248aab0b01d4442d09, type: 3}
@@ -17615,7 +17693,7 @@ RectTransform:
   - {fileID: 1741555800}
   - {fileID: 97283538}
   m_Father: {fileID: 361191556}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

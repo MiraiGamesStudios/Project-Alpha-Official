@@ -6,21 +6,22 @@ using TMPro;
 
 public class LifeStamina : MonoBehaviour
 {
-
+    #region Variables
     public Slider lifeSlide;
     public Slider staminaSlide;
 
     public TMP_Text lifeNumber;
     public TMP_Text staminaNumber;
 
+    public RawImage sangrePantalla;
+
     public float vidaMaxima;
+    public float cantidadVida;
     public float staminaMaxima;
 
-    public float cantidadVida;
-
+    public bool recuperando = false;
     public bool outStamina = false;
     public bool death = false;
-    public bool recuperando = false;
 
     public List<GameObject> Lactiva;
     public List<GameObject> Lderecha;
@@ -28,7 +29,9 @@ public class LifeStamina : MonoBehaviour
 
     bool daño = false;
 
+    #endregion
 
+    #region Metodos Unity
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +42,7 @@ public class LifeStamina : MonoBehaviour
         staminaSlide.value = staminaMaxima;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (lifeSlide.value != vidaMaxima && recuperando == false)
@@ -106,37 +109,35 @@ public class LifeStamina : MonoBehaviour
         }
 
     }
-
-    public IEnumerator lifeLost(float vida)
+    private void OnEnable()
     {
-        StopCoroutine(recoverLife());
-        daño = true;
+        Dinosaur.dañoRecibido += mostrarDaño;
+    }
+    private void OnDisable()
+    {
+        Dinosaur.dañoRecibido -= mostrarDaño;
+    }
+    #endregion
 
-        float cantidadPerdida = 0;
-        float i = 0.2f;
+    #region FeedBack Daño
+    void mostrarDaño()
+    { 
+        sangrePantalla.color = new Color(255,255,255,0.75f);
+        StartCoroutine(espera());
+    }
+    IEnumerator espera()
+    {
+        yield return new WaitForSeconds(0.5f);
 
-        while (cantidadPerdida <= vida)
-        {
-
-            lifeSlide.value -= i;
-            lifeNumber.SetText(lifeSlide.value.ToString("#."));
-
-            if (lifeSlide.value == 0)
-            {
-                death = true;
-            }
-
-            cantidadPerdida += i;
-            i += 0.01f;
-
-            yield return new WaitForSeconds(0.01f);
-        }
-
-        daño = false;
+        sangrePantalla.color = new Color(255, 255, 255, 0);
 
         yield return null;
+
     }
 
+    #endregion
+
+    #region Metodos Stamina
     IEnumerator staminaLost()
     {
 
@@ -167,12 +168,38 @@ public class LifeStamina : MonoBehaviour
         yield return null;
 
     }
+    #endregion
 
-    public IEnumerator wait()
+    #region Metodos Vida
+    public IEnumerator lifeLost(float vida)
     {
-        yield return new WaitForSeconds(4);
-    }
+        StopCoroutine(recoverLife());
+        daño = true;
 
+        float cantidadPerdida = 0;
+        float i = 0.2f;
+
+        while (cantidadPerdida <= vida)
+        {
+
+            lifeSlide.value -= i;
+            lifeNumber.SetText(lifeSlide.value.ToString("#."));
+
+            if (lifeSlide.value == 0)
+            {
+                death = true;
+            }
+
+            cantidadPerdida += i;
+            i += 0.01f;
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        daño = false;
+
+        yield return null;
+    }
     public IEnumerator recoverLife()
     {
         for (int j = 0; j < 4; j++)
@@ -204,4 +231,5 @@ public class LifeStamina : MonoBehaviour
         yield return null;
 
     }
+    #endregion
 }

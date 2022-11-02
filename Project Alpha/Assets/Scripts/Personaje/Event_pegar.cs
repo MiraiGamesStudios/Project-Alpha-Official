@@ -5,6 +5,9 @@ using TMPro;
 
 public class Event_pegar : MonoBehaviour
 {
+
+    
+
     public Lanza lanza;
     public Porra porra;
     public Antorcha antorcha;
@@ -21,12 +24,9 @@ public class Event_pegar : MonoBehaviour
         {
             QuitarVida(porra.targetP);
             porra.targetP = porra.noTarget;
-            porra.espera = true;
+            //porra.espera = true;
 
         }
-
-
-
     }
     public void GolpeLanza()
     {
@@ -47,6 +47,13 @@ public class Event_pegar : MonoBehaviour
             antorcha.targetA = antorcha.noTarget;
         }
 
+    }
+
+    void targetNull()
+    {
+        antorcha.targetA = antorcha.noTarget;
+        porra.targetP = porra.noTarget;
+        lanza.targetL = lanza.noTarget;
     }
 
     void QuitarVida(GameObject target)

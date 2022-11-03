@@ -75,7 +75,7 @@ BlendTree:
     m_DirectBlendParameter: Xaxis
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -6978405042771864306, guid: 9b916251de95d02449295ed11168ec95, type: 3}
+    m_Motion: {fileID: 7400000, guid: 39ac20a643f2fa94280af86c04396e72, type: 2}
     m_Threshold: 0.8
     m_Position: {x: 1, y: 1}
     m_TimeScale: 1

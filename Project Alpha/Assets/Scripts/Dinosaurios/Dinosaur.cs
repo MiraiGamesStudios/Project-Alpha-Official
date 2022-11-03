@@ -206,6 +206,10 @@ public class Dinosaur : MonoBehaviour
     {
         StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(3));
         target = null;
+        if (dañoRecibido != null)
+        {
+            dañoRecibido();
+        }
     }
 
     void MorderTriceratops()
@@ -222,6 +226,10 @@ public class Dinosaur : MonoBehaviour
     {
         StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(15));
         target = null;
+        if (dañoRecibido != null)
+        {
+            dañoRecibido();
+        }
     }
 
     void MorderAlpha()
@@ -229,6 +237,10 @@ public class Dinosaur : MonoBehaviour
 
         StartCoroutine(target.GetComponent<LifeStamina>().lifeLost(10));
         target = null;
+        if (dañoRecibido != null)
+        {
+            dañoRecibido();
+        }
     }
 
 }

@@ -1,0 +1,1013 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5401333023954163572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333023954163575}
+  - component: {fileID: 5401333023954163574}
+  m_Layer: 0
+  m_Name: "L\xEDmite (19)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333023954163575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333023954163572}
+  m_LocalRotation: {x: -0, y: 0.903041, z: -0, w: 0.42955434}
+  m_LocalPosition: {x: 369.7, y: 29.6, z: -57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 129.121, z: 0}
+--- !u!65 &5401333023954163574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333023954163572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 121.83552, z: 77.66561}
+  m_Center: {x: 0.000857367, y: 60.41804, z: 22.682066}
+--- !u!1 &5401333024054697520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024054697523}
+  - component: {fileID: 5401333024054697522}
+  m_Layer: 0
+  m_Name: "L\xEDmite (11)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024054697523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024054697520}
+  m_LocalRotation: {x: -0, y: 0.98810667, z: -0, w: -0.15377036}
+  m_LocalPosition: {x: 222.1, y: 0, z: 103.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 197.691, z: 0}
+--- !u!65 &5401333024054697522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024054697520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 66.34945, z: 89.6187}
+  m_Center: {x: 0.000018501436, y: 32.674603, z: 28.658642}
+--- !u!1 &5401333024117876366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024117876361}
+  - component: {fileID: 5401333024117876360}
+  m_Layer: 0
+  m_Name: "L\xEDmite (12)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024117876361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024117876366}
+  m_LocalRotation: {x: -0, y: 0.91653836, z: -0, w: 0.39994687}
+  m_LocalPosition: {x: 206.8, y: 0, z: 35.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 132.85, z: 0}
+--- !u!65 &5401333024117876360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024117876366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 66.34945, z: 49.533665}
+  m_Center: {x: 0.00009055124, y: 32.674603, z: 15.542342}
+--- !u!1 &5401333024176634361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024176634360}
+  - component: {fileID: 5401333024176634363}
+  m_Layer: 0
+  m_Name: "L\xEDmite (8)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024176634360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024176634361}
+  m_LocalRotation: {x: -0, y: 0.6474737, z: -0, w: 0.7620878}
+  m_LocalPosition: {x: 108.2, y: 0, z: 122.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 80.703, z: 0}
+--- !u!65 &5401333024176634363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024176634361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 27.740261, z: 24.404861}
+  m_Center: {x: 0.000003944731, y: 13.37001, z: -3.9483712}
+--- !u!1 &5401333024206584394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024206584389}
+  - component: {fileID: 5401333024206584388}
+  m_Layer: 0
+  m_Name: "L\xEDmite (13)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024206584389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024206584394}
+  m_LocalRotation: {x: -0, y: 0.8045723, z: -0, w: 0.5938547}
+  m_LocalPosition: {x: 13.6, y: 0, z: -16.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 107.138, z: 0}
+--- !u!65 &5401333024206584388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024206584394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 66.34945, z: 189.6093}
+  m_Center: {x: 0.000034130157, y: 32.674603, z: 78.65378}
+--- !u!1 &5401333024255265514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024255265509}
+  - component: {fileID: 5401333024255265508}
+  m_Layer: 0
+  m_Name: "L\xEDmite (7)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024255265509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024255265514}
+  m_LocalRotation: {x: -0, y: 0.6474737, z: -0, w: 0.7620878}
+  m_LocalPosition: {x: 84.1, y: 0, z: 118.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 80.703, z: 0}
+--- !u!65 &5401333024255265508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024255265514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333024329861105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024329861104}
+  - component: {fileID: 5401333024329861107}
+  m_Layer: 0
+  m_Name: "L\xEDmite (4)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024329861104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024329861105}
+  m_LocalRotation: {x: -0, y: 0.09324638, z: -0, w: 0.99564314}
+  m_LocalPosition: {x: 23.8, y: 0, z: 91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 10.701, z: 0}
+--- !u!65 &5401333024329861107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024329861105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333024858014382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024858014377}
+  - component: {fileID: 5401333024858014376}
+  m_Layer: 0
+  m_Name: "L\xEDmite (17)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024858014377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024858014382}
+  m_LocalRotation: {x: -0, y: 0.9721652, z: -0, w: 0.23429652}
+  m_LocalPosition: {x: 393.6, y: 29.6, z: 62.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 152.9, z: 0}
+--- !u!65 &5401333024858014376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024858014382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 121.83552, z: 162.7721}
+  m_Center: {x: 0.0008598685, y: 60.416843, z: 65.23522}
+--- !u!1 &5401333024872797901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024872797900}
+  - component: {fileID: 5401333024872797903}
+  m_Layer: 0
+  m_Name: "L\xEDmite (15)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024872797900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024872797901}
+  m_LocalRotation: {x: -0, y: 0.7642924, z: -0, w: 0.64486974}
+  m_LocalPosition: {x: 208.2, y: 29.6, z: -44.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 99.688, z: 0}
+--- !u!65 &5401333024872797903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024872797901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 66.34945, z: 58.465958}
+  m_Center: {x: 0.000025649877, y: 32.674603, z: 13.082063}
+--- !u!1 &5401333024969161066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333024969161061}
+  - component: {fileID: 5401333024969161060}
+  m_Layer: 0
+  m_Name: "L\xEDmite (10)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333024969161061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024969161066}
+  m_LocalRotation: {x: -0, y: 0.8045723, z: -0, w: 0.5938547}
+  m_LocalPosition: {x: 154.6, y: 0, z: 122.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 107.138, z: 0}
+--- !u!65 &5401333024969161060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333024969161066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 66.34945, z: 99.22537}
+  m_Center: {x: 0.0000152356915, y: 32.674603, z: 33.461876}
+--- !u!1 &5401333025013641560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025013641563}
+  - component: {fileID: 5401333025013641562}
+  m_Layer: 0
+  m_Name: "L\xEDmite (9)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025013641563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025013641560}
+  m_LocalRotation: {x: -0, y: 0.6474737, z: -0, w: 0.7620878}
+  m_LocalPosition: {x: 131.6, y: 0, z: 126.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 80.703, z: 0}
+--- !u!65 &5401333025013641562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025013641560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 32.40037, z: 24.404861}
+  m_Center: {x: 0.000003944731, y: 15.700066, z: -3.9483712}
+--- !u!1 &5401333025055973334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025055973328}
+  - component: {fileID: 5401333025055973329}
+  m_Layer: 0
+  m_Name: "L\xEDmites"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025055973328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025055973334}
+  m_LocalRotation: {x: -0, y: -0.1425562, z: -0, w: 0.98978674}
+  m_LocalPosition: {x: -140.08, y: -3.5, z: -118.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5401333025241377119}
+  - {fileID: 5401333025816446613}
+  - {fileID: 5401333025129038816}
+  - {fileID: 5401333024329861104}
+  - {fileID: 5401333025542214675}
+  - {fileID: 5401333025068921253}
+  - {fileID: 5401333024255265509}
+  - {fileID: 5401333024176634360}
+  - {fileID: 5401333025013641563}
+  - {fileID: 5401333024969161061}
+  - {fileID: 5401333024054697523}
+  - {fileID: 5401333024117876361}
+  - {fileID: 5401333024206584389}
+  - {fileID: 5401333025405369479}
+  - {fileID: 5401333024872797900}
+  - {fileID: 5401333025428757908}
+  - {fileID: 5401333024858014377}
+  - {fileID: 5401333025836156540}
+  - {fileID: 5401333023954163575}
+  - {fileID: 5401333025453875494}
+  - {fileID: 5401333025133504263}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -16.392, z: 0}
+--- !u!65 &5401333025055973329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025055973334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333025068921258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025068921253}
+  - component: {fileID: 5401333025068921252}
+  m_Layer: 0
+  m_Name: "L\xEDmite (6)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025068921253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025068921258}
+  m_LocalRotation: {x: -0, y: 0.6677615, z: -0, w: 0.74437535}
+  m_LocalPosition: {x: 60.4, y: 0, z: 115.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 83.789, z: 0}
+--- !u!65 &5401333025068921252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025068921258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333025129038817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025129038816}
+  - component: {fileID: 5401333025129038819}
+  m_Layer: 0
+  m_Name: "L\xEDmite (3)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025129038816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025129038817}
+  m_LocalRotation: {x: -0, y: 0.09324638, z: -0, w: 0.99564314}
+  m_LocalPosition: {x: 19.61, y: 0, z: 68.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 10.701, z: 0}
+--- !u!65 &5401333025129038819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025129038817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333025133504260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025133504263}
+  - component: {fileID: 5401333025133504262}
+  m_Layer: 0
+  m_Name: "L\xEDmite (21)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025133504263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025133504260}
+  m_LocalRotation: {x: -0, y: 0.91653836, z: -0, w: 0.39994687}
+  m_LocalPosition: {x: 218.2, y: 21.09, z: 27.1}
+  m_LocalScale: {x: 39.33635, y: 0.61112356, z: 0.92045}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 132.85, z: 0}
+--- !u!65 &5401333025133504262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025133504260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.58767205, y: 66.34944, z: 49.53366}
+  m_Center: {x: 0.08633593, y: 32.674603, z: 15.541906}
+--- !u!1 &5401333025241377116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025241377119}
+  - component: {fileID: 5401333025241377118}
+  m_Layer: 0
+  m_Name: "L\xEDmite (1)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025241377119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025241377116}
+  m_LocalRotation: {x: -0, y: 0.12802298, z: -0, w: 0.9917712}
+  m_LocalPosition: {x: 3.99, y: 0, z: 23.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 14.711, z: 0}
+--- !u!65 &5401333025241377118
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025241377116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333025405369476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025405369479}
+  - component: {fileID: 5401333025405369478}
+  m_Layer: 0
+  m_Name: "L\xEDmite (14)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025405369479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025405369476}
+  m_LocalRotation: {x: -0, y: 0.5838171, z: -0, w: 0.81188524}
+  m_LocalPosition: {x: 153.4, y: 22.3, z: -55.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 71.439, z: 0}
+--- !u!65 &5401333025405369478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025405369476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 66.34945, z: 58.465958}
+  m_Center: {x: 0.000025649877, y: 32.674603, z: 13.082063}
+--- !u!1 &5401333025428757909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025428757908}
+  - component: {fileID: 5401333025428757911}
+  m_Layer: 0
+  m_Name: "L\xEDmite (16)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025428757908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025428757909}
+  m_LocalRotation: {x: -0, y: 0.7824199, z: -0, w: 0.6227513}
+  m_LocalPosition: {x: 246.9, y: 29.6, z: 95.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 102.965, z: 0}
+--- !u!65 &5401333025428757911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025428757909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 121.83552, z: 171.3718}
+  m_Center: {x: 0.000015313944, y: 60.416843, z: 69.53456}
+--- !u!1 &5401333025453875495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025453875494}
+  - component: {fileID: 5401333025453875489}
+  m_Layer: 0
+  m_Name: "L\xEDmite (20)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025453875494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025453875495}
+  m_LocalRotation: {x: -0, y: 0.98448855, z: -0, w: 0.17544876}
+  m_LocalPosition: {x: 418.3, y: 29.6, z: -98.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 159.79, z: 0}
+--- !u!65 &5401333025453875489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025453875495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 121.83552, z: 65.01662}
+  m_Center: {x: 0.00076579576, y: 60.41804, z: 29.0065}
+--- !u!1 &5401333025542214672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025542214675}
+  - component: {fileID: 5401333025542214674}
+  m_Layer: 0
+  m_Name: "L\xEDmite (5)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025542214675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025542214672}
+  m_LocalRotation: {x: -0, y: 0.4432351, z: -0, w: 0.89640546}
+  m_LocalPosition: {x: 38.2, y: 0, z: 108.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 52.621, z: 0}
+--- !u!65 &5401333025542214674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025542214672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333025816446618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025816446613}
+  - component: {fileID: 5401333025816446612}
+  m_Layer: 0
+  m_Name: "L\xEDmite (2)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025816446613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025816446618}
+  m_LocalRotation: {x: -0, y: 0.22629148, z: -0, w: 0.97405964}
+  m_LocalPosition: {x: 13.47, y: 0, z: 46.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 26.158, z: 0}
+--- !u!65 &5401333025816446612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025816446618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 21.41159, z: 24.404861}
+  m_Center: {x: 0.0000038966223, y: 10.205675, z: -3.9483738}
+--- !u!1 &5401333025836156541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401333025836156540}
+  - component: {fileID: 5401333025836156543}
+  m_Layer: 0
+  m_Name: "L\xEDmite (18)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401333025836156540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025836156541}
+  m_LocalRotation: {x: -0, y: 0.98506683, z: -0, w: 0.1721724}
+  m_LocalPosition: {x: 342.5, y: 29.6, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5401333025055973328}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 160.172, z: 0}
+--- !u!65 &5401333025836156543
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401333025836156541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 121.83552, z: 98.4249}
+  m_Center: {x: 0.00083110516, y: 60.41804, z: 33.061737}

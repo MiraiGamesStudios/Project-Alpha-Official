@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float Health;
-    public bool Dead;
-    public string Name;
-
     public int arma;
 
     public List<GameObject> weapons;

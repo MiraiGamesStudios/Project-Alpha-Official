@@ -6,8 +6,6 @@ using TMPro;
 public class Event_pegar : MonoBehaviour
 {
 
-    
-
     public Lanza lanza;
     public Porra porra;
     public Antorcha antorcha;

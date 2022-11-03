@@ -209,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("Morir", true);
 
-        GetComponent<Event_pegar>().enabled = false;
+        //GetComponent<Event_pegar>().enabled = false;
 
         yield return new WaitForSeconds(2.2f);
 

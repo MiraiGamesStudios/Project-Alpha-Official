@@ -112,10 +112,12 @@ public class LifeStamina : MonoBehaviour
     private void OnEnable()
     {
         Dinosaur.dañoRecibido += mostrarDaño;
+        EspadaCaballero.dañarPersonaje += comenzarCorrutinaVida;
     }
     private void OnDisable()
     {
         Dinosaur.dañoRecibido -= mostrarDaño;
+        EspadaCaballero.dañarPersonaje -= comenzarCorrutinaVida;
     }
     #endregion
 
@@ -171,6 +173,11 @@ public class LifeStamina : MonoBehaviour
     #endregion
 
     #region Metodos Vida
+
+    void comenzarCorrutinaVida(int daño)
+    {
+        StartCoroutine(lifeLost(daño));
+    }
     public IEnumerator lifeLost(float vida)
     {
         StopCoroutine(recoverLife());

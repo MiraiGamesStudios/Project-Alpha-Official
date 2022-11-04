@@ -208,6 +208,7 @@ public class PlayerMovement : MonoBehaviour
         cineMchine.SetActive(false);
 
         animator.SetBool("Morir", true);
+        animator.SetLayerWeight(2, 1);
 
         //GetComponent<Event_pegar>().enabled = false;
 

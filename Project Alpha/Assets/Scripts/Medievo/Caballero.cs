@@ -56,6 +56,7 @@ public class Caballero : MonoBehaviour
         m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
         transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
 
+
         FSMCaballero();
     }
 

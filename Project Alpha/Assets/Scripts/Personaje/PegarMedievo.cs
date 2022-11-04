@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PegarMedievo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    #region Variables
+
+    public EspadaP espada;
+
+    #endregion
+
+    void GolpeEspada()
     {
-        
+        if(espada.targetE.tag == "Enemigo")
+        {
+            espada.targetE.GetComponent<Caballero>().quitarVida(10);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void resetTarget()
     {
-        
+        espada.targetE = null;
     }
 }

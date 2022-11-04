@@ -12,6 +12,7 @@ TagManager:
   - TrexTarget
   - Area1Target
   - Area2Target
+  - Enemigo
   layers:
   - Default
   - TransparentFX

@@ -60,16 +60,6 @@ public class Caballero : MonoBehaviour
         FSMCaballero();
     }
 
-    private void OnEnable()
-    {
-        EspadaP.dañarEnemigo += quitarVida;
-    }
-
-    private void OnDisable()
-    {
-        EspadaP.dañarEnemigo -= quitarVida;
-    }
-
     #endregion
 
     #region FSM y metodos
@@ -164,13 +154,10 @@ public class Caballero : MonoBehaviour
     #endregion
 
     #region Metodos del caballero
-    void quitarVida(GameObject go)
+    public void quitarVida(int daño)
     {
-        if(go == this)
-        {
-            life -= 10;
-            numerosPantalla(10, "10");
-        }
+        life -= daño;
+        numerosPantalla(daño, "10");
     }
 
     void numerosPantalla(float tamaño, string daño)

@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Caballero : MonoBehaviour
 {
+    #region Variables
+
     public float speed = 4;
     public float life;
     bool restado = true;
 
     public GameManager gm;
-
     private Animator anim;
+    GameObject player;
 
     public int area = 0;
-
-    GameObject player;
+    public GameObject damageText;
 
     private float avancePersonaje = 0.0f;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
@@ -25,7 +27,9 @@ public class Caballero : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusCaballero = Status.deambulando;
 
-    // Start is called before the first frame update
+    #endregion
+
+    #region Metodos Unity
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -54,6 +58,20 @@ public class Caballero : MonoBehaviour
 
         FSMCaballero();
     }
+
+    private void OnEnable()
+    {
+        EspadaP.dañarEnemigo += quitarVida;
+    }
+
+    private void OnDisable()
+    {
+        EspadaP.dañarEnemigo -= quitarVida;
+    }
+
+    #endregion
+
+    #region FSM y metodos
 
     public void FSMCaballero()
     {
@@ -142,4 +160,27 @@ public class Caballero : MonoBehaviour
         return Vector3.Distance(transform.position, _objetivo) < epsilonDistancia;
     }
 
+    #endregion
+
+    #region Metodos del caballero
+    void quitarVida(GameObject go)
+    {
+        if(go == this)
+        {
+            life -= 10;
+            numerosPantalla(10, "10");
+        }
+    }
+
+    void numerosPantalla(float tamaño, string daño)
+    {
+        Vector3 posicion = new Vector3(this.transform.position.x + 0.5f + Random.Range(-0.3f, 0.3f), this.transform.position.y + 2.8f + Random.Range(0f, 0.5f), this.transform.position.z + Random.Range(-0.5f, 0.5f));
+
+        GameObject textGO = Instantiate(damageText, posicion, Quaternion.LookRotation(this.transform.forward));
+        textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
+        textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
+        Destroy(textGO, 1);
+    }
+
+    #endregion
 }

@@ -15,6 +15,9 @@ public class Disparo : MonoBehaviour
 
     void Update()
     {
+        //spawnDireccion.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.8f, this.transform.position.z + 0.75f);
+        //spawnDireccion.rotation = this.transform.rotation;
+
         if (Input.GetKey("r"))
         {
             if(Time.time > shotRateTime)
@@ -36,7 +39,7 @@ public class Disparo : MonoBehaviour
 
     IEnumerator caida(GameObject go)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.75f);
         print(go);
         go.GetComponent<Rigidbody>().useGravity = true;
         yield return null;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Variables
+
     private CharacterController characterController;
     private Animator animator;
 
@@ -21,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     CapsuleCollider capsule;
 
+    #endregion
+
+    #region Metodos Unity
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,9 +53,19 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             calculateMov();
-            move();
+            moveAnimations();
         }
     }
+
+    private void FixedUpdate()
+    {
+        Move(movementInput);
+    }
+
+    #endregion
+
+    #region Movimiento
+
     void calculateMov()
     {
 
@@ -90,11 +105,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        Move(movementInput);
-    }
-
     void Move(Vector3 direction)
     {
         rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
@@ -103,7 +113,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Multiplicador", speed / 2);
     }
 
-    void move()
+    #endregion
+
+    #region Animaciones
+
+    void moveAnimations()
     {
         if (Input.GetKey("w"))
         {
@@ -113,39 +127,41 @@ public class PlayerMovement : MonoBehaviour
                 {
                     
                     speed = 8;
-                    animator.SetFloat("Xaxis", 3.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
                     if (Input.GetKey("d"))
                     {
-                        animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
+                        animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                     }
                     else if (Input.GetKey("a"))
                     {
-                        animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                        animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
                     }
                     else
                     {
                        
-                        animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                        animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                     }
                 }
                 else // Andar
                 {
                     
                     speed = 4;
-                    animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
                     if (Input.GetKey("d"))
                     {
-                        animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
+                        animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                     }
                     else if (Input.GetKey("a"))
                     {
-                        animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                        animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
                     }
                     else
                     {
-                        animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                        animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                     }
                 }
             }
@@ -153,7 +169,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 
                 speed = 1;
-                animator.SetFloat("Xaxis", 4.0f, 0.1f, Time.deltaTime);
+                animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                animator.SetFloat("Cansancio", 1.0f, 0.1f, Time.deltaTime);
             }
         }
 
@@ -161,19 +178,19 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKey("s")) // Caminar hacia atras
         {
             speed = 3;
-            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
 
             if (Input.GetKey("d"))
             {
-                animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
+                animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
             }
             else if (Input.GetKey("a"))
             {
-                animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
             }
             else
             {
-                animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
             }
         }
 
@@ -181,26 +198,28 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKey("d")) // Caminar derecha
         {
             speed = 3;
-            animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
-            animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
         }
 
 
         else if (Input.GetKey("a")) // Caminar izquierda
         {
             speed = 3;
-            animator.SetFloat("Xaxis", 2.0f, 0.1f, Time.deltaTime);
-            animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
         }
 
 
         else //Idle
         {
-            animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
         }
 
     }
+
+    #endregion
 
     IEnumerator Morir()
     {

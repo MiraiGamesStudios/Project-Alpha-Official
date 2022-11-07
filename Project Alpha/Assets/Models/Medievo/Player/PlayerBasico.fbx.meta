@@ -11,7 +11,7 @@ ModelImporter:
     second: Armature.006|AndarCansadoNormal
   - first:
       74: -2750824240426336758
-    second: Armature.006|AndarLateralNormal
+    second: Armature.006|AndarLateralNormalDerecha
   - first:
       74: 1451481234759633308
     second: Armature.006|AndarNormal
@@ -24,6 +24,9 @@ ModelImporter:
   - first:
       74: -3332282370433528199
     second: Armature.006|Morir
+  - first:
+      74: 5246627958752392204
+    second: Armature.006|AndarLateralNormalIzquierda
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -112,7 +115,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.006|AndarLateralNormal
+      name: Armature.006|AndarLateralNormalDerecha
       takeName: Armature.006|AndarLateralNormal
       internalID: 0
       firstFrame: 0
@@ -120,14 +123,14 @@ ModelImporter:
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
+      cycleOffset: 2.46
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -249,6 +252,35 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.006|AndarLateralNormalIzquierda
+      takeName: Armature.006|AndarLateralNormal
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 1.9
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 1
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []

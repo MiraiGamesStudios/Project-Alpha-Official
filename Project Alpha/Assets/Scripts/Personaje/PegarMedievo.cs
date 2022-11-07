@@ -13,7 +13,7 @@ public class PegarMedievo : MonoBehaviour
 
     void GolpeEspada()
     {
-        if(espada.targetE.tag == "Enemigo")
+        if(espada.targetE?.tag == "Enemigo")
         {
             espada.targetE.GetComponent<Caballero>().quitarVida(10);
         }

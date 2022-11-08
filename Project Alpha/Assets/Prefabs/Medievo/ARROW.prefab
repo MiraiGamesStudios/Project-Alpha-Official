@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8095202442933389962}
   - component: {fileID: 3846509850076625327}
   - component: {fileID: 8470283057140131377}
+  - component: {fileID: 2629014493621806174}
   m_Layer: 0
   m_Name: ARROW
   m_TagString: Untagged
@@ -112,8 +113,20 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7734672649733073759}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0027414588, y: 0.027338244, z: 0.0023827397}
   m_Center: {x: 0.000004555215, y: -0.013246851, z: 0.00033926722}
+--- !u!114 &2629014493621806174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734672649733073759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5cbebc3de57c84aa72163a8b91b6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

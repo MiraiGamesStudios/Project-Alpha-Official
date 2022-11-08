@@ -154,10 +154,10 @@ public class Caballero : MonoBehaviour
     #endregion
 
     #region Metodos del caballero
-    public void quitarVida(int daño)
+    public void quitarVida(int daño, string numDaño)
     {
         life -= daño;
-        numerosPantalla(daño, "10");
+        numerosPantalla(daño, numDaño);
     }
 
     void numerosPantalla(float tamaño, string daño)

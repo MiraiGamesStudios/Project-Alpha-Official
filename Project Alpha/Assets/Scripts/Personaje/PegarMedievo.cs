@@ -15,7 +15,7 @@ public class PegarMedievo : MonoBehaviour
     {
         if(espada.targetE?.tag == "Enemigo")
         {
-            espada.targetE.GetComponent<Caballero>().quitarVida(10);
+            espada.targetE.GetComponent<Caballero>().quitarVida(10, "10");
         }
     }
 

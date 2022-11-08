@@ -92,13 +92,13 @@ public class Escudero : MonoBehaviour
             case Status.atacando:
                 //atacar
                 anim.SetBool("Atacar", true);
-                anim.SetLayerWeight(1, 1);
+                anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
                     avancePersonaje = 1.0f;
                     statusEscudero = Status.corriendo;
-                    anim.SetLayerWeight(1, 0);
                 }
                 break;
 

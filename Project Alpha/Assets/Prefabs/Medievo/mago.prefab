@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 7270163870858029823}
   m_Layer: 0
   m_Name: mago
-  m_TagString: Untagged
+  m_TagString: Mago
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

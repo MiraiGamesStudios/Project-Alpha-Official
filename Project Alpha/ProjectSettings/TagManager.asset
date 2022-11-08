@@ -12,6 +12,14 @@ TagManager:
   - TrexTarget
   - Area1Target
   - Area2Target
+  - Car
+  - Door
+  - Key
+  - Pizza
+  - Arquero
+  - Mago
+  - Escudero
+  - Caballero
   - Enemigo
   layers:
   - Default

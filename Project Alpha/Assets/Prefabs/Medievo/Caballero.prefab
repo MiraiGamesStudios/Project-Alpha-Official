@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 445357959508478088}
   m_Layer: 0
   m_Name: Caballero
-  m_TagString: Untagged
+  m_TagString: Caballero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   life: 50
   gm: {fileID: 0}
   area: 0
-  damageText: {fileID: 0}
+  damageText: {fileID: 7967537858786677960, guid: f87d6a9aa1c8de141b40dba925249ae6, type: 3}
   epsilonDistancia: 1
   m_moveSpeed: 1
   statusCaballero: 1

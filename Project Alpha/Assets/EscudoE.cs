@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EspadaCaballero : MonoBehaviour
+public class EscudoE : MonoBehaviour
 {
     public delegate void _dañarPersonaje(int daño);
-    public static event _dañarPersonaje dañarPersonajeC;
+    public static event _dañarPersonaje dañarPersonajeE;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        
+        if (other?.gameObject.tag == "Player")
         {
-            dañarPersonajeC(10);
+            print("HOLA");
+            dañarPersonajeE(10);
         }
     }
 }

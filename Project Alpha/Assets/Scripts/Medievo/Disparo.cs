@@ -13,6 +13,8 @@ public class Disparo : MonoBehaviour
 
     private float shotRateTime = 0;
 
+    GameObject newBullet;
+
     void Update()
     {
         //spawnDireccion.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.8f, this.transform.position.z + 0.75f);
@@ -20,12 +22,11 @@ public class Disparo : MonoBehaviour
 
         if (Input.GetKey("r"))
         {
-            if(Time.time > shotRateTime)
+            if (Time.time > shotRateTime)
             {
-                GameObject newBullet;
                 newBullet = Instantiate(bullet, spawnDireccion.position, spawnRotacion.rotation);
                 newBullet.GetComponent<Rigidbody>().useGravity = false;
-                newBullet.transform.localScale = new Vector3(50,50,50);
+                newBullet.transform.localScale = new Vector3(50, 50, 50);
                 newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
                 StartCoroutine(caida(newBullet));
                 //newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.up * 250);
@@ -37,10 +38,32 @@ public class Disparo : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        Arquero.disparoArco += disparo;
+    }
+    private void OnDisable()
+    {
+        Arquero.disparoArco -= disparo;
+    }
+
+    public void disparo(Transform pos, Transform rot, GameObject bullet)
+    {
+        newBullet = Instantiate(bullet, pos.position, rot.rotation);
+        newBullet.GetComponent<Rigidbody>().useGravity = false;
+        newBullet.transform.localScale = new Vector3(50, 50, 50);
+        newBullet.GetComponent<Rigidbody>().AddForce(pos.forward * shotForce);
+        StartCoroutine(caida(newBullet));
+        //newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.up * 250);
+
+        //shotRateTime = Time.time + shotRate;
+
+        Destroy(newBullet, 5);
+    }
+
     IEnumerator caida(GameObject go)
     {
         yield return new WaitForSeconds(0.75f);
-        print(go);
         go.GetComponent<Rigidbody>().useGravity = true;
         yield return null;
     }

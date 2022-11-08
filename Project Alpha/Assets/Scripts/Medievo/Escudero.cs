@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Escudero : MonoBehaviour
 {
+    #region Variables
     public float speed = 4;
     public float life;
     bool restado = true;
@@ -13,6 +15,7 @@ public class Escudero : MonoBehaviour
     private Animator anim;
 
     public int area = 0;
+    public GameObject damageText;
 
     GameObject player;
 
@@ -25,6 +28,9 @@ public class Escudero : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusEscudero = Status.deambulando;
 
+    #endregion
+
+    #region Metodos Unity
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +61,9 @@ public class Escudero : MonoBehaviour
         FSMEscudero();
     }
 
+    #endregion
+
+    #region FSM
     public void FSMEscudero()
     {
         switch (statusEscudero)
@@ -141,4 +150,23 @@ public class Escudero : MonoBehaviour
     {
         return Vector3.Distance(transform.position, _objetivo) < epsilonDistancia;
     }
+    #endregion
+
+    #region Metodos Escudero
+    public void quitarVida(int daño, string numDaño)
+    {
+        life -= daño;
+        numerosPantalla(daño, numDaño);
+    }
+
+    void numerosPantalla(float tamaño, string daño)
+    {
+        Vector3 posicion = new Vector3(this.transform.position.x + 0.5f + Random.Range(-0.3f, 0.3f), this.transform.position.y + 2.8f + Random.Range(0f, 0.5f), this.transform.position.z + Random.Range(-0.5f, 0.5f));
+
+        GameObject textGO = Instantiate(damageText, posicion, Quaternion.LookRotation(this.transform.forward));
+        textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
+        textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
+        Destroy(textGO, 1);
+    }
+    #endregion
 }

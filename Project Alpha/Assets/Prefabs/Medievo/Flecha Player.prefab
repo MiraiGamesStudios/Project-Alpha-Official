@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8470283057140131377}
   - component: {fileID: 2629014493621806174}
   m_Layer: 0
-  m_Name: ARROW
+  m_Name: Flecha Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

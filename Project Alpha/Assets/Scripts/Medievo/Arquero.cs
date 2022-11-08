@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Arquero : MonoBehaviour
 {
+    #region Variable
+
     public float speed = 4;
     public float life;
     bool restado = true;
@@ -13,6 +16,8 @@ public class Arquero : MonoBehaviour
     private Animator anim;
 
     public int area = 0;
+    public GameObject damageText;
+
 
     GameObject player;
 
@@ -24,6 +29,17 @@ public class Arquero : MonoBehaviour
 
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusArquero = Status.deambulando;
+
+    public delegate void _disparoArco(Transform posicion, Transform rotacion, GameObject bullet);
+    public static event _disparoArco disparoArco;
+
+    public Transform pos;
+    public Transform rot;
+    public GameObject bullet;
+
+    #endregion
+
+    #region Metodos Unity
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +71,9 @@ public class Arquero : MonoBehaviour
         FSMArquero();
     }
 
+    #endregion
+
+    #region FSM
     public void FSMArquero()
     {
         switch (statusArquero)
@@ -141,4 +160,30 @@ public class Arquero : MonoBehaviour
     {
         return Vector3.Distance(transform.position, _objetivo) < epsilonDistancia;
     }
+    #endregion
+
+    #region Metodos Arquero
+
+    void DispararFlecha()
+    {
+        disparoArco(pos, rot, bullet);
+    }
+
+    public void quitarVida(int daño, string numDaño)
+    {
+        life -= daño;
+        numerosPantalla(daño, numDaño);
+    }
+
+    void numerosPantalla(float tamaño, string daño)
+    {
+        Vector3 posicion = new Vector3(this.transform.position.x + 0.5f + Random.Range(-0.3f, 0.3f), this.transform.position.y + 2.8f + Random.Range(0f, 0.5f), this.transform.position.z + Random.Range(-0.5f, 0.5f));
+
+        GameObject textGO = Instantiate(damageText, posicion, Quaternion.LookRotation(this.transform.forward));
+        textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
+        textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
+        Destroy(textGO, 1);
+    }
+
+    #endregion
 }

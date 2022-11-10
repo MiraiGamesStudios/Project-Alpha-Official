@@ -2681,31 +2681,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726810157}
   m_CullTransparentMesh: 1
---- !u!1 &1754554661 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4025671729494795249, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
-  m_PrefabInstance: {fileID: 4260236790872431133}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1754554665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754554661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e08f3863fe76149986d44b900678c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  life: 40
-  gm: {fileID: 0}
-  area: 0
-  damageText: {fileID: 0}
-  epsilonDistancia: 5
-  m_moveSpeed: 1
-  statusMago: 1
 --- !u!1 &1760070108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,7 +3557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 689560262950910706, guid: 06338fbe4766d7144bf0506631c8904a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 973144260820837323, guid: 06338fbe4766d7144bf0506631c8904a, type: 3}
       propertyPath: m_IsActive
@@ -3688,7 +3663,7 @@ PrefabInstance:
     - target: {fileID: 5238543450139346672, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
       propertyPath: cineMchine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 907370535}
     - target: {fileID: 5238543450139346672, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
       propertyPath: panelDeath
       value: 
@@ -3835,6 +3810,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3895682764527641768, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
+      propertyPath: life
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895682764527641768, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
+      propertyPath: epsilonDistancia
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4025671729494795249, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
       propertyPath: m_Name
       value: mago
@@ -3966,7 +3949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7583075709194397184, guid: 9572dbbe60f495a4da07a96bb5b77b56, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7583075709194397184, guid: 9572dbbe60f495a4da07a96bb5b77b56, type: 3}
       propertyPath: m_TagString

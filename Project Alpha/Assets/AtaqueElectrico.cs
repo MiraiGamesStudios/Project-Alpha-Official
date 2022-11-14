@@ -16,10 +16,12 @@ public class AtaqueElectrico : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other?.gameObject.tag == "Player")
         {
             AElectricoDaño(daño);
             AElectricoStun(stun);
+            Destroy(gameObject);
+
         }
     }
 }

@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool stun = false;
 
+    public Joystick joystickMove;
+
     #endregion
 
     #region Metodos Unity
@@ -61,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
             calculateMov();
             moveAnimations();
         }
+
+        MoveJoystick();
+
     }
 
     private void FixedUpdate()
@@ -126,6 +131,11 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
 
         animator.SetFloat("Multiplicador", speed / 2);
+    }
+
+    void MoveJoystick()
+    {
+        rb.velocity = new Vector3(joystickMove.Horizontal * speed, rb.velocity.y, joystickMove.Vertical * speed);
     }
 
     #endregion

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ApatosaurSounds : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] sounds;
-
+    [SerializeField] private AudioClip soundAttack, soundDeath, soundStepRun, soundStepWalk;
     private AudioSource audioManagement;
     private Animator animate;
 
@@ -19,25 +18,18 @@ public class ApatosaurSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundAttack, 0.4f);
             print("ApatoAttack");
         }
     }
 
-    private void ApatoJump()
-    {
-        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0.5)
-        {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
-            print("ApatoJump");
-        }
-    }
+
 
     private void ApatoDeath()
     {
         if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundDeath, 0.4f);
             print("ApatoDeath");
         }
     }
@@ -46,7 +38,7 @@ public class ApatosaurSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepRun, 0.4f);
             print("ApatoForwardRun");
         }
     }
@@ -55,7 +47,7 @@ public class ApatosaurSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepRun, 0.4f);
             print("ApatoBackwardRun");
         }
     }
@@ -64,7 +56,7 @@ public class ApatosaurSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepWalk, 0.4f);
             print("ApatoFirstWalk");
         }
     }
@@ -73,8 +65,16 @@ public class ApatosaurSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepWalk, 0.4f);
             print("ApatoSecondWalk");
+        }
+    }
+
+    private void ApatoIdle()
+    {
+        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.Stop();
         }
     }
 }

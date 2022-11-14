@@ -717,6 +717,8 @@ GameObject:
   - component: {fileID: 4985129574853703770}
   - component: {fileID: -406670974502781044}
   - component: {fileID: -963223495974655050}
+  - component: {fileID: -5986524682244893731}
+  - component: {fileID: -5883511935369532585}
   m_Layer: 0
   m_Name: Trex
   m_TagString: Dinosaur
@@ -816,6 +818,7 @@ MonoBehaviour:
   tipo: 3
   epsilonDistancia: 3
   m_moveSpeed: 5
+  statusDinosaur: 1
 --- !u!195 &-406670974502781044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -853,6 +856,120 @@ MonoBehaviour:
   movePositionTransform:
   - {fileID: 0}
   naveMeshAgent: {fileID: 0}
+--- !u!114 &-5986524682244893731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327711346598543933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe9591ca29362046850525d97744374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAttack: {fileID: 8300000, guid: 0af9392524095744b85815a16566685b, type: 3}
+  soundDeath: {fileID: 8300000, guid: dbb426f380378534d882756f836c2b2e, type: 3}
+  soundStepRun1: {fileID: 8300000, guid: 5b7490117a9e08442959348af08924a5, type: 3}
+  soundStepRun2: {fileID: 8300000, guid: 53f142bab022b574db89ead61c6db737, type: 3}
+  soundStepWalk1: {fileID: 8300000, guid: 595dc816465459140a5614815b88401e, type: 3}
+  soundStepWalk2: {fileID: 8300000, guid: 6e92761bf4ae09c4683d11cc90ac5024, type: 3}
+--- !u!82 &-5883511935369532585
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327711346598543933}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5339268733220588590
 GameObject:
   m_ObjectHideFlags: 0

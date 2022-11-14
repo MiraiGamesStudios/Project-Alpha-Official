@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TrexSounds : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] sounds;
+    [SerializeField] private AudioClip soundAttack, soundDeath, soundStepRun1, soundStepRun2, soundStepWalk1,
+        soundStepWalk2;
     private AudioSource audioManagement;
     private Animator animate;
 
@@ -18,7 +19,7 @@ public class TrexSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundAttack, 0.4f);
             print("TRexAttack");
         }
     }
@@ -27,25 +28,17 @@ public class TrexSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundDeath, 0.4f);
             print("TRexDeath");
         }
     }
 
-    private void TRexJump()
-    {
-        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0.5)
-        {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
-            print(" TRexJump");
-        }
-    }
 
     private void TRexStepRRun()
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepRun1, 0.4f);
             print("TRexRRun");
         }
     }
@@ -54,7 +47,7 @@ public class TrexSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepRun2, 0.4f);
             print("TRexLRun");
         }
     }
@@ -63,7 +56,7 @@ public class TrexSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepWalk1, 0.4f);
             print("TRexRWalk");
         }
     }
@@ -72,8 +65,16 @@ public class TrexSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepWalk2, 0.4f);
             print("TRexLWalk");
+        }
+    }
+
+    private void TRexIdle()
+    {
+        if(animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.Stop();
         }
     }
 }

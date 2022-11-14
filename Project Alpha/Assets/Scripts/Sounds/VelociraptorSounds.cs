@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class VelociraptorSounds : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] sounds;
-    
+    [SerializeField] private AudioClip soundAttack, soundDeath, soundStepRun, soundStepWalk;
     private AudioSource audioManagement;
     private Animator animate;
 
@@ -19,7 +18,7 @@ public class VelociraptorSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") ==1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundAttack, 0.4f);
             print("VelocAttack");
         }
     }
@@ -28,25 +27,17 @@ public class VelociraptorSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 1)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundDeath, 0.4f);
             print("VelocDeath");
         }
     }
 
-    private void VelocJumpFall()
-    {
-        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0.5)
-        {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
-            print("VelocJump");
-        }
-    }
 
     private void VelocStepLRun()
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepRun, 0.4f);
             print("VelocLRun");
         }
     }
@@ -55,7 +46,7 @@ public class VelociraptorSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepRun, 0.4f);
             print("VelocRRun");
         }
     }
@@ -64,7 +55,7 @@ public class VelociraptorSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepWalk, 0.4f);
             print("VelocLWalk");
         }
     }
@@ -73,8 +64,16 @@ public class VelociraptorSounds : MonoBehaviour
     {
         if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 0)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
+            audioManagement.PlayOneShot(soundStepWalk, 0.4f);
             print("VelocRWalk");
+        }
+    }
+
+    private void VelocIdle()
+    {
+        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.Stop();
         }
     }
 }

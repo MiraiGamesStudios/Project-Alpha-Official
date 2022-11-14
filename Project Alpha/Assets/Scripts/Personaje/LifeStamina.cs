@@ -114,12 +114,14 @@ public class LifeStamina : MonoBehaviour
         Dinosaur.dañoRecibido += mostrarDaño;
         EspadaCaballero.dañarPersonajeC += comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE += comenzarCorrutinaVida; 
+        AtaqueElectrico.AElectricoDaño += comenzarCorrutinaVida;
     }
     private void OnDisable()
     {
         Dinosaur.dañoRecibido -= mostrarDaño;
         EspadaCaballero.dañarPersonajeC -= comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE -= comenzarCorrutinaVida;
+        AtaqueElectrico.AElectricoDaño -= comenzarCorrutinaVida;
     }
     #endregion
 

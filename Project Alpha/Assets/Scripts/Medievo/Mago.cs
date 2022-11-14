@@ -71,14 +71,14 @@ public class Mago : MonoBehaviour
         {
             case Status.quieto:
                 //idle
-                anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+                //anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 break;
 
             case Status.deambulando:
                 //andar
-                anim.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
-                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                //anim.SetFloat("Xaxis", 0.5f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                 if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
                 {
                     statusMago = Status.corriendo;
@@ -90,8 +90,8 @@ public class Mago : MonoBehaviour
             case Status.corriendo:
                 //correr
                 Avanzar(player.transform.position);
-                anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                //anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
                 if (this.EstaEnObjetivo(player.transform.position))
                 {
                     avancePersonaje = 0.0f;
@@ -101,12 +101,14 @@ public class Mago : MonoBehaviour
 
             case Status.atacando:
                 //atacar
+                Alinear(player.transform.position);
                 anim.SetBool("Atacar", true);
-                anim.SetFloat("Xaxis", 1.5f, 0.1f, Time.deltaTime);
-                anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                //anim.SetFloat("Xaxis", 1.5f, 0.1f, Time.deltaTime);
+                //anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
+                    anim.SetBool("Atacar", false);
                     avancePersonaje = 1.0f;
                     statusMago = Status.corriendo;
                 }

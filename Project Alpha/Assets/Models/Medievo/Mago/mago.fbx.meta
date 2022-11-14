@@ -18,6 +18,18 @@ ModelImporter:
   - first:
       74: -5312894682905152162
     second: Armature.004|Muerte
+  - first:
+      74: -1055766231766805323
+    second: Andar
+  - first:
+      74: -5343769981576626215
+    second: Ataque
+  - first:
+      74: 4226248068542788271
+    second: Correr
+  - first:
+      74: -3100369314251171874
+    second: Idle
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -83,7 +95,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.004|Andar
+      name: Andar
       takeName: Armature.004|Andar
       internalID: 0
       firstFrame: 0
@@ -96,7 +108,7 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
@@ -112,7 +124,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Ataque
+      name: Ataque
       takeName: Armature.004|Ataque
       internalID: 0
       firstFrame: 0
@@ -148,7 +160,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Correr
+      name: Correr
       takeName: Armature.004|Correr
       internalID: 0
       firstFrame: 0
@@ -161,7 +173,7 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
@@ -177,7 +189,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Idle
+      name: Idle
       takeName: Armature.004|Idle
       internalID: 0
       firstFrame: 0
@@ -190,7 +202,7 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0

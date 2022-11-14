@@ -12,7 +12,6 @@ public class EscudoE : MonoBehaviour
         
         if (other?.gameObject.tag == "Player")
         {
-            print("HOLA");
             dañarPersonajeE(10);
         }
     }

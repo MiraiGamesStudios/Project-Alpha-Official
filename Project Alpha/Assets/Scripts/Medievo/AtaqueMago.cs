@@ -15,11 +15,6 @@ public class AtaqueMago : MonoBehaviour
 
     GameObject newBullet;
 
-    void Update()
-    {
-       
-    }
-
     public void lanzarHechizo()
     {
         int i = Random.Range(0, 4);

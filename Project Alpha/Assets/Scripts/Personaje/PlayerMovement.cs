@@ -6,13 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Variables
 
-    private CharacterController characterController;
     private Animator animator;
 
     Vector3 movementInput = Vector3.zero;
     
     public GameObject cam;
     public GameObject cineMchine;
+
     public float speed;
     public float gravity;
 
@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
     CapsuleCollider capsule;
+
+    bool stun = false;
 
     #endregion
 
@@ -50,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Morir());            
         }
+        else if (stun)
+        {
+            movementInput = Vector3.zero;
+        }
         else
         {
             calculateMov();
@@ -62,6 +68,15 @@ public class PlayerMovement : MonoBehaviour
         Move(movementInput);
     }
 
+    private void OnEnable()
+    {
+        AtaqueElectrico.AElectricoStun += comenzarCorrutinaStun;
+    }
+
+    private void OnDisable()
+    {
+        AtaqueElectrico.AElectricoStun -= comenzarCorrutinaStun;
+    }
     #endregion
 
     #region Movimiento
@@ -221,6 +236,11 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+    void comenzarCorrutinaStun(int seg)
+    {
+        StartCoroutine(Stunned(seg));
+    }
+
     IEnumerator Morir()
     {
         movementInput = (new Vector3(0, 0, 0));
@@ -236,6 +256,21 @@ public class PlayerMovement : MonoBehaviour
         capsule.height = 1.0f;
         HUD.SetActive(false);
         panelDeath.SetActive(true);
+
+        yield return null;
+    }
+
+    IEnumerator Stunned(int seg)
+    {
+        stun = true;
+        animator.enabled = false;
+        cineMchine.SetActive(false);
+
+        yield return new WaitForSeconds(seg);
+
+        stun = false;
+        animator.enabled = true;
+        cineMchine.SetActive(true);
 
         yield return null;
     }

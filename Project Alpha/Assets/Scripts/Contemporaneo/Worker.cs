@@ -104,9 +104,8 @@ public class Worker : MonoBehaviour
             case Status.atacando:
                 //atacar
                 anim.SetBool("Atacar", true);
-                anim.SetFloat("Xaxis", 1.5f, 0.1f, Time.deltaTime);
+                anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
-
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
@@ -117,7 +116,7 @@ public class Worker : MonoBehaviour
 
             case Status.muerto:
                 //morir
-                anim.SetLayerWeight(1, 1);
+                anim.SetLayerWeight(2, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
                 Destroy(this.gameObject, 3.5f);

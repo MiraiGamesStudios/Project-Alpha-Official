@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Suit : MonoBehaviour
+public class Militar : MonoBehaviour
 {
     #region Variable
 
@@ -28,7 +28,7 @@ public class Suit : MonoBehaviour
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
-    public Status statusSuit = Status.deambulando;
+    public Status statusMilitar = Status.deambulando;
 
     #endregion
 
@@ -48,7 +48,7 @@ public class Suit : MonoBehaviour
     {
         if (life <= 0)
         {
-            statusSuit = Status.muerto;
+            statusMilitar = Status.muerto;
             if (restado)
             {
                 restado = false;
@@ -61,15 +61,15 @@ public class Suit : MonoBehaviour
         m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
         transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
 
-        FSMSuit();
+        FSMMilitar();
     }
 
     #endregion
 
     #region FSM
-    public void FSMSuit()
+    public void FSMMilitar()
     {
-        switch (statusSuit)
+        switch (statusMilitar)
         {
             case Status.quieto:
                 //idle
@@ -83,7 +83,7 @@ public class Suit : MonoBehaviour
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
                 {
-                    statusSuit = Status.corriendo;
+                    statusMilitar = Status.corriendo;
                     //this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled;
                     //this.gameObject.GetComponent<DinosaurNavMesh>().enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().enabled;
                 }
@@ -97,7 +97,7 @@ public class Suit : MonoBehaviour
                 if (this.EstaEnObjetivo(player.transform.position))
                 {
                     avancePersonaje = 0.0f;
-                    statusSuit = Status.atacando;
+                    statusMilitar = Status.atacando;
                 }
                 break;
 
@@ -110,7 +110,7 @@ public class Suit : MonoBehaviour
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
                     avancePersonaje = 1.0f;
-                    statusSuit = Status.corriendo;
+                    statusMilitar = Status.corriendo;
                 }
                 break;
 
@@ -131,11 +131,11 @@ public class Suit : MonoBehaviour
         if (area == 1)
         {
             //se elimina
-            //gm.GetComponent<GameManager>().SuitsArea1.Remove(this.gameObject);
+            //gm.GetComponent<GameManager>().MilitarsArea1.Remove(this.gameObject);
         }
         else if (area == 2)
         {
-            //gm.GetComponent<GameManager>().SuitsArea2.Remove(this.gameObject);
+            //gm.GetComponent<GameManager>().MilitarsArea2.Remove(this.gameObject);
         }
 
     }
@@ -155,7 +155,7 @@ public class Suit : MonoBehaviour
     }
     #endregion
 
-    #region Metodos Suit
+    #region Metodos Militar
 
     public void quitarVida(int daño, string numDaño)
     {

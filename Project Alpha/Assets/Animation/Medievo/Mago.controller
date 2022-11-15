@@ -112,6 +112,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Atacar
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Morir
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5102584487312046370}
   m_Solo: 0

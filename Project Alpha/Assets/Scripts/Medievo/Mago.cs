@@ -116,7 +116,7 @@ public class Mago : MonoBehaviour
 
             case Status.muerto:
                 //morir
-                anim.SetLayerWeight(2, 1);
+                anim.SetLayerWeight(1, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
                 Destroy(this.gameObject, 3.5f);

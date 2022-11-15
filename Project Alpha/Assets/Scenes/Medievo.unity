@@ -1567,7 +1567,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627630222}
-  m_LocalRotation: {x: 0.14277436, y: 0.7625147, z: -0.18000542, w: 0.6048016}
+  m_LocalRotation: {x: 0.14277437, y: 0.7625147, z: -0.1800054, w: 0.6048016}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3167,6 +3167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CROSSBOW
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c88b723d1cab2504e87da997afaa6465, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88b723d1cab2504e87da997afaa6465, type: 3}
 --- !u!1 &1813090631
@@ -3238,7 +3242,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813090631}
-  m_LocalRotation: {x: 0.016809536, y: 0.7831868, z: -0.021192933, w: 0.6211979}
+  m_LocalRotation: {x: 0.016809538, y: 0.7831868, z: -0.021192934, w: 0.6211979}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3952,7 +3956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3486826558403089465, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5169066474463722173, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
       propertyPath: m_Height

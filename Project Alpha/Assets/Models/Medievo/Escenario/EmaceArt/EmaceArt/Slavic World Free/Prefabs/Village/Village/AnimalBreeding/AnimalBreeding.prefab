@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4992163595705294}
   - component: {fileID: 205582608373417642}
   m_Layer: 0
-  m_Name: EA03_Village_AnimalBreeding_Hovel_01a_PRE
+  m_Name: AnimalBreeding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

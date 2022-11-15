@@ -18,21 +18,37 @@ public class ArcherSounds : MonoBehaviour
 
     private void StepLWalk()
     {
-
+        if (animate.GetFloat("Xaxis") <= 0.5 && animate.GetFloat("Xaxis") >0 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.PlayOneShot(ArcherStepLeft, 0.4f);
+            print("ArcherLWalk");
+        }
     }
 
     private void StepRWalk()
     {
-
+        if (animate.GetFloat("Xaxis") <= 0.5 && animate.GetFloat("Xaxis") > 0 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.PlayOneShot(ArcherStepRight, 0.4f);
+            print("ArcherRWalk");
+        }
     }
 
     private void StepRRun()
     {
-
+        if (animate.GetFloat("Xaxis") < 1.3 && animate.GetFloat("Xaxis") > 0.5 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.PlayOneShot(ArcherStepRight, 0.4f);
+            print("ArcherRRun");
+        }
     }
     private void StepLRun()
     {
-
+        if (animate.GetFloat("Xaxis") < 1.3 && animate.GetFloat("Xaxis") > 0.5 && animate.GetFloat("Yaxis") == 0)
+        {
+            audioManagement.PlayOneShot(ArcherStepRight, 0.4f);
+            print("ArcherLRun");
+        }
     }
 
     private void ArcherIdle()

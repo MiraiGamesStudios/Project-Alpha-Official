@@ -240,13 +240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a86887f28a9524eba121cddedd9469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArcherStepLeft: {fileID: 0}
-  ArcherStepRight: {fileID: 0}
-  ArcherStepRunLeft: {fileID: 0}
-  ArcherStepRunRight: {fileID: 0}
-  ArcherAttackSound: {fileID: 0}
+  ArcherStepLeft: {fileID: 8300000, guid: f2cbd16c664937e42b7133e34f4392ae, type: 3}
+  ArcherStepRight: {fileID: 8300000, guid: f71425dbfe62d504392a070c8f7068a4, type: 3}
+  ArcherStepRunLeft: {fileID: 8300000, guid: f2cbd16c664937e42b7133e34f4392ae, type: 3}
+  ArcherStepRunRight: {fileID: 8300000, guid: f71425dbfe62d504392a070c8f7068a4, type: 3}
+  ArcherAttackSound: {fileID: 8300000, guid: aa1d4d02d6dda5d49b355bf16dbd7c41, type: 3}
   ArcherImpactSound: {fileID: 0}
-  ArcherDeathSound: {fileID: 0}
+  ArcherDeathSound: {fileID: 8300000, guid: 91b03673949f4964493710e10eacc0ec, type: 3}
 --- !u!82 &-1510645096369840752
 AudioSource:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
             moveAnimations();
         }
 
-        MoveJoystick();
+        //MoveJoystick();
 
     }
 

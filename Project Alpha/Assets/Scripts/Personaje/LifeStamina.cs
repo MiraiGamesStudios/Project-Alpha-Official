@@ -304,8 +304,7 @@ public class LifeStamina : MonoBehaviour
 
         if (fuego.active == false)
         {
-            HUDColor.SetActive(true);
-            HUDColor.GetComponent<Image>().color = new Color(1, 0.43f, 0, 0.2f);
+            fuego.SetActive(true);
             
             for (int i = 0; i < 10; i++)
             {

@@ -8,6 +8,7 @@ public class ButonMenus : MonoBehaviour
 
     public GameObject MainMenu;
     public GameObject Controles;
+    public GameObject Creditos;
     public GameObject Reinicio;
 
 
@@ -28,9 +29,16 @@ public class ButonMenus : MonoBehaviour
         Controles.SetActive(true);
     }
 
+    public void ButtonCreditos()
+    {
+        Creditos.SetActive(true);
+    }
+
     public void ButtonVoler()
     {
         Controles.SetActive(false);
+        Creditos.SetActive(false);
+
     }
 
     public void CambiarEscena(int indice)

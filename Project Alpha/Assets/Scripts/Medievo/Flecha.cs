@@ -31,6 +31,10 @@ public class Flecha : MonoBehaviour
             golpeado = true;
             collision.transform.root.gameObject.GetComponent<Mago>().quitarVida(5, "5");
         }
+        else
+        {
+            golpeado = true;
+        }
 
     }
 }

@@ -116,6 +116,7 @@ public class Mago : MonoBehaviour
 
             case Status.muerto:
                 //morir
+                this.tag = "Enemigo";
                 anim.SetLayerWeight(1, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);

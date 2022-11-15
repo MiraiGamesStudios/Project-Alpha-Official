@@ -124,6 +124,7 @@ public class Arquero : MonoBehaviour
 
             case Status.muerto:
                 //morir
+                this.tag = "Enemigo";
                 anim.SetLayerWeight(2, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);

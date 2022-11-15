@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject rayos;
     public GameObject hielo;
 
+    public GameObject HUDColor;
+
     bool stun = false;
 
     public Joystick joystickMove;

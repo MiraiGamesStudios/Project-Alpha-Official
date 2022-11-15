@@ -35,7 +35,7 @@ public class LifeStamina : MonoBehaviour
     public GameObject fuego;
     public GameObject veneno;
 
-
+    public GameObject HUDColor;
 
     #endregion
 
@@ -304,7 +304,8 @@ public class LifeStamina : MonoBehaviour
 
         if (fuego.active == false)
         {
-            fuego.SetActive(true);
+            HUDColor.SetActive(true);
+            HUDColor.GetComponent<Image>().color = new Color(1, 0.43f, 0, 0.2f);
             
             for (int i = 0; i < 10; i++)
             {
@@ -326,6 +327,8 @@ public class LifeStamina : MonoBehaviour
             fuego.SetActive(false);
 
         }
+
+        HUDColor.GetComponent<Image>().color = new Color(0, 0, 0, 0);
 
         yield return null;
     }

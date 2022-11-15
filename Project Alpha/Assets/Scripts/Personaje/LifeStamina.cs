@@ -19,6 +19,9 @@ public class LifeStamina : MonoBehaviour
     public float cantidadVida;
     public float staminaMaxima;
 
+    public int segRec;
+    private int segundosParaRecuperar;
+
     public bool recuperando = false;
     public bool outStamina = false;
     public bool death = false;
@@ -27,7 +30,12 @@ public class LifeStamina : MonoBehaviour
     public List<GameObject> Lderecha;
     public List<GameObject> Lizquierda;
 
-    bool daño = false;
+    public bool daño = false;
+
+    public GameObject fuego;
+    public GameObject veneno;
+
+
 
     #endregion
 
@@ -40,15 +48,17 @@ public class LifeStamina : MonoBehaviour
 
         staminaSlide.maxValue = staminaMaxima;
         staminaSlide.value = staminaMaxima;
+
+        segundosParaRecuperar = segRec;
     }
 
 
     void Update()
     {
-        if (lifeSlide.value != vidaMaxima && recuperando == false)
+        if (lifeSlide.value != vidaMaxima && recuperando == false && daño == false)
         {
             recuperando = true;
-            StartCoroutine(recoverLife());
+            StartCoroutine(waiting(segundosParaRecuperar));
         }
 
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
@@ -115,6 +125,12 @@ public class LifeStamina : MonoBehaviour
         EspadaCaballero.dañarPersonajeC += comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE += comenzarCorrutinaVida; 
         AtaqueElectrico.AElectricoDaño += comenzarCorrutinaVida;
+        AtaqueFuego.AFuego += comenzarCorrutinaVida;
+        AtaqueFuego.AFuego += comenzarCorrutinaFuego;
+        AtaqueVeneno.AVeneno += comenzarCorrutinaVida;
+        AtaqueVeneno.AVeneno += comenzarCorrutinaenvenenado;
+        AtaqueHielo.AHielo += comenzarCorrutinaVida;
+
     }
     private void OnDisable()
     {
@@ -122,6 +138,11 @@ public class LifeStamina : MonoBehaviour
         EspadaCaballero.dañarPersonajeC -= comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE -= comenzarCorrutinaVida;
         AtaqueElectrico.AElectricoDaño -= comenzarCorrutinaVida;
+        AtaqueFuego.AFuego -= comenzarCorrutinaVida;
+        AtaqueFuego.AFuego -= comenzarCorrutinaFuego;
+        AtaqueVeneno.AVeneno -= comenzarCorrutinaVida;
+        AtaqueVeneno.AVeneno += comenzarCorrutinaenvenenado;
+        AtaqueHielo.AHielo += comenzarCorrutinaVida;
     }
     #endregion
 
@@ -182,9 +203,18 @@ public class LifeStamina : MonoBehaviour
     {
         StartCoroutine(lifeLost(daño));
     }
+    public void comenzarCorrutinaFuego(int a)
+    {
+        StartCoroutine(Quemarse());
+    }
+
+    void comenzarCorrutinaenvenenado(int a)
+    {
+        StartCoroutine(envenenado());
+    }
     public IEnumerator lifeLost(float vida)
     {
-        StopCoroutine(recoverLife());
+        //StopCoroutine(recoverLife(segundosParaRecuperar));
         daño = true;
 
         float cantidadPerdida = 0;
@@ -211,16 +241,42 @@ public class LifeStamina : MonoBehaviour
 
         yield return null;
     }
-    public IEnumerator recoverLife()
+
+    IEnumerator waiting(int seg)
     {
-        for (int j = 0; j < 4; j++)
+        bool meHanDado = false;
+        for (int j = 0; j < seg; j++)
         {
             yield return new WaitForSeconds(1);
+            
             if (daño)
             {
+                meHanDado = true;
                 break;
             }
         }
+
+        if(meHanDado == false)
+        {
+            StartCoroutine(recoverLife(seg));
+            yield return null;
+        }
+        else
+        {
+            recuperando = false;
+        }
+
+    }
+    public IEnumerator recoverLife(int seg)
+    {
+        //for (int j = 0; j < seg; j++)
+        //{
+        //    yield return new WaitForSeconds(1);
+        //    if (daño)
+        //    {
+        //        break;
+        //    }
+        //}
         float i = 0.05f;
 
         while (lifeSlide.value != vidaMaxima)
@@ -242,5 +298,52 @@ public class LifeStamina : MonoBehaviour
         yield return null;
 
     }
+
+    IEnumerator Quemarse()
+    {
+
+        if (fuego.active == false)
+        {
+            fuego.SetActive(true);
+            
+            for (int i = 0; i < 10; i++)
+            {
+                //StopCoroutine(recoverLife(segundosParaRecuperar));
+                daño = true;
+
+                if (death == true)
+                {
+                    yield return null;
+                }
+
+                lifeSlide.value--;
+                lifeNumber.SetText(lifeSlide.value.ToString("#."));
+
+                yield return new WaitForSeconds(1f);
+            }
+
+            daño = false;
+            fuego.SetActive(false);
+
+        }
+
+        yield return null;
+    }
+
+    IEnumerator envenenado()
+    {
+        veneno.SetActive(true);
+        daño = true;
+        segundosParaRecuperar = segRec * 2;
+        lifeSlide.GetComponentInChildren<Image>().color = new Color(0, 0.3f, 0, 1);
+
+        yield return new WaitForSeconds(10);
+
+        veneno.SetActive(false);
+        daño = false;
+        segundosParaRecuperar = segRec;
+        lifeSlide.GetComponentInChildren<Image>().color = new Color(255, 0, 0, 255);
+    }
+
     #endregion
 }

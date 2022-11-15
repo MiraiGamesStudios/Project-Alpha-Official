@@ -397,7 +397,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a67d85e79cffa141b70ad68bc30f3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  VelocSoundAttack: {fileID: 8300000, guid: 5d8f626c348e7f94a8dad55022928129, type: 3}
+  VelocSoundDeath: {fileID: 8300000, guid: 34006aeaba863d840ad8d6d66bb64e29, type: 3}
+  VelocSoundStepRun: {fileID: 8300000, guid: 60f2d195ccbe2c745b46051f7e2262ff, type: 3}
+  VelocSoundStepWalk: {fileID: 8300000, guid: d1662c9781d1e9c449744aeca00870fc, type: 3}
+  VelocSoundStepRun2: {fileID: 8300000, guid: 1cdd5a7ef685c8e49bde80c42e1ec9db, type: 3}
+  VelocSoundStepWalk2: {fileID: 8300000, guid: db225056c5a88b441bc8a3a31f26fb13, type: 3}
 --- !u!82 &195052044734080129
 AudioSource:
   m_ObjectHideFlags: 0
@@ -454,7 +459,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

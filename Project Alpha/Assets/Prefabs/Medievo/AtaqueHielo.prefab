@@ -4989,6 +4989,7 @@ GameObject:
   - component: {fileID: 1131433003411680240}
   - component: {fileID: 1131433003411680205}
   - component: {fileID: 3184925845301769464}
+  - component: {fileID: 4385513591464149981}
   m_Layer: 0
   m_Name: AtaqueHielo
   m_TagString: Untagged
@@ -5104,7 +5105,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9900,6 +9901,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4385513591464149981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131433003411680241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42c9277b2c82fd4e8e28b4d30ba7757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2434047060158799378
 GameObject:
   m_ObjectHideFlags: 0
@@ -14701,7 +14714,7 @@ Transform:
   m_GameObject: {fileID: 5597959054418445197}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.48076236, y: 0.48076236, z: 0.48076236}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1131433003411680206}
@@ -14722,7 +14735,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -14780,7 +14793,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
   randomSeed: 0
@@ -15275,7 +15288,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 1
@@ -15541,7 +15554,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 80
       minScalar: 10
       maxCurve:
         serializedVersion: 2

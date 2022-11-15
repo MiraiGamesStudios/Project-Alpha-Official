@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3513403501701625657}
   - component: {fileID: 5302648157845035090}
   - component: {fileID: 6327839085027996312}
+  - component: {fileID: 5674104206137349986}
   m_Layer: 0
   m_Name: AtaqueVeneno
   m_TagString: Untagged
@@ -4993,6 +4994,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5674104206137349986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513403501701625659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e2bc313050e224d9c4534eee044650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "da\xF1o": 15
 --- !u!1 &5595023430140309602
 GameObject:
   m_ObjectHideFlags: 0

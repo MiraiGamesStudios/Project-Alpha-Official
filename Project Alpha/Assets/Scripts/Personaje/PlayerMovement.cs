@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject cam;
     public GameObject cineMchine;
 
-    public float speed;
+    public float speedInicial;
+    float speed;
     public float gravity;
 
     public LifeStamina VidaStamina;
@@ -22,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
     CapsuleCollider capsule;
+
+    public GameObject rayos;
+    public GameObject hielo;
 
     bool stun = false;
 
@@ -76,11 +80,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         AtaqueElectrico.AElectricoStun += comenzarCorrutinaStun;
+        AtaqueHielo.AHielo += comenzarCorrutinaCongelado;
     }
 
     private void OnDisable()
     {
         AtaqueElectrico.AElectricoStun -= comenzarCorrutinaStun;
+        AtaqueHielo.AHielo -= comenzarCorrutinaCongelado;
+
     }
     #endregion
 
@@ -151,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKey("left shift")) //Correr
                 {
                     
-                    speed = 8;
+                    speed = speedInicial*2;
                     animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
                     animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
@@ -172,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
                 else // Andar
                 {
                     
-                    speed = 4;
+                    speed = speedInicial;
                     animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                     animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
@@ -193,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
             else //No tiene stamina, por lo tanto, esta cansado
             {
                 
-                speed = 1;
+                speed = speedInicial/4;
                 animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                 animator.SetFloat("Cansancio", 1.0f, 0.1f, Time.deltaTime);
             }
@@ -202,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Input.GetKey("s")) // Caminar hacia atras
         {
-            speed = 3;
+            speed = speedInicial/4*3;
             animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
 
             if (Input.GetKey("d"))
@@ -222,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Input.GetKey("d")) // Caminar derecha
         {
-            speed = 3;
+            speed = speedInicial / 4 * 3;
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
             animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
         }
@@ -230,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Input.GetKey("a")) // Caminar izquierda
         {
-            speed = 3;
+            speed = speedInicial / 4 * 3;
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
             animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
         }
@@ -249,6 +256,11 @@ public class PlayerMovement : MonoBehaviour
     void comenzarCorrutinaStun(int seg)
     {
         StartCoroutine(Stunned(seg));
+    }
+
+    void comenzarCorrutinaCongelado(int a)
+    {
+        StartCoroutine(congelado());
     }
 
     IEnumerator Morir()
@@ -275,14 +287,32 @@ public class PlayerMovement : MonoBehaviour
         stun = true;
         animator.enabled = false;
         cineMchine.SetActive(false);
+        rayos.SetActive(true);
+        GetComponent<Disparo>().enabled = false;
 
         yield return new WaitForSeconds(seg);
 
         stun = false;
         animator.enabled = true;
         cineMchine.SetActive(true);
+        rayos.SetActive(false);
+        GetComponent<Disparo>().enabled = true;
 
         yield return null;
     }
-    
+
+    IEnumerator congelado()
+    {
+        float speedCambiada = speedInicial;
+
+        hielo.SetActive(true);
+        speedInicial = speedCambiada/4;
+
+        yield return new WaitForSeconds(5);
+
+        speedInicial = speedCambiada;
+        hielo.SetActive(false);
+
+    }
+
 }

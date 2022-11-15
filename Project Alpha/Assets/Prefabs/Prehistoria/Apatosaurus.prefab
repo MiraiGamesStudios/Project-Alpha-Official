@@ -1007,7 +1007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f20693ab695b449aa796df8a0c4c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  soundAttack: {fileID: 8300000, guid: 751a2e98e9014ac43ba4e781b0b1dd95, type: 3}
+  soundDeath: {fileID: 8300000, guid: b9c3a0bba9bb7404bb11bbd93185a200, type: 3}
+  soundStepRun: {fileID: 0}
+  soundStepWalk: {fileID: 8300000, guid: ffe66658c1aeeba46b61015b544a112b, type: 3}
 --- !u!82 &6194672788077562382
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1064,7 +1067,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

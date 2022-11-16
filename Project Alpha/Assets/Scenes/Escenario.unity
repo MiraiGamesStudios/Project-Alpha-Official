@@ -4911,6 +4911,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 3bf84706a6aff5e45beffb10a6b5a94b, type: 2}
     - target: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+      propertyPath: segRec
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: lifeSlide
       value: 
       objectReference: {fileID: 2077615727}
@@ -4918,6 +4922,10 @@ PrefabInstance:
       propertyPath: lifeNumber
       value: 
       objectReference: {fileID: 631852880}
+    - target: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+      propertyPath: cantidadVida
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: staminaSlide
       value: 
@@ -5146,6 +5154,10 @@ PrefabInstance:
       propertyPath: joystickMove
       value: 
       objectReference: {fileID: 1815360537}
+    - target: {fileID: 7875247875034299886, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+      propertyPath: speedInicial
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8219135511019362993, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5624,6 +5636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 0}
   Controles: {fileID: 0}
+  Creditos: {fileID: 0}
   Reinicio: {fileID: 0}
 --- !u!4 &594846400
 Transform:
@@ -13822,10 +13835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a67d85e79cffa141b70ad68bc30f3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundAttack: {fileID: 0}
-  soundDeath: {fileID: 0}
-  soundStepRun: {fileID: 0}
-  soundStepWalk: {fileID: 0}
+  VelocSoundAttack: {fileID: 0}
+  VelocSoundDeath: {fileID: 0}
+  VelocSoundStepRun: {fileID: 0}
+  VelocSoundStepWalk: {fileID: 0}
+  VelocSoundStepRun2: {fileID: 0}
+  VelocSoundStepWalk2: {fileID: 0}
 --- !u!1 &1699864325
 GameObject:
   m_ObjectHideFlags: 0
@@ -13985,7 +14000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8336908613086346259, guid: 3b66d1d10fe8c82408802239e21b332c, type: 3}
       propertyPath: life
-      value: 500
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8336908613086346259, guid: 3b66d1d10fe8c82408802239e21b332c, type: 3}
       propertyPath: epsilonDistancia

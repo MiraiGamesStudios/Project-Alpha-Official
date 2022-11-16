@@ -35,8 +35,6 @@ public class LifeStamina : MonoBehaviour
     public GameObject fuego;
     public GameObject veneno;
 
-    public GameObject HUDColor;
-
     #endregion
 
     #region Metodos Unity
@@ -122,6 +120,7 @@ public class LifeStamina : MonoBehaviour
     private void OnEnable()
     {
         Dinosaur.dañoRecibido += mostrarDaño;
+
         EspadaCaballero.dañarPersonajeC += comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE += comenzarCorrutinaVida; 
         AtaqueElectrico.AElectricoDaño += comenzarCorrutinaVida;
@@ -131,10 +130,14 @@ public class LifeStamina : MonoBehaviour
         AtaqueVeneno.AVeneno += comenzarCorrutinaenvenenado;
         AtaqueHielo.AHielo += comenzarCorrutinaVida;
 
+        Worker.dañarPersonajeMartillo += comenzarCorrutinaVida;
+        Suit.dañarPersonajePeriodico += comenzarCorrutinaVida;
+
     }
     private void OnDisable()
     {
         Dinosaur.dañoRecibido -= mostrarDaño;
+
         EspadaCaballero.dañarPersonajeC -= comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE -= comenzarCorrutinaVida;
         AtaqueElectrico.AElectricoDaño -= comenzarCorrutinaVida;
@@ -143,6 +146,10 @@ public class LifeStamina : MonoBehaviour
         AtaqueVeneno.AVeneno -= comenzarCorrutinaVida;
         AtaqueVeneno.AVeneno += comenzarCorrutinaenvenenado;
         AtaqueHielo.AHielo += comenzarCorrutinaVida;
+
+        Worker.dañarPersonajeMartillo -= comenzarCorrutinaVida;
+        Suit.dañarPersonajePeriodico -= comenzarCorrutinaVida;
+
     }
     #endregion
 
@@ -326,8 +333,6 @@ public class LifeStamina : MonoBehaviour
             fuego.SetActive(false);
 
         }
-
-        HUDColor.GetComponent<Image>().color = new Color(0, 0, 0, 0);
 
         yield return null;
     }

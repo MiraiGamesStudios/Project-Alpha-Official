@@ -30,6 +30,10 @@ public class Worker : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusWorker = Status.deambulando;
 
+    public GameObject arma;
+    public delegate void _dañarPersonajeMartillo(int daño);
+    public static event _dañarPersonajeMartillo dañarPersonajeMartillo;
+
     #endregion
 
     #region Metodos Unity
@@ -171,6 +175,19 @@ public class Worker : MonoBehaviour
         textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
         textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
         Destroy(textGO, 1);
+    }
+
+    void Golpe()
+    {
+        if (arma.GetComponent<MartilloW>().target?.tag == "Player")
+        {
+            dañarPersonajeMartillo(10);
+        }
+    }
+
+    void Resetear()
+    {
+        arma.GetComponent<MartilloW>().target = null;
     }
 
     #endregion

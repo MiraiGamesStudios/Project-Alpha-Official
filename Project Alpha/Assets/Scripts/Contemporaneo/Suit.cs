@@ -30,6 +30,10 @@ public class Suit : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusSuit = Status.deambulando;
 
+    public GameObject arma;
+    public delegate void _dañarPersonajePeriodico(int daño);
+    public static event _dañarPersonajePeriodico dañarPersonajePeriodico;
+
     #endregion
 
     #region Metodos Unity
@@ -171,6 +175,20 @@ public class Suit : MonoBehaviour
         textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
         textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
         Destroy(textGO, 1);
+    }
+
+
+    void Golpe()
+    {
+        if (arma.GetComponent<PeriodicoS>().target?.tag == "Player")
+        {
+            dañarPersonajePeriodico(10);
+        }
+    }
+
+    void Resetear()
+    {
+        arma.GetComponent<PeriodicoS>().target = null;
     }
 
     #endregion

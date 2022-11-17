@@ -21,6 +21,9 @@ TagManager:
   - Escudero
   - Caballero
   - Enemigo
+  - TriggerMurosIN
+  - TriggerMurosOUT
+  - TriggerMuros
   layers:
   - Default
   - TransparentFX

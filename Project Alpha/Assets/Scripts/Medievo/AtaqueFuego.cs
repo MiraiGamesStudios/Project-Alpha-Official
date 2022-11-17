@@ -9,11 +9,15 @@ public class AtaqueFuego : MonoBehaviour
 
     public int daño;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other?.gameObject.tag == "Player")
         {
             AFuego(daño);
+            Destroy(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }

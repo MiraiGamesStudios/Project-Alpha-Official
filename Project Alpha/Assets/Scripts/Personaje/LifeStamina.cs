@@ -144,8 +144,8 @@ public class LifeStamina : MonoBehaviour
         AtaqueFuego.AFuego -= comenzarCorrutinaVida;
         AtaqueFuego.AFuego -= comenzarCorrutinaFuego;
         AtaqueVeneno.AVeneno -= comenzarCorrutinaVida;
-        AtaqueVeneno.AVeneno += comenzarCorrutinaenvenenado;
-        AtaqueHielo.AHielo += comenzarCorrutinaVida;
+        AtaqueVeneno.AVeneno -= comenzarCorrutinaenvenenado;
+        AtaqueHielo.AHielo -= comenzarCorrutinaVida;
 
         Worker.dañarPersonajeMartillo -= comenzarCorrutinaVida;
         Suit.dañarPersonajePeriodico -= comenzarCorrutinaVida;

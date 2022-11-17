@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movementInput = Vector3.zero;
     
     public GameObject cam;
+    public GameObject camArriba;
+    public GameObject camAbajo;
     public GameObject cineMchine;
+    bool camPosUp = false;
 
     public float speedInicial;
     float speed;
@@ -28,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject hielo;
 
     bool stun = false;
+    float speedCambiada;
 
     public Joystick joystickMove;
 
@@ -49,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
         Physics.gravity *= gravity;
         animator.SetBool("Atacar", true);
+
+        speedCambiada = speedInicial;
+        
     }
 
     // Update is called once per frame
@@ -81,12 +89,16 @@ public class PlayerMovement : MonoBehaviour
     {
         AtaqueElectrico.AElectricoStun += comenzarCorrutinaStun;
         AtaqueHielo.AHielo += comenzarCorrutinaCongelado;
+
+        TirggerMuros.TriggerMuros += cambiarCamara;
     }
 
     private void OnDisable()
     {
         AtaqueElectrico.AElectricoStun -= comenzarCorrutinaStun;
         AtaqueHielo.AHielo -= comenzarCorrutinaCongelado;
+
+        TirggerMuros.TriggerMuros -= cambiarCamara;
 
     }
     #endregion
@@ -253,6 +265,30 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+
+    void cambiarCamara()
+    {
+        if (!camPosUp)
+        {
+            cineMchine.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 1;
+
+            cam.transform.position = camArriba.transform.position;
+            cam.transform.rotation = camArriba.transform.rotation;
+
+            camPosUp = true;
+        }
+        else
+        {
+            cineMchine.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
+
+            cam.transform.position = camAbajo.transform.position;
+            cam.transform.rotation = camAbajo.transform.rotation;
+
+            camPosUp = false;
+        }
+    }
+
+
     void comenzarCorrutinaStun(int seg)
     {
         StartCoroutine(Stunned(seg));
@@ -303,7 +339,6 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator congelado()
     {
-        float speedCambiada = speedInicial;
 
         hielo.SetActive(true);
         speedInicial = speedCambiada/4;

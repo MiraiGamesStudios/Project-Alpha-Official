@@ -14,7 +14,7 @@ public class AtaqueElectrico : MonoBehaviour
     public int stun;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if(other?.gameObject.tag == "Player")
         {
@@ -22,6 +22,10 @@ public class AtaqueElectrico : MonoBehaviour
             AElectricoStun(stun);
             Destroy(gameObject);
 
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

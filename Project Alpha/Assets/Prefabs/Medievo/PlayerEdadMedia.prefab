@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6820567208347892962}
   - component: {fileID: 7500102445584287462}
   - component: {fileID: 8938608782254295045}
-  - component: {fileID: 6265300941250717411}
+  - component: {fileID: 7508251727448561427}
   - component: {fileID: 5238543450139346672}
   - component: {fileID: 7981433064096823129}
   - component: {fileID: 5169066474463722173}
@@ -203,7 +203,7 @@ MonoBehaviour:
   "da\xF1o": 0
   fuego: {fileID: 0}
   veneno: {fileID: 0}
---- !u!114 &6265300941250717411
+--- !u!114 &7508251727448561427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 219684369580522530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266d3ac83f1bf6447b2c0e7d40f489ab, type: 3}
+  m_Script: {fileID: 11500000, guid: f00b58e3e3c8f194a863febe12d9dc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arma: 0
@@ -230,6 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  camArriba: {fileID: 0}
+  camAbajo: {fileID: 0}
   cineMchine: {fileID: 0}
   speedInicial: 0
   gravity: 0

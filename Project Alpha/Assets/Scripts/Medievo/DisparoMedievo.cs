@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Disparo : MonoBehaviour
+public class DisparoMedievo : MonoBehaviour
 {
-    public GameObject bulletA;
-    public GameObject bulletB;
+    public GameObject bullet;
     public Transform spawnDireccion;
     public Transform spawnRotacion;
 
     public float shotForce = 1000;
     public float shotRate = 0.5f;
+
+    private float shotRateTime = 0;
 
     GameObject newBullet;
 
@@ -19,32 +20,9 @@ public class Disparo : MonoBehaviour
 
     }
 
-    private void OnEnable()
+    public void disparoPolicia()
     {
-        Arquero.disparoArco += disparo;
-    }
-    private void OnDisable()
-    {
-        Arquero.disparoArco -= disparo;
-    }
-
-    public void disparo(Transform pos, Transform rot, GameObject bullet)
-    {
-        newBullet = Instantiate(bulletA, pos.position, rot.rotation);
-        newBullet.GetComponent<Rigidbody>().useGravity = false;
-        newBullet.transform.localScale = new Vector3(50, 50, 50);
-        newBullet.GetComponent<Rigidbody>().AddForce(pos.forward * shotForce);
-        StartCoroutine(caida(newBullet));
-        //newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.up * 250);
-
-        //shotRateTime = Time.time + shotRate;
-
-        Destroy(newBullet, 5);
-    }
-
-    public void disparoArco()
-    {
-        newBullet = Instantiate(bulletA, spawnDireccion.position, spawnRotacion.rotation);
+        newBullet = Instantiate(bullet, spawnDireccion.position, spawnRotacion.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
@@ -58,7 +36,7 @@ public class Disparo : MonoBehaviour
 
     public void disparoBallesta()
     {
-        newBullet = Instantiate(bulletB, spawnDireccion.position, spawnRotacion.rotation);
+        newBullet = Instantiate(bullet, spawnDireccion.position, spawnRotacion.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);

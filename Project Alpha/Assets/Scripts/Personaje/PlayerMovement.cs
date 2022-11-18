@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
             right.Normalize();
         }
 
-        movementInput = forward + right + new Vector3(0, -9.8f, 0).normalized;
+        movementInput = forward + right - new Vector3(0, 0.1f, 0);
 
     }
 

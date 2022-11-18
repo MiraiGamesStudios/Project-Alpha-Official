@@ -16001,7 +16001,6 @@ GameObject:
   - component: {fileID: 6120908227932548135}
   - component: {fileID: 9020170041169302239}
   - component: {fileID: 6269885825325108067}
-  - component: {fileID: 5713809981560337729}
   - component: {fileID: 7307699006291055509}
   m_Layer: 0
   m_Name: Caveman
@@ -16091,20 +16090,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  camArriba: {fileID: 0}
-  camAbajo: {fileID: 0}
   cineMchine: {fileID: 0}
-  speedInicial: 0
+  speed: 4
   gravity: 1
   VidaStamina: {fileID: 5690577475692899109}
   panelDeath: {fileID: 0}
   HUD: {fileID: 0}
-  rayos: {fileID: 0}
-  hielo: {fileID: 0}
-  joystickMove: {fileID: 0}
-  joystick: {fileID: 0}
-  Disp: 0
-  botonCorrer: {fileID: 0}
 --- !u!114 &5690577475692899109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16125,16 +16116,12 @@ MonoBehaviour:
   vidaMaxima: 100
   cantidadVida: 10
   staminaMaxima: 20
-  segRec: 0
   recuperando: 0
   outStamina: 0
   death: 0
   Lactiva: []
   Lderecha: []
   Lizquierda: []
-  "da\xF1o": 0
-  fuego: {fileID: 0}
-  veneno: {fileID: 0}
 --- !u!114 &6120908227932548135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16262,25 +16249,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5713809981560337729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7077355935387013132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00b58e3e3c8f194a863febe12d9dc6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arma: 0
-  armaIzq: 0
-  armaDch: 0
-  weapons: []
-  botonArmaIzq: {fileID: 0}
-  botonArmaDch: {fileID: 0}
-  Disp: 0
 --- !u!114 &7307699006291055509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16294,15 +16262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arma: 0
-  armaIzq: 0
-  armaDch: 0
   weapons:
   - {fileID: 3135934107325222051}
   - {fileID: 1197189908513760183}
   - {fileID: 7341759764475963229}
-  botonArmaIzq: {fileID: 0}
-  botonArmaDch: {fileID: 0}
-  Disp: 0
 --- !u!1 &7102860249676234633
 GameObject:
   m_ObjectHideFlags: 0

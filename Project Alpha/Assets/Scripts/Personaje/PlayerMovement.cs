@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -162,7 +163,14 @@ public class PlayerMovement : MonoBehaviour
             right.Normalize();
         }
 
-        movementInput = forward + right - new Vector3(0, 0.1f, 0);
+        //if (SceneManager.GetActiveScene().name == "Escenario")
+        //{
+        movementInput = forward + right;
+        //}
+        //else
+        //{
+        //    movementInput = forward + right - new Vector3(0, 0.1f, 0);
+        //}
 
     }
 
@@ -201,7 +209,14 @@ public class PlayerMovement : MonoBehaviour
             right.Normalize();
         }
 
-        movementInput = forward + right + new Vector3(0, -9.8f, 0).normalized;
+        //if (SceneManager.GetActiveScene().name == "Escenario")
+        //{
+            movementInput = forward + right;
+        //}
+        //else
+        //{
+        //    movementInput = forward + right - new Vector3(0, 0.1f, 0);
+        //}
 
     }
 

@@ -8,8 +8,10 @@ public class Flecha : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if(collision?.transform.root.gameObject.tag == "Caballero" && golpeado == false)
         {
+            print("HOLA");
             golpeado = true;
             collision.transform.root.gameObject.GetComponent<Caballero>().quitarVida(5, "5");
         }

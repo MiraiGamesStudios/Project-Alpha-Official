@@ -2412,7 +2412,7 @@ MonoBehaviour:
   camAbajo: {fileID: 2012389883}
   cineMchine: {fileID: 1645463823}
   speedInicial: 4
-  gravity: 1
+  gravity: 20
   VidaStamina: {fileID: 563406885}
   panelDeath: {fileID: 1972713208}
   HUD: {fileID: 1021464573}
@@ -2421,6 +2421,7 @@ MonoBehaviour:
   joystickMove: {fileID: 0}
   joystick: {fileID: 0}
   Disp: 0
+  botonCorrer: {fileID: 0}
 --- !u!114 &563406885
 MonoBehaviour:
   m_ObjectHideFlags: 0

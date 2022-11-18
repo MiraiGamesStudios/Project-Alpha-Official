@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8095202442933389962}
   - component: {fileID: 3846509850076625327}
   - component: {fileID: 8470283057140131377}
-  - component: {fileID: 2629014493621806174}
+  - component: {fileID: 595859850974764284}
   m_Layer: 0
   m_Name: Flecha Player
   m_TagString: Untagged
@@ -118,7 +118,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0027414588, y: 0.027338244, z: 0.0023827397}
   m_Center: {x: 0.000004555215, y: -0.013246851, z: 0.00033926722}
---- !u!114 &2629014493621806174
+--- !u!114 &595859850974764284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

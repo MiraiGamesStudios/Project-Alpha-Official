@@ -1385,10 +1385,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8d61ccc6ad1174bb79a2bd59f1a28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnightStepLeft: {fileID: 0}
-  KnightStepRight: {fileID: 0}
-  KnightStepRunLeft: {fileID: 0}
-  KnightStepRunRight: {fileID: 0}
+  KnightStepLeft: {fileID: 8300000, guid: df02c0884a7a08442a432db3394f77ec, type: 3}
+  KnightStepRight: {fileID: 8300000, guid: 31c5a9d6ed896bd4eadb2cd550c33f76, type: 3}
+  KnightStepRunLeft: {fileID: 8300000, guid: df02c0884a7a08442a432db3394f77ec, type: 3}
+  KnightStepRunRight: {fileID: 8300000, guid: 31c5a9d6ed896bd4eadb2cd550c33f76, type: 3}
   KnightAttackSound: {fileID: 0}
   KnightImpactSound: {fileID: 0}
   KnightDeathSound: {fileID: 0}

@@ -2770,7 +2770,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627630222}
-  m_LocalRotation: {x: 0.18011737, y: -0.6042037, z: 0.14263332, w: 0.7629885}
+  m_LocalRotation: {x: 0.18011737, y: -0.6042037, z: 0.14263335, w: 0.7629885}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7429,6 +7429,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5259902496321252915, guid: 06338fbe4766d7144bf0506631c8904a, type: 3}
+      propertyPath: ArcherAttackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6203d2c61e4744c49896134a2481084d, type: 3}
     - target: {fileID: 6519642282142186284, guid: 06338fbe4766d7144bf0506631c8904a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7799,6 +7803,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 644216076417493368, guid: f9f0cd6a489d2ca45b24c5d3c154077e, type: 3}
+      propertyPath: SquireStepLeft
+      value: 
+      objectReference: {fileID: 8300000, guid: 52c39d4b66deacc4b862e065a564ea00, type: 3}
+    - target: {fileID: 644216076417493368, guid: f9f0cd6a489d2ca45b24c5d3c154077e, type: 3}
+      propertyPath: SquireStepRight
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cf8278869cfb7e41ae06f2a07706b5d, type: 3}
+    - target: {fileID: 644216076417493368, guid: f9f0cd6a489d2ca45b24c5d3c154077e, type: 3}
+      propertyPath: SquireStepRunLeft
+      value: 
+      objectReference: {fileID: 8300000, guid: 52c39d4b66deacc4b862e065a564ea00, type: 3}
+    - target: {fileID: 644216076417493368, guid: f9f0cd6a489d2ca45b24c5d3c154077e, type: 3}
+      propertyPath: SquireStepRunRight
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cf8278869cfb7e41ae06f2a07706b5d, type: 3}
     - target: {fileID: 1284696219626451412, guid: f9f0cd6a489d2ca45b24c5d3c154077e, type: 3}
       propertyPath: epsilonDistancia
       value: 1.35

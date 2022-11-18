@@ -765,8 +765,8 @@ GameObject:
   - component: {fileID: 7671305150934491953}
   - component: {fileID: 7270163870858029823}
   - component: {fileID: 3895682764527641768}
-  - component: {fileID: -8539571130645926776}
   - component: {fileID: 4269381981406457072}
+  - component: {fileID: 4188508022211068852}
   m_Layer: 0
   m_Name: mago
   m_TagString: Mago
@@ -847,25 +847,6 @@ MonoBehaviour:
   epsilonDistancia: 3
   m_moveSpeed: 1
   statusMago: 1
---- !u!114 &-8539571130645926776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4025671729494795249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe2ce6ad59d5d143afab9e9c17d778b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WizardStepLeft: {fileID: 0}
-  WizardStepRight: {fileID: 0}
-  WizardStepRunLeft: {fileID: 0}
-  WizardStepRunRight: {fileID: 0}
-  WizardAttackSound: {fileID: 0}
-  WizardImpactSound: {fileID: 0}
-  WizardDeathSound: {fileID: 0}
 --- !u!82 &4269381981406457072
 AudioSource:
   m_ObjectHideFlags: 0
@@ -962,6 +943,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4188508022211068852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4025671729494795249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe2ce6ad59d5d143afab9e9c17d778b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WizardStepLeft: {fileID: 8300000, guid: 52c39d4b66deacc4b862e065a564ea00, type: 3}
+  WizardStepRight: {fileID: 8300000, guid: 0cf8278869cfb7e41ae06f2a07706b5d, type: 3}
+  WizardStepRunLeft: {fileID: 8300000, guid: 52c39d4b66deacc4b862e065a564ea00, type: 3}
+  WizardStepRunRight: {fileID: 8300000, guid: 0cf8278869cfb7e41ae06f2a07706b5d, type: 3}
+  WizardImpactSound: {fileID: 0}
+  WizardDeathSound: {fileID: 8300000, guid: c4e7f8cf299eb90459893b2c7badc046, type: 3}
+  WizardAttackSound:
+  - {fileID: 8300000, guid: 0430cf52d7bb1a543b96ed7fb692dccd, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: d378525872493c74f9fcb3d7fb68d516, type: 3}
+  - {fileID: 0}
 --- !u!1 &4211669004123299228
 GameObject:
   m_ObjectHideFlags: 0

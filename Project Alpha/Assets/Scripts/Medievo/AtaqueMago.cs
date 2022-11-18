@@ -18,7 +18,7 @@ public class AtaqueMago : MonoBehaviour
     public void lanzarHechizo()
     {
         int i = Random.Range(0, 4);
-
+        this.gameObject.GetComponent<WizardSound>().WizardAttack(i);
         newBullet = Instantiate(hechizos[i], spawnDireccion.position, spawnRotacion.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         //newBullet.transform.localScale = new Vector3(50, 50, 50);

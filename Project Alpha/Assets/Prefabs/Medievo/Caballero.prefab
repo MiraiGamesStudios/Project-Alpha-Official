@@ -1389,7 +1389,7 @@ MonoBehaviour:
   KnightStepRight: {fileID: 8300000, guid: 31c5a9d6ed896bd4eadb2cd550c33f76, type: 3}
   KnightStepRunLeft: {fileID: 8300000, guid: df02c0884a7a08442a432db3394f77ec, type: 3}
   KnightStepRunRight: {fileID: 8300000, guid: 31c5a9d6ed896bd4eadb2cd550c33f76, type: 3}
-  KnightAttackSound: {fileID: 0}
+  KnightAttackSound: {fileID: 8300000, guid: eeb672cba4f71d046b1334a5f3a202d7, type: 3}
   KnightImpactSound: {fileID: 0}
   KnightDeathSound: {fileID: 0}
   KnightFurySound: {fileID: 0}

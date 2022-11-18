@@ -7129,7 +7129,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065196824}
+      - m_Target: {fileID: 594846399}
         m_TargetAssemblyTypeName: ButonMenus, Assembly-CSharp
         m_MethodName: CambiarEscena
         m_Mode: 3

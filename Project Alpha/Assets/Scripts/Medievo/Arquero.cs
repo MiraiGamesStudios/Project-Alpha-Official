@@ -110,6 +110,7 @@ public class Arquero : MonoBehaviour
 
             case Status.atacando:
                 //atacar
+                Alinear(player.transform.position);
                 anim.SetBool("Atacar", true);
                 anim.SetFloat("Xaxis", 1.5f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);

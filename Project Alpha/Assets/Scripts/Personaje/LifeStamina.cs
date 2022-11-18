@@ -75,7 +75,7 @@ public class LifeStamina : MonoBehaviour
 
     public void cambiarHUDArmas()
     {
-        if (Input.GetKey(KeyCode.Alpha1) || this.gameObject.GetComponent<Player>().arma == 0)
+        if (Input.GetKey(KeyCode.Alpha1) || this.gameObject.GetComponent<Weapons>().arma == 0)
         {
             Lactiva[0].SetActive(true);
             Lactiva[1].SetActive(false);
@@ -91,7 +91,7 @@ public class LifeStamina : MonoBehaviour
 
 
         }
-        if (Input.GetKey(KeyCode.Alpha2) || this.gameObject.GetComponent<Player>().arma == 1)
+        if (Input.GetKey(KeyCode.Alpha2) || this.gameObject.GetComponent<Weapons>().arma == 1)
         {
             Lactiva[0].SetActive(false);
             Lactiva[1].SetActive(true);
@@ -106,7 +106,7 @@ public class LifeStamina : MonoBehaviour
             Lizquierda[2].SetActive(false);
 
         }
-        if (Input.GetKey(KeyCode.Alpha3) || this.gameObject.GetComponent<Player>().arma == 2)
+        if (Input.GetKey(KeyCode.Alpha3) || this.gameObject.GetComponent<Weapons>().arma == 2)
         {
             Lactiva[0].SetActive(false);
             Lactiva[1].SetActive(false);

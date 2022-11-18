@@ -11,7 +11,7 @@ public class Porra : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.GetComponentInParent<Dinosaur>().gameObject.tag == "Dinosaur" && !espera)
+        if (collider?.GetComponentInParent<Dinosaur>().gameObject.tag == "Dinosaur" && !espera)
         {
             targetP = collider.GetComponentInParent<Dinosaur>().gameObject;
         }

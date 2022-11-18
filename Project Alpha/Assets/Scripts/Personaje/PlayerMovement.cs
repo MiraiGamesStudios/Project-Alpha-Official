@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     float speedCambiada;
 
     public Joystick joystickMove;
+    public GameObject joystick;
+
+    public int Disp;
+
 
     #endregion
 
@@ -44,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         capsule = GetComponent<CapsuleCollider>();
+
+        Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
+
     }
 
     // Start is called before the first frame update
@@ -56,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Atacar", true);
 
         speedCambiada = speedInicial;
+
+        if (Disp == 1)
+        {
+            joystick.SetActive(true);
+        }
         
     }
 
@@ -72,7 +84,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            calculateMov();
+            if (Disp == 0) //esta en ordenador 
+            {
+                calculateMovPC();
+            }
+            else //esta en movil/tablet
+            {
+                calculateMovJoystick();
+            }
             moveAnimations();
         }
 
@@ -105,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
     #region Movimiento
 
-    void calculateMov()
+    void calculateMovPC()
     {
 
         Vector3 forward = Vector3.zero; 
@@ -144,6 +163,45 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void calculateMovJoystick()
+    {
+
+        Vector3 forward = Vector3.zero;
+        Vector3 right = Vector3.zero;
+        Vector3 up = Vector3.zero;
+
+        if (joystickMove.Vertical > 0.15f)
+        {
+            forward = cam.transform.forward;
+            forward.y = 0;
+            forward.Normalize();
+
+
+        }
+        else if (joystickMove.Vertical < -0.15f)
+        {
+            forward = -cam.transform.forward;
+            forward.y = 0;
+            forward.Normalize();
+        }
+
+        if (joystickMove.Horizontal > 0.15f)
+        {
+            right = cam.transform.right;
+            right.y = 0;
+            right.Normalize();
+        }
+        else if (joystickMove.Horizontal < -0.15f)
+        {
+            right = -cam.transform.right;
+            right.y = 0;
+            right.Normalize();
+        }
+
+        movementInput = forward + right + new Vector3(0, -9.8f, 0).normalized;
+
+    }
+
     void Move(Vector3 direction)
     {
         rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
@@ -152,18 +210,13 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Multiplicador", speed / 2);
     }
 
-    void MoveJoystick()
-    {
-        rb.velocity = new Vector3(joystickMove.Horizontal * speed, rb.velocity.y, joystickMove.Vertical * speed);
-    }
-
     #endregion
 
     #region Animaciones
 
     void moveAnimations()
     {
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") || joystickMove.Vertical > 0.15f)
         {
             if (VidaStamina.outStamina == false) // Si tiene stamina entra
             {
@@ -174,11 +227,11 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
                     animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
-                    if (Input.GetKey("d"))
+                    if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f)
                     {
                         animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                     }
-                    else if (Input.GetKey("a"))
+                    else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f)
                     {
                         animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
                     }
@@ -195,11 +248,11 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                     animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
-                    if (Input.GetKey("d"))
+                    if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f)
                     {
                         animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                     }
-                    else if (Input.GetKey("a"))
+                    else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f)
                     {
                         animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
                     }
@@ -219,16 +272,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        else if (Input.GetKey("s")) // Caminar hacia atras
+        else if (Input.GetKey("s") || joystickMove.Vertical < -0.15) // Caminar hacia atras
         {
             speed = speedInicial/4*3;
             animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
 
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f)
             {
                 animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
             }
-            else if (Input.GetKey("a"))
+            else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f)
             {
                 animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
             }
@@ -239,7 +292,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        else if (Input.GetKey("d")) // Caminar derecha
+        else if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f) // Caminar derecha
         {
             speed = speedInicial / 4 * 3;
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
@@ -247,7 +300,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        else if (Input.GetKey("a")) // Caminar izquierda
+        else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f) // Caminar izquierda
         {
             speed = speedInicial / 4 * 3;
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);

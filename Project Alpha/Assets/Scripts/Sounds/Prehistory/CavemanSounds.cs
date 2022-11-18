@@ -17,133 +17,122 @@ public class CavemanSounds : MonoBehaviour
 
     private void StepRTired()
     {
-        if (animate.GetFloat("Xaxis") >= 3 && animate.GetFloat("Xaxis") < 4)
+        if(animate.GetFloat("Multiplicador") == 0.5f)
         {
-            audioManagement.PlayOneShot(sounds[1], 0.4f);
-            //print("RTired");
+            if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
+            {
+                audioManagement.PlayOneShot(sounds[1], 0.4f);
+                print("RTired");
+            }
         }
+        
 
     }
 
     private void StepLTired()
     {
-        if (animate.GetFloat("Xaxis") >= 3 && animate.GetFloat("Xaxis") < 4)
+        if (animate.GetFloat("Multiplicador") == 0.5)
         {
-            audioManagement.PlayOneShot(sounds[0], 0.4f);
-            //print("LTired");
+            if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
+            {
+                audioManagement.PlayOneShot(sounds[1], 0.4f);
+                print("LTired");
+            }
         }
     }
 
     private void StepLWalking()
     {
-        /*if (animate.GetFloat("Xaxis") > 1.06 && animate.GetFloat("Xaxis") <= 2)
-        {
-            if (animate.GetFloat("Yaxis") == 0)
-            {
-                audioManagement.PlayOneShot(sounds[1], 0.4f);
-                print("LWalking");
-            }
-            if (animate.GetFloat("Yaxis") >= -1 && animate.GetFloat("Yaxis") < 0)
-            {
-                audioManagement.PlayOneShot(sounds[1], 0.4f);
-                print("LLateral");
-            }
-
-            if (animate.GetFloat("Yaxis") > 0 && animate.GetFloat("Yaxis") <= 1)
-            {
-                audioManagement.PlayOneShot(sounds[1], 0.4f);
-                print("LLateral");
-            }
-        }*/
-
-        if (animate.GetFloat("Xaxis") > 1.06 && animate.GetFloat("Xaxis") <= 2.05)
+        //Recto
+        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f )
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            //print("LWalking");
+            print("LWalkingrect");
+        }
+
+        //Lateral Dcha
+        if (animate.GetFloat("Xaxis") > 0.25f && animate.GetFloat("Xaxis") <= 1.0f )
+        {
+            audioManagement.PlayOneShot(sounds[1], 0.4f);
+            print("LWalkingdcha");
+        }
+
+        //Lateral Izqda
+        if (animate.GetFloat("Xaxis") >= (-1.0f) && animate.GetFloat("Xaxis") < -0.25f)
+        {
+            audioManagement.PlayOneShot(sounds[1], 0.4f);
+            print("LWalkingizqda");
         }
     }
 
     private void StepRWalking()
     {
-        /*if (animate.GetFloat("Xaxis") > 1.06 && animate.GetFloat("Xaxis") <= 2)
-        {
-            if (animate.GetFloat("Yaxis") == 0)
-            {
-                audioManagement.PlayOneShot(sounds[1], 0.4f);
-                print("RWalking");
-            }
-            if (animate.GetFloat("Yaxis") >= -1 && animate.GetFloat("Yaxis") < 0)
-            {
-                audioManagement.PlayOneShot(sounds[1], 0.4f);
-                print("RLateral");
-            }
 
-            if (animate.GetFloat("Yaxis") > 0 && animate.GetFloat("Yaxis") <= 1)
-            {
-                audioManagement.PlayOneShot(sounds[1], 0.4f);
-                print("RLateral");
-            }
-        }*/
-
-        if (animate.GetFloat("Xaxis") > 1.06 && animate.GetFloat("Xaxis") <= 2.05)
+        //Recto
+        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            //print("RWalking");
+            print("RWalkingrect");
+        }
+
+        //Lateral Dcha
+        if (animate.GetFloat("Xaxis") > 0.2f && animate.GetFloat("Xaxis") <= 1.0f)
+        {
+            audioManagement.PlayOneShot(sounds[1], 0.4f);
+            print("RWalkingdcha");
+        }
+
+        //Lateral Izqda
+        if (animate.GetFloat("Xaxis") >= (-1.0f) && animate.GetFloat("Xaxis") < -0.25f)
+        {
+            audioManagement.PlayOneShot(sounds[1], 0.4f);
+            print("RWalkingizqda");
         }
     }
 
     private void StepLRunning()
     {
-        if (animate.GetFloat("Xaxis") > 2.1 && animate.GetFloat("Xaxis") <= 3)
+        if (animate.GetFloat("Yaxis") > 1.0f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador")==4)
         {
             audioManagement.PlayOneShot(sounds[3], 0.4f);
-            //print("LRunning");
+            print("LRunning");
         }
     }
 
     private void StepRRunning()
     {
-        if (animate.GetFloat("Xaxis") > 2.1 && animate.GetFloat("Xaxis") <= 3)
+        if (animate.GetFloat("Yaxis") > 1.0f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador") == 4)
         {
             audioManagement.PlayOneShot(sounds[3], 0.4f);
-            //print("RRunning");
+            print("RRunning");
         }
     }
 
     private void StepRBack()
     {
-        if (animate.GetFloat("Xaxis") >= 0 && animate.GetFloat("Xaxis") < 0.90)
+        if (animate.GetFloat("Yaxis") > -1.0f && animate.GetFloat("Xaxis") <= 0.11f)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            //print("RBack");
+            print("RBack");
         }
     }
 
     private void StepLBack()
     {
-        if (animate.GetFloat("Xaxis") >= 0 && animate.GetFloat("Xaxis") < 0.90)
+        if (animate.GetFloat("Yaxis") > -1.0f && animate.GetFloat("Yaxis") <= 0.11f)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            //print("LBack");
+            print("LBack");
         }
     }
 
-    private void StepLIdle()
+    private void StepIdle()
     {
-        if (animate.GetFloat("Xaxis") >= 0.95 && animate.GetFloat("Xaxis") < 1.05)
+        if (animate.GetFloat("Yaxis") > -0.1f && animate.GetFloat("Yaxis") < 0.1f && animate.GetFloat("Xaxis") > -0.1f && animate.GetFloat("Xaxis") < 0.1f)
         {
             audioManagement.Stop();
-            //print("LIdle");
         }
-    }
 
-    private void StepRIdle()
-    {
-        if (animate.GetFloat("Xaxis") >= 0.95 && animate.GetFloat("Xaxis") < 1.05)
-        {
-            audioManagement.Stop();
-            //print("RIdle");
-        }
     }
 
 }

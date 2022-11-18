@@ -12,6 +12,7 @@ public class Cohete : MonoBehaviour
     {
         this.GetComponent<MeshRenderer>().enabled = false;
         this.GetComponent<BoxCollider>().enabled = false;
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
         Explosion.GetComponent<Explosion>().hacerGrande();
         ExplosionParticula.SetActive(true);

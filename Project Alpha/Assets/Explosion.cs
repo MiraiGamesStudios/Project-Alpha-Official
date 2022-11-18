@@ -12,21 +12,25 @@ public class Explosion : MonoBehaviour
         {
             other?.transform.root.gameObject.GetComponent<Police>().quitarVida(20, "20");
             other.transform.root.gameObject.GetComponent<Police>().golpeadoExplosion = true;
+            StartCoroutine(destruir());
         }
         if (other?.transform.root.gameObject.tag == "Militar")
         {
             other?.transform.root.gameObject.GetComponent<Militar>().quitarVida(20, "20");
             other.transform.root.gameObject.GetComponent<Militar>().golpeadoExplosion = true;
+            StartCoroutine(destruir());
         }
         if (other?.transform.root.gameObject.tag == "Worker")
         {
             other?.transform.root.gameObject.GetComponent<Worker>().quitarVida(20, "20");
             other.transform.root.gameObject.GetComponent<Worker>().golpeadoExplosion = true;
+            StartCoroutine(destruir());
         }
         if (other?.transform.root.gameObject.tag == "Suit")
         {
             other?.transform.root.gameObject.GetComponent<Suit>().quitarVida(20, "20");
             other.transform.root.gameObject.GetComponent<Suit>().golpeadoExplosion = true;
+            StartCoroutine(destruir());
         }
     }
 
@@ -35,33 +39,9 @@ public class Explosion : MonoBehaviour
         this.GetComponent<SphereCollider>().radius = 0.05f;
     }
 
-    //public void hacerDaño(int daño)
-    //{
-    //    int i = 0;
-    //    while(enemigosDentro.Count != 0)
-    //    {
-    //        if(enemigosDentro[i].tag == "Policia")
-    //        {
-    //            enemigosDentro[i].GetComponent<Police>().quitarVida(daño, "20");
-    //            enemigosDentro.Remove(enemigosDentro[i]);
-    //        }
-    //        if (enemigosDentro[i].tag == "Militar")
-    //        {
-    //            enemigosDentro[i].GetComponent<Militar>().quitarVida(daño, "20");
-    //            enemigosDentro.Remove(enemigosDentro[i]);
-    //        }
-    //        if (enemigosDentro[i].tag == "Suit")
-    //        {
-    //            enemigosDentro[i].GetComponent<Suit>().quitarVida(daño, "20");
-    //            enemigosDentro.Remove(enemigosDentro[i]);
-    //        }
-    //        if (enemigosDentro[i].tag == "Worker")
-    //        {
-    //            enemigosDentro[i].GetComponent<Worker>().quitarVida(daño, "20");
-    //            enemigosDentro.Remove(enemigosDentro[i]);
-    //        }
+    IEnumerator destruir()
+    {
 
-    //        i++;
-    //    }
-    //}
+        yield return new WaitForSeconds(0.5f);
+    }
 }

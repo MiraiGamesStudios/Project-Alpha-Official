@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     public Joystick joystickMove;
     public GameObject joystick;
 
-    public int Disp;
+    public int Disp = 0;
 
 
     #endregion
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         capsule = GetComponent<CapsuleCollider>();
 
-        Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
+        //Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
 
     }
 
@@ -216,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
 
     void moveAnimations()
     {
-        if (Input.GetKey("w") || joystickMove.Vertical > 0.15f)
+        if (Input.GetKey("w") || joystickMove?.Vertical > 0.15f)
         {
             if (VidaStamina.outStamina == false) // Si tiene stamina entra
             {
@@ -227,11 +227,11 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
                     animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
-                    if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f)
+                    if (Input.GetKey("d") || joystickMove?.Horizontal > 0.15f)
                     {
                         animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                     }
-                    else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f)
+                    else if (Input.GetKey("a") || joystickMove?.Horizontal < -0.15f)
                     {
                         animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
                     }
@@ -248,11 +248,11 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
                     animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
 
-                    if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f)
+                    if (Input.GetKey("d") || joystickMove?.Horizontal > 0.15f)
                     {
                         animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                     }
-                    else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f)
+                    else if (Input.GetKey("a") || joystickMove?.Horizontal < -0.15f)
                     {
                         animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
                     }
@@ -272,16 +272,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        else if (Input.GetKey("s") || joystickMove.Vertical < -0.15) // Caminar hacia atras
+        else if (Input.GetKey("s") || joystickMove?.Vertical < -0.15) // Caminar hacia atras
         {
             speed = speedInicial/4*3;
             animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
 
-            if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f)
+            if (Input.GetKey("d") || joystickMove?.Horizontal > 0.15f)
             {
                 animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
             }
-            else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f)
+            else if (Input.GetKey("a") || joystickMove?.Horizontal < -0.15f)
             {
                 animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
             }
@@ -292,7 +292,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        else if (Input.GetKey("d") || joystickMove.Horizontal > 0.15f) // Caminar derecha
+        else if (Input.GetKey("d") || joystickMove?.Horizontal > 0.15f) // Caminar derecha
         {
             speed = speedInicial / 4 * 3;
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
@@ -300,7 +300,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        else if (Input.GetKey("a") || joystickMove.Horizontal < -0.15f) // Caminar izquierda
+        else if (Input.GetKey("a") || joystickMove?.Horizontal < -0.15f) // Caminar izquierda
         {
             speed = speedInicial / 4 * 3;
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);

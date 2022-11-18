@@ -7,6 +7,7 @@ public class Disparo : MonoBehaviour
     public GameObject bulletA;
     public GameObject bulletB;
     public Transform spawnDireccion;
+    public Transform spawnRotacionVirote;
     public Transform spawnRotacion;
 
     public float shotForce = 1000;
@@ -58,7 +59,7 @@ public class Disparo : MonoBehaviour
 
     public void disparoBallesta()
     {
-        newBullet = Instantiate(bulletB, spawnDireccion.position, spawnRotacion.rotation);
+        newBullet = Instantiate(bulletB, spawnDireccion.position, spawnRotacionVirote.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);

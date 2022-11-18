@@ -21,9 +21,11 @@ TagManager:
   - Escudero
   - Caballero
   - Enemigo
-  - TriggerMurosIN
-  - TriggerMurosOUT
   - TriggerMuros
+  - Worker
+  - Militar
+  - Policia
+  - Suit
   layers:
   - Default
   - TransparentFX

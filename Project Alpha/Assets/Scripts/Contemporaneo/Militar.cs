@@ -30,6 +30,8 @@ public class Militar : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusMilitar = Status.deambulando;
 
+    public bool golpeadoExplosion = false;
+
     #endregion
 
     #region Metodos Unity
@@ -160,8 +162,12 @@ public class Militar : MonoBehaviour
 
     public void quitarVida(int daño, string numDaño)
     {
-        life -= daño;
-        numerosPantalla(daño, numDaño);
+        if (!golpeadoExplosion && statusMilitar != Status.muerto)
+        {
+            life -= daño;
+            numerosPantalla(daño, numDaño);
+            StartCoroutine(resetearGolpeExplosion());
+        }
     }
 
     void numerosPantalla(float tamaño, string daño)
@@ -174,5 +180,10 @@ public class Militar : MonoBehaviour
         Destroy(textGO, 1);
     }
 
+    IEnumerator resetearGolpeExplosion()
+    {
+        yield return new WaitForSeconds(0.5f);
+        golpeadoExplosion = false;
+    }
     #endregion
 }

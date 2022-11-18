@@ -34,6 +34,8 @@ public class Suit : MonoBehaviour
     public delegate void _dañarPersonajePeriodico(int daño);
     public static event _dañarPersonajePeriodico dañarPersonajePeriodico;
 
+    public bool golpeadoExplosion = false;
+
     #endregion
 
     #region Metodos Unity
@@ -164,8 +166,12 @@ public class Suit : MonoBehaviour
 
     public void quitarVida(int daño, string numDaño)
     {
-        life -= daño;
-        numerosPantalla(daño, numDaño);
+        if (!golpeadoExplosion && statusSuit != Status.muerto)
+        {
+            life -= daño;
+            numerosPantalla(daño, numDaño);
+            StartCoroutine(resetearGolpeExplosion());
+        }
     }
 
     void numerosPantalla(float tamaño, string daño)
@@ -192,5 +198,10 @@ public class Suit : MonoBehaviour
         arma.GetComponent<PeriodicoS>().target = null;
     }
 
+    IEnumerator resetearGolpeExplosion()
+    {
+        yield return new WaitForSeconds(0.5f);
+        golpeadoExplosion = false;
+    }
     #endregion
 }

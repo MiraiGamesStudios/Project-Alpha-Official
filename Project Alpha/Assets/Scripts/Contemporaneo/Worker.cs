@@ -34,6 +34,8 @@ public class Worker : MonoBehaviour
     public delegate void _dañarPersonajeMartillo(int daño);
     public static event _dañarPersonajeMartillo dañarPersonajeMartillo;
 
+    public bool golpeadoExplosion = false;
+
     #endregion
 
     #region Metodos Unity
@@ -164,8 +166,12 @@ public class Worker : MonoBehaviour
 
     public void quitarVida(int daño, string numDaño)
     {
-        life -= daño;
-        numerosPantalla(daño, numDaño);
+        if (!golpeadoExplosion && statusWorker != Status.muerto)
+        {
+            life -= daño;
+            numerosPantalla(daño, numDaño);
+            StartCoroutine(resetearGolpeExplosion());
+        }
     }
 
     void numerosPantalla(float tamaño, string daño)
@@ -189,6 +195,12 @@ public class Worker : MonoBehaviour
     void Resetear()
     {
         arma.GetComponent<MartilloW>().target = null;
+    }
+
+    IEnumerator resetearGolpeExplosion()
+    {
+        yield return new WaitForSeconds(0.5f);
+        golpeadoExplosion = false;
     }
 
     #endregion

@@ -172,7 +172,7 @@ public class LifeStamina : MonoBehaviour
     #endregion
 
     #region Metodos Stamina
-    IEnumerator staminaLost()
+    public IEnumerator staminaLost()
     {
 
         float i = 0.01f;
@@ -184,6 +184,11 @@ public class LifeStamina : MonoBehaviour
             outStamina = true;
         }
         yield return null;
+    }
+
+    public void ComenzarCorrutinaStamina()
+    {
+        StartCoroutine(staminaLost());
     }
 
     IEnumerator staminaRecover()

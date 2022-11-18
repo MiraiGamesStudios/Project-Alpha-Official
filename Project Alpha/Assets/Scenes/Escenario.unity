@@ -5395,6 +5395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 434381606}
     - target: {fileID: 7875247875034299886, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+      propertyPath: botonCorrer
+      value: 
+      objectReference: {fileID: 1790004715}
+    - target: {fileID: 7875247875034299886, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
       propertyPath: joystickMove
       value: 
       objectReference: {fileID: 2069918660}
@@ -8252,6 +8256,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb1694bdddd41443be1fc4e006c841b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &920312101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5690577475692899109, guid: 4c63fd9fe7b0dfd49ab16fbd57cc8c13, type: 3}
+  m_PrefabInstance: {fileID: 559051420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799854901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6224e9927c76a418d03170bddd5fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &920736395
@@ -14926,7 +14941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1790004716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15048,6 +15063,18 @@ MonoBehaviour:
       - m_Target: {fileID: 920312100}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: movAnimatorCorrerMovil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 920312101}
+        m_TargetAssemblyTypeName: LifeStamina, Assembly-CSharp
+        m_MethodName: ComenzarCorrutinaStamina
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

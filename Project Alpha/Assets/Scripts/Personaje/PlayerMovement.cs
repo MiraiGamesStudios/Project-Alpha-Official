@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         capsule = GetComponent<CapsuleCollider>();
 
-        //Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
+        Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
 
     }
 

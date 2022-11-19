@@ -10,7 +10,7 @@ public class Escudero : MonoBehaviour
     public float life;
     bool restado = true;
 
-    public GameManager gm;
+    public GameManagerMedievo gm;
 
     private Animator anim;
 
@@ -49,7 +49,7 @@ public class Escudero : MonoBehaviour
             if (restado)
             {
                 restado = false;
-                //gm.enemigosVivos--;
+                gm.enemigosVivos--;
             }
 
         }
@@ -109,6 +109,7 @@ public class Escudero : MonoBehaviour
                 {
                     avancePersonaje = 1.0f;
                     statusEscudero = Status.corriendo;
+                    anim.SetBool("Atacar", false);
                 }
                 break;
 
@@ -130,11 +131,11 @@ public class Escudero : MonoBehaviour
         if (area == 1)
         {
             //se elimina
-            //gm.GetComponent<GameManager>().arquerosArea1.Remove(this.gameObject);
+            gm.GetComponent<GameManagerMedievo>().escArea1.Remove(this.gameObject);
         }
         else if (area == 2)
         {
-            //gm.GetComponent<GameManager>().arquerosArea2.Remove(this.gameObject);
+            gm.GetComponent<GameManagerMedievo>().escArea2.Remove(this.gameObject);
         }
 
     }

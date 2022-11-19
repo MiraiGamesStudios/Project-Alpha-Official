@@ -11,7 +11,7 @@ public class Arquero : MonoBehaviour
     public float life;
     bool restado = true;
 
-    public GameManager gm;
+    public GameManagerMedievo gm;
 
     private Animator anim;
 
@@ -59,7 +59,7 @@ public class Arquero : MonoBehaviour
             if (restado)
             {
                 restado = false;
-                //gm.enemigosVivos--;
+                gm.enemigosVivos--;
             }
 
         }
@@ -120,6 +120,7 @@ public class Arquero : MonoBehaviour
                 {
                     avancePersonaje = 1.0f;
                     statusArquero = Status.corriendo;
+                    anim.SetBool("Atacar", false);
                 }
                 break;
 
@@ -141,11 +142,11 @@ public class Arquero : MonoBehaviour
         if (area == 1)
         {
             //se elimina
-            //gm.GetComponent<GameManager>().arquerosArea1.Remove(this.gameObject);
+            gm.GetComponent<GameManagerMedievo>().arqArea1.Remove(this.gameObject);
         }
         else if (area == 2)
         {
-            //gm.GetComponent<GameManager>().arquerosArea2.Remove(this.gameObject);
+            gm.GetComponent<GameManagerMedievo>().arqArea2.Remove(this.gameObject);
         }
 
     }

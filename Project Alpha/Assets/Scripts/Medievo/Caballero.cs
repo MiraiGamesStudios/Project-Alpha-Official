@@ -11,7 +11,7 @@ public class Caballero : MonoBehaviour
     public float life;
     bool restado = true;
 
-    public GameManager gm;
+    public GameManagerMedievo gm;
     private Animator anim;
     GameObject player;
 
@@ -47,7 +47,7 @@ public class Caballero : MonoBehaviour
             if (restado)
             {
                 restado = false;
-                //gm.enemigosVivos--;
+                gm.enemigosVivos--;
             }
 
         }
@@ -109,6 +109,7 @@ public class Caballero : MonoBehaviour
                 {
                     avancePersonaje = 1.0f;
                     statusCaballero = Status.corriendo;
+                    anim.SetBool("Atacar", false);
                 }
                 break;
 
@@ -130,11 +131,11 @@ public class Caballero : MonoBehaviour
         if (area == 1)
         {
             //se elimina
-            //gm.GetComponent<GameManager>().arquerosArea1.Remove(this.gameObject);
+            gm.GetComponent<GameManagerMedievo>().cabArea1.Remove(this.gameObject);
         }
         else if (area == 2)
         {
-            //gm.GetComponent<GameManager>().arquerosArea2.Remove(this.gameObject);
+            gm.GetComponent<GameManagerMedievo>().cabArea2.Remove(this.gameObject);
         }
 
     }

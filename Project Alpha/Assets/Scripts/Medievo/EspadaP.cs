@@ -8,14 +8,24 @@ public class EspadaP : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other?.transform.root.gameObject.tag == "Mago"
-            || other?.transform.root.gameObject.tag == "Arquero"
-            || other?.transform.root.gameObject.tag == "Caballero"
-            || other?.transform.root.gameObject.tag == "Escudero")
-        {
-            
-            targetE = other.transform.root.gameObject;
 
+        print(other.gameObject.GetComponentInParent<Mago>().gameObject.tag);
+
+        if (other?.gameObject.GetComponentInParent<Mago>().gameObject.tag == "Mago")
+        {
+            targetE = other.GetComponentInParent<Mago>().gameObject;
+        }
+        if (other?.gameObject.GetComponentInParent<Arquero>().gameObject.tag == "Arquero")
+        {
+            targetE = other.GetComponentInParent<Arquero>().gameObject;
+        }
+        if (other?.gameObject.GetComponentInParent<Escudero>().gameObject.tag == "Escudero")
+        {
+            targetE = other.GetComponentInParent<Escudero>().gameObject;
+        }
+        if (other?.gameObject.GetComponentInParent<Caballero>().gameObject.tag == "Caballero")
+        {
+            targetE = other.GetComponentInParent<Caballero>().gameObject;
         }
     }
 }

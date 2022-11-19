@@ -21,8 +21,10 @@ public class DisparoPlayerCont : MonoBehaviour
 
     public void disparoPistola()
     {
+        
         newBullet = Instantiate(bullet, spawnDireccionP.position, spawnRotacionP.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
+        this.gameObject.GetComponent<CPlayerSounds>().GunAttack();
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionP.forward * shotForce);
         //StartCoroutine(caida(newBullet));
@@ -34,6 +36,7 @@ public class DisparoPlayerCont : MonoBehaviour
     {
         newBullet = Instantiate(bullet, spawnDireccionRi.position, spawnRotacionRi.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
+        this.gameObject.GetComponent<CPlayerSounds>().RifleAttack();
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRi.forward * shotForce);
         //StartCoroutine(caida(newBullet));
@@ -45,6 +48,7 @@ public class DisparoPlayerCont : MonoBehaviour
     {
         newBullet = Instantiate(rocket, spawnDireccionRo.position, spawnRotacionRo.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
+        this.gameObject.GetComponent<CPlayerSounds>().RPGAttack();
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRo.forward * shotForce);
         //StartCoroutine(caida(newBullet));

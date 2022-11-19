@@ -28,7 +28,7 @@ public class Arquero : MonoBehaviour
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
-    public Status statusArquero = Status.deambulando;
+    public Status statusArquero = Status.quieto;
 
     public delegate void _disparoArco(Transform posicion, Transform rotacion, GameObject bullet);
     public static event _disparoArco disparoArco;
@@ -82,6 +82,10 @@ public class Arquero : MonoBehaviour
                 //idle
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
+                {
+                    statusArquero = Status.corriendo;
+                }
                 break;
 
             case Status.deambulando:
@@ -127,7 +131,7 @@ public class Arquero : MonoBehaviour
             case Status.muerto:
                 //morir
                 this.tag = "Enemigo";
-                anim.SetLayerWeight(2, 1);
+                anim.SetLayerWeight(1, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
                 Destroy(this.gameObject, 3.5f);
@@ -170,7 +174,10 @@ public class Arquero : MonoBehaviour
 
     void DispararFlecha()
     {
-        disparoArco(pos, rot, bullet);
+        if(anim.GetBool("Atacar") == true)
+        {
+            disparoArco(pos, rot, bullet);
+        }
     }
 
     public void quitarVida(int daño, string numDaño)

@@ -26,7 +26,7 @@ public class Escudero : MonoBehaviour
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
-    public Status statusEscudero = Status.deambulando;
+    public Status statusEscudero = Status.quieto;
 
     #endregion
 
@@ -72,6 +72,10 @@ public class Escudero : MonoBehaviour
                 //idle
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
+                {
+                    statusEscudero = Status.corriendo;
+                }
                 break;
 
             case Status.deambulando:

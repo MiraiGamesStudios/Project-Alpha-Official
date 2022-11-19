@@ -7,6 +7,7 @@ public class Reincio : MonoBehaviour
 {
     public void CambiarEscena(int indice)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(indice);
     }
 }

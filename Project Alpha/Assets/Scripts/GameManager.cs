@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> tricesArea2;
     public GameObject alphaArea2;
 
+    public GameObject boos;
+    public GameObject panelVictoria;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (boos.GetComponent<Dinosaur>().life <= 0)
+        {
+            panelVictoria.SetActive(true);
+        }
+
         enemysPerRound(round);
 
         if (zona == 0 && spawneados==false)

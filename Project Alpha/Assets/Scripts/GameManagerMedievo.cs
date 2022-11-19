@@ -28,6 +28,9 @@ public class GameManagerMedievo : MonoBehaviour
     public List<GameObject> arqArea2;
     public List<GameObject> escArea2;
 
+    public GameObject boos;
+    public GameObject panelVictoria;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,10 @@ public class GameManagerMedievo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (boos.GetComponent<Mago>().life <=0)
+        {
+            panelVictoria.SetActive(true);
+        }
         enemysPerRound(round);
 
         if (zona == 0 && spawneados == false)

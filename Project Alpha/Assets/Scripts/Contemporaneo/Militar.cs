@@ -11,7 +11,7 @@ public class Militar : MonoBehaviour
     public float life;
     bool restado = true;
 
-    public GameManager gm;
+    public GameManagerContemporaneo gm;
 
     private Animator anim;
 
@@ -28,7 +28,7 @@ public class Militar : MonoBehaviour
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
-    public Status statusMilitar = Status.deambulando;
+    public Status statusMilitar = Status.quieto;
 
     public bool golpeadoExplosion = false;
 
@@ -54,7 +54,7 @@ public class Militar : MonoBehaviour
             if (restado)
             {
                 restado = false;
-                //gm.enemigosVivos--;
+                gm.enemigosVivos--;
             }
 
         }
@@ -77,6 +77,10 @@ public class Militar : MonoBehaviour
                 //idle
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
+                {
+                    statusMilitar = Status.corriendo;
+                }
                 break;
 
             case Status.deambulando:
@@ -114,6 +118,7 @@ public class Militar : MonoBehaviour
                 {
                     avancePersonaje = 1.0f;
                     statusMilitar = Status.corriendo;
+                    anim.SetBool("Atacar", false);
                 }
                 break;
 
@@ -134,11 +139,11 @@ public class Militar : MonoBehaviour
         if (area == 1)
         {
             //se elimina
-            //gm.GetComponent<GameManager>().MilitarsArea1.Remove(this.gameObject);
+            gm.GetComponent<GameManagerContemporaneo>().milArea1.Remove(this.gameObject);
         }
         else if (area == 2)
         {
-            //gm.GetComponent<GameManager>().MilitarsArea2.Remove(this.gameObject);
+            gm.GetComponent<GameManagerContemporaneo>().milArea2.Remove(this.gameObject);
         }
 
     }

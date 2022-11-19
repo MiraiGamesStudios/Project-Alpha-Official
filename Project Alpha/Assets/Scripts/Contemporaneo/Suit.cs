@@ -11,7 +11,7 @@ public class Suit : MonoBehaviour
     public float life;
     bool restado = true;
 
-    public GameManager gm;
+    public GameManagerContemporaneo gm;
 
     private Animator anim;
 
@@ -28,7 +28,7 @@ public class Suit : MonoBehaviour
     [SerializeField] private float m_moveSpeed = 1;         // Velocidad de avance del personaje
 
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
-    public Status statusSuit = Status.deambulando;
+    public Status statusSuit = Status.quieto;
 
     public GameObject arma;
     public delegate void _dañarPersonajePeriodico(int daño);
@@ -58,7 +58,7 @@ public class Suit : MonoBehaviour
             if (restado)
             {
                 restado = false;
-                //gm.enemigosVivos--;
+                gm.enemigosVivos--;
             }
 
         }
@@ -81,6 +81,10 @@ public class Suit : MonoBehaviour
                 //idle
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
+                {
+                    statusSuit = Status.corriendo;
+                }
                 break;
 
             case Status.deambulando:
@@ -138,11 +142,11 @@ public class Suit : MonoBehaviour
         if (area == 1)
         {
             //se elimina
-            //gm.GetComponent<GameManager>().SuitsArea1.Remove(this.gameObject);
+            gm.GetComponent<GameManagerContemporaneo>().suitArea1.Remove(this.gameObject);
         }
         else if (area == 2)
         {
-            //gm.GetComponent<GameManager>().SuitsArea2.Remove(this.gameObject);
+            gm.GetComponent<GameManagerContemporaneo>().suitArea2.Remove(this.gameObject);
         }
 
     }

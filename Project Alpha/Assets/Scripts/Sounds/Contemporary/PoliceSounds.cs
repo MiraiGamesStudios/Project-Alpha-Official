@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PoliceSounds : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private AudioClip PlayerStepLeft, PlayerStepRight, PlayerRunStepLeft, PlayerRunStepRight,
+        PlayerRifleAttack, PlayerGunAttack, PlayerRPGAttack, PlayerDeathSound;
 
-    // Update is called once per frame
-    void Update()
+    private AudioSource audioManagement;
+    private Animator animate;
+
+    private void Awake()
     {
-        
+        audioManagement = GetComponent<AudioSource>();
+        animate = GetComponent<Animator>();
     }
 }

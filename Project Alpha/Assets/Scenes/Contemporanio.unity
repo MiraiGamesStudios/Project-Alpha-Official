@@ -1122,7 +1122,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1328,7 +1328,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1380,6 +1380,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef4ed615e3b9ab44993475fc69539d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStepLeft: {fileID: 0}
+  PlayerStepRight: {fileID: 0}
+  PlayerRunStepLeft: {fileID: 0}
+  PlayerRunStepRight: {fileID: 0}
+  PlayerRifleAttack: {fileID: 0}
+  PlayerGunAttack: {fileID: 0}
+  PlayerRPGAttack: {fileID: 0}
+  PlayerDeathSound: {fileID: 0}
 --- !u!1 &130973868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 295682021827791483, guid: dcce26889d3276945a013e8fb5f92180, type: 3}
@@ -1690,7 +1698,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3079,7 +3087,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3495,7 +3503,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4299,7 +4307,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6089,7 +6097,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7597,7 +7605,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7971,7 +7979,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8079,7 +8087,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8718,6 +8726,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef4ed615e3b9ab44993475fc69539d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStepLeft: {fileID: 0}
+  PlayerStepRight: {fileID: 0}
+  PlayerRunStepLeft: {fileID: 0}
+  PlayerRunStepRight: {fileID: 0}
+  PlayerRifleAttack: {fileID: 0}
+  PlayerGunAttack: {fileID: 0}
+  PlayerRPGAttack: {fileID: 0}
+  PlayerDeathSound: {fileID: 0}
 --- !u!82 &743233363
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8774,7 +8790,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10423,6 +10439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef4ed615e3b9ab44993475fc69539d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStepLeft: {fileID: 0}
+  PlayerStepRight: {fileID: 0}
+  PlayerRunStepLeft: {fileID: 0}
+  PlayerRunStepRight: {fileID: 0}
+  PlayerRifleAttack: {fileID: 0}
+  PlayerGunAttack: {fileID: 0}
+  PlayerRPGAttack: {fileID: 0}
+  PlayerDeathSound: {fileID: 0}
 --- !u!82 &993990778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10479,7 +10503,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -11617,7 +11641,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -11981,7 +12005,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -12553,7 +12577,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13046,7 +13070,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13263,6 +13287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef4ed615e3b9ab44993475fc69539d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStepLeft: {fileID: 0}
+  PlayerStepRight: {fileID: 0}
+  PlayerRunStepLeft: {fileID: 0}
+  PlayerRunStepRight: {fileID: 0}
+  PlayerRifleAttack: {fileID: 0}
+  PlayerGunAttack: {fileID: 0}
+  PlayerRPGAttack: {fileID: 0}
+  PlayerDeathSound: {fileID: 0}
 --- !u!82 &1285016391
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13319,7 +13351,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13869,7 +13901,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14217,7 +14249,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14834,7 +14866,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15291,7 +15323,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -17303,7 +17335,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -17813,6 +17845,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef4ed615e3b9ab44993475fc69539d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStepLeft: {fileID: 0}
+  PlayerStepRight: {fileID: 0}
+  PlayerRunStepLeft: {fileID: 0}
+  PlayerRunStepRight: {fileID: 0}
+  PlayerRifleAttack: {fileID: 0}
+  PlayerGunAttack: {fileID: 0}
+  PlayerRPGAttack: {fileID: 0}
+  PlayerDeathSound: {fileID: 0}
 --- !u!82 &1624172035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17869,7 +17909,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -19136,7 +19176,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -20758,7 +20798,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -22281,7 +22321,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

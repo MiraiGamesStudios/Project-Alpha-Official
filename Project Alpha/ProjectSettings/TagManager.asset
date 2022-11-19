@@ -26,6 +26,7 @@ TagManager:
   - Militar
   - Policia
   - Suit
+  - Boss
   layers:
   - Default
   - TransparentFX

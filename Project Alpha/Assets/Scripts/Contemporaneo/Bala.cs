@@ -8,36 +8,43 @@ public class Bala : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision?.transform.root.gameObject.tag == "Policia" && golpeado == false)
+        if (collision?.gameObject.GetComponentInParent<Worker>()?.gameObject.tag == "Worker" && golpeado == false)
         {
             golpeado = true;
-            collision.transform.root.gameObject.GetComponent<Police>().quitarVida(5, "5");
+            collision.gameObject.GetComponentInParent<Worker>().quitarVida(5, "5");
             Destroy(gameObject);
         }
 
-        if (collision?.transform.root.gameObject.tag == "Militar" && golpeado == false)
+        if (collision?.gameObject.GetComponentInParent<Suit>()?.gameObject.tag == "Suit" && golpeado == false)
         {
             golpeado = true;
-            collision.transform.root.gameObject.GetComponent<Militar>().quitarVida(5, "5");
+            collision.gameObject.GetComponentInParent<Suit>().quitarVida(5, "5");
             Destroy(gameObject);
         }
 
-        if (collision?.transform.root.gameObject.tag == "Worker" && golpeado == false)
+        if (collision?.gameObject.GetComponentInParent<Militar>()?.gameObject.tag == "Militar" && golpeado == false)
         {
             golpeado = true;
-            collision.transform.root.gameObject.GetComponent<Worker>().quitarVida(5, "5");
+            collision.gameObject.GetComponentInParent<Militar>().quitarVida(5, "5");
             Destroy(gameObject);
         }
 
-        if (collision?.transform.root.gameObject.tag == "Suit" && golpeado == false)
+        if (collision?.gameObject.GetComponentInParent<Police>()?.gameObject.tag == "Policia" && golpeado == false)
         {
             golpeado = true;
-            collision.transform.root.gameObject.GetComponent<Suit>().quitarVida(5, "5");
+            collision.gameObject.GetComponentInParent<Police>().quitarVida(5, "5");
+            Destroy(gameObject);
+        }
+        if (collision?.gameObject.GetComponentInParent<Militar>()?.gameObject.tag == "Boss" && golpeado == false)
+        {
+            golpeado = true;
+            collision.gameObject.GetComponentInParent<Militar>().quitarVida(5, "5");
             Destroy(gameObject);
         }
         else
         {
             golpeado = true;
+            Destroy(gameObject);
         }
 
     }

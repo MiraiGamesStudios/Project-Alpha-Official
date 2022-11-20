@@ -13,20 +13,20 @@ public class PegarMedievo : MonoBehaviour
 
     void GolpeEspada()
     {
-        if(espada.targetE.tag == "Caballero")
+        if(espada.targetE?.tag == "Caballero")
         {
             print(espada.targetE);
             espada.targetE.GetComponent<Caballero>().quitarVida(10, "10");
         }
-        if (espada.targetE.tag == "Arquero")
+        if (espada.targetE?.tag == "Arquero")
         {
             espada.targetE.GetComponent<Arquero>().quitarVida(10, "10");
         }
-        if (espada.targetE.tag == "Escudero")
+        if (espada.targetE?.tag == "Escudero")
         {
             espada.targetE.GetComponent<Escudero>().quitarVida(10, "10");
         }
-        if (espada.targetE.tag == "Mago")
+        if (espada.targetE?.tag == "Mago")
         {
             espada.targetE.GetComponent<Mago>().quitarVida(10, "10");
         }

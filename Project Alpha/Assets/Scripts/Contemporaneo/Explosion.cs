@@ -8,28 +8,34 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other?.transform.root.gameObject.tag == "Policia")
+        if (other?.gameObject.GetComponentInParent<Worker>()?.gameObject.tag == "Worker")
         {
-            other?.transform.root.gameObject.GetComponent<Police>().quitarVida(20, "20");
-            other.transform.root.gameObject.GetComponent<Police>().golpeadoExplosion = true;
+            other?.gameObject.GetComponentInParent<Worker>().quitarVida(20, "20");
+            other.gameObject.GetComponentInParent<Worker>().golpeadoExplosion = true;
             StartCoroutine(destruir());
         }
-        if (other?.transform.root.gameObject.tag == "Militar")
+        if (other?.gameObject.GetComponentInParent<Suit>()?.gameObject.tag == "Suit")
         {
-            other?.transform.root.gameObject.GetComponent<Militar>().quitarVida(20, "20");
-            other.transform.root.gameObject.GetComponent<Militar>().golpeadoExplosion = true;
+            other?.gameObject.GetComponentInParent<Suit>().quitarVida(20, "20");
+            other.gameObject.GetComponentInParent<Suit>().golpeadoExplosion = true;
             StartCoroutine(destruir());
         }
-        if (other?.transform.root.gameObject.tag == "Worker")
+        if (other?.gameObject.GetComponentInParent<Militar>()?.gameObject.tag == "Militar")
         {
-            other?.transform.root.gameObject.GetComponent<Worker>().quitarVida(20, "20");
-            other.transform.root.gameObject.GetComponent<Worker>().golpeadoExplosion = true;
+            other?.gameObject.GetComponentInParent<Militar>().quitarVida(20, "20");
+            other.gameObject.GetComponentInParent<Militar>().golpeadoExplosion = true;
             StartCoroutine(destruir());
         }
-        if (other?.transform.root.gameObject.tag == "Suit")
+        if (other?.gameObject.GetComponentInParent<Police>()?.gameObject.tag == "Policia")
         {
-            other?.transform.root.gameObject.GetComponent<Suit>().quitarVida(20, "20");
-            other.transform.root.gameObject.GetComponent<Suit>().golpeadoExplosion = true;
+            other?.gameObject.GetComponentInParent<Police>().quitarVida(20, "20");
+            other.gameObject.GetComponentInParent<Police>().golpeadoExplosion = true;
+            StartCoroutine(destruir());
+        }
+        if (other?.gameObject.GetComponentInParent<Militar>()?.gameObject.tag == "Boss")
+        {
+            other?.gameObject.GetComponentInParent<Militar>().quitarVida(20, "20");
+            other.gameObject.GetComponentInParent<Militar>().golpeadoExplosion = true;
             StartCoroutine(destruir());
         }
     }
@@ -41,7 +47,7 @@ public class Explosion : MonoBehaviour
 
     IEnumerator destruir()
     {
-
+        this.GetComponent<SphereCollider>().enabled = false;
         yield return new WaitForSeconds(0.5f);
     }
 }

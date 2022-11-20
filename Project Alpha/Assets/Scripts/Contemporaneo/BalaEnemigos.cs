@@ -11,6 +11,11 @@ public class BalaEnemigos : MonoBehaviour
         {
             golpeado = true;
             collision.gameObject.GetComponent<LifeStamina>().comenzarCorrutinaVida(10);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
     }

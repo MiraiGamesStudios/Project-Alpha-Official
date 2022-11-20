@@ -3,7 +3,12 @@ guid: e2c867bdc35444846afa0e16ff2eb4a9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - WorkerStepRight: {fileID: 8300000, guid: 652b5b6d0d5b1c8419cccb882e419299, type: 3}
+  - WorkerStepLeft: {fileID: 8300000, guid: bd1d96a308481de4b8a7767584053b99, type: 3}
+  - WorkerImpactSound: {instanceID: 0}
+  - WorkerAttackSound: {instanceID: 0}
+  - WorkerDeathSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

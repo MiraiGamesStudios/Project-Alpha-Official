@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             joystick.SetActive(true);
             botonCorrer.SetActive(true);
+            cineMchine.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 400;
         }
         
     }

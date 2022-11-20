@@ -47,6 +47,7 @@ public class Explosion : MonoBehaviour
 
     IEnumerator destruir()
     {
+        yield return new WaitForSeconds(0.1f);
         this.GetComponent<SphereCollider>().enabled = false;
         yield return new WaitForSeconds(0.5f);
     }

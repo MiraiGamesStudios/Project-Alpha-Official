@@ -125,8 +125,7 @@ public class LifeStamina : MonoBehaviour
 
     private void OnEnable()
     {
-        Dinosaur.dañoRecibido += mostrarDaño;
-
+        
         EspadaCaballero.dañarPersonajeC += comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE += comenzarCorrutinaVida; 
         AtaqueElectrico.AElectricoDaño += comenzarCorrutinaVida;
@@ -142,8 +141,7 @@ public class LifeStamina : MonoBehaviour
     }
     private void OnDisable()
     {
-        Dinosaur.dañoRecibido -= mostrarDaño;
-
+        
         EspadaCaballero.dañarPersonajeC -= comenzarCorrutinaVida;
         EscudoE.dañarPersonajeE -= comenzarCorrutinaVida;
         AtaqueElectrico.AElectricoDaño -= comenzarCorrutinaVida;
@@ -232,9 +230,8 @@ public class LifeStamina : MonoBehaviour
     }
     public IEnumerator lifeLost(float vida)
     {
-        //StopCoroutine(recoverLife(segundosParaRecuperar));
         daño = true;
-
+        mostrarDaño();
         float cantidadPerdida = 0;
         float i = 0.2f;
 
@@ -287,14 +284,7 @@ public class LifeStamina : MonoBehaviour
     }
     public IEnumerator recoverLife(int seg)
     {
-        //for (int j = 0; j < seg; j++)
-        //{
-        //    yield return new WaitForSeconds(1);
-        //    if (daño)
-        //    {
-        //        break;
-        //    }
-        //}
+
         float i = 0.05f;
 
         while (lifeSlide.value != vidaMaxima)

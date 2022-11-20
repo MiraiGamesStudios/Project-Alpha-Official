@@ -31,15 +31,12 @@ public class Disparo : MonoBehaviour
 
     public void disparo(Transform pos, Transform rot, GameObject bullet)
     {
-        newBullet = Instantiate(bulletA, pos.position, rot.rotation);
+        newBullet = Instantiate(bullet, pos.position, rot.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(pos.forward * shotForce);
         StartCoroutine(caida(newBullet));
-        //newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.up * 250);
-
-        //shotRateTime = Time.time + shotRate;
-
+        
         Destroy(newBullet, 5);
     }
 
@@ -50,10 +47,7 @@ public class Disparo : MonoBehaviour
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
         StartCoroutine(caida(newBullet));
-        //newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.up * 250);
-
-        //shotRateTime = Time.time + shotRate;
-
+        
         Destroy(newBullet, 5);
     }
 
@@ -64,10 +58,7 @@ public class Disparo : MonoBehaviour
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
         StartCoroutine(caida(newBullet));
-        //newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.up * 250);
-
-        //shotRateTime = Time.time + shotRate;
-
+        
         Destroy(newBullet, 5);
     }
 

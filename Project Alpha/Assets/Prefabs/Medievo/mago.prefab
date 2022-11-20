@@ -963,9 +963,9 @@ MonoBehaviour:
   WizardDeathSound: {fileID: 8300000, guid: c4e7f8cf299eb90459893b2c7badc046, type: 3}
   WizardAttackSound:
   - {fileID: 8300000, guid: 0430cf52d7bb1a543b96ed7fb692dccd, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 07f25ac5d0dba4744a7ea16dbca52275, type: 3}
   - {fileID: 8300000, guid: d378525872493c74f9fcb3d7fb68d516, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 15b6fea96a2aca5459331b85a788d8ae, type: 3}
 --- !u!1 &4211669004123299228
 GameObject:
   m_ObjectHideFlags: 0

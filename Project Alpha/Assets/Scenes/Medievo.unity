@@ -5612,7 +5612,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853797671}
-  m_LocalRotation: {x: 0.10405769, y: -0.615318, z: 0.082402356, w: 0.77702355}
+  m_LocalRotation: {x: 0.1040577, y: -0.61531794, z: 0.08240235, w: 0.7770236}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10576,7 +10576,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760070108}
-  m_LocalRotation: {x: 0.021206146, y: -0.6205839, z: 0.016792955, w: 0.7836734}
+  m_LocalRotation: {x: 0.02120614, y: -0.62058383, z: 0.016792951, w: 0.7836734}
   m_LocalPosition: {x: -151.46072, y: -82.76291, z: -704.486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11088,7 +11088,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813090631}
-  m_LocalRotation: {x: 0.021206139, y: -0.6205839, z: 0.016792951, w: 0.7836734}
+  m_LocalRotation: {x: 0.021206133, y: -0.62058383, z: 0.016792942, w: 0.78367347}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12962,6 +12962,18 @@ PrefabInstance:
       propertyPath: espada
       value: 
       objectReference: {fileID: 1359309843}
+    - target: {fileID: 8251523379626037144, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
+      propertyPath: PlayerBowAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 68851e0956f4f494eb914aaff45343c5, type: 3}
+    - target: {fileID: 8251523379626037144, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
+      propertyPath: PlayerSwordAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: bbaf572437ac72d49bcff269b83d8889, type: 3}
+    - target: {fileID: 8251523379626037144, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
+      propertyPath: PlayerCrossbowAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 68851e0956f4f494eb914aaff45343c5, type: 3}
     - target: {fileID: 8370595549960880945, guid: 517febe53249ccd44a11fcb9cc3d16c1, type: 3}
       propertyPath: m_CollisionDetection
       value: 0

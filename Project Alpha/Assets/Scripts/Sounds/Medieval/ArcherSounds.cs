@@ -18,7 +18,7 @@ public class ArcherSounds : MonoBehaviour
 
     private void StepLWalk()
     {
-        if (animate.GetFloat("Xaxis") <= 0.5 && animate.GetFloat("Xaxis") >0 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") <= 0.5 && animate.GetFloat("Xaxis") >0.1 && animate.GetFloat("Yaxis") == 0)
         {
             audioManagement.PlayOneShot(ArcherStepLeft, 0.4f);
             print("ArcherLWalk");
@@ -27,7 +27,7 @@ public class ArcherSounds : MonoBehaviour
 
     private void StepRWalk()
     {
-        if (animate.GetFloat("Xaxis") <= 0.5 && animate.GetFloat("Xaxis") > 0 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") <= 0.5 && animate.GetFloat("Xaxis") > 0.1 && animate.GetFloat("Yaxis") == 0)
         {
             audioManagement.PlayOneShot(ArcherStepRight, 0.4f);
             print("ArcherRWalk");
@@ -36,7 +36,7 @@ public class ArcherSounds : MonoBehaviour
 
     private void StepRRun()
     {
-        if (animate.GetFloat("Xaxis") < 1.3 && animate.GetFloat("Xaxis") > 0.5 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") < 1.2 && animate.GetFloat("Xaxis") > 0.5 && animate.GetFloat("Yaxis") == 0)
         {
             audioManagement.PlayOneShot(ArcherStepRight, 0.4f);
             print("ArcherRRun");
@@ -44,7 +44,7 @@ public class ArcherSounds : MonoBehaviour
     }
     private void StepLRun()
     {
-        if (animate.GetFloat("Xaxis") < 1.3 && animate.GetFloat("Xaxis") > 0.5 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") < 1.2f && animate.GetFloat("Xaxis") > 0.5f && animate.GetFloat("Yaxis") == 0.0f)
         {
             audioManagement.PlayOneShot(ArcherStepRight, 0.4f);
             print("ArcherLRun");
@@ -53,7 +53,10 @@ public class ArcherSounds : MonoBehaviour
 
     private void ArcherIdle()
     {
-
+        if (animate.GetFloat("Xaxis") < 0.1f)
+        {
+            audioManagement.Stop();
+        }
     }
 
     private void ArcherDeath()
@@ -63,7 +66,10 @@ public class ArcherSounds : MonoBehaviour
 
     private void ArcherAttack()
     {
-
+        if (animate.GetBool("Atacar") == true)
+        {
+            audioManagement.PlayOneShot(ArcherAttackSound, 0.4f);
+        }
     }
 
     private void ArcherImpact()

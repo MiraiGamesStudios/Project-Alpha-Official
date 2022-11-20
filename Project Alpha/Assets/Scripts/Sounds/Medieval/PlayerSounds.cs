@@ -110,17 +110,35 @@ public class PlayerSounds : MonoBehaviour
 
     private void SwordAttack()
     {
-
+        if (animate.GetBool("Atacar") == true)
+        {
+            if(animate.GetInteger("ArmaElegida") == 0)
+            {
+                audioManagement.PlayOneShot(PlayerSwordAttack, 0.4f);
+            }
+        }
     }
 
     private void CrossbowAttack()
     {
-
+        if (animate.GetBool("Atacar") == true)
+        {
+            if (animate.GetInteger("ArmaElegida") == 2)
+            {
+                audioManagement.PlayOneShot(PlayerCrossbowAttack, 0.4f);
+            }
+        }
     }
 
     private void BowAttack()
     {
-
+        if (animate.GetBool("Atacar") == true)
+        {
+            if (animate.GetInteger("ArmaElegida") == 1)
+            {
+                audioManagement.PlayOneShot(PlayerBowAttack, 0.4f);
+            }
+        }
     }
 
     private void PlayerIdle()

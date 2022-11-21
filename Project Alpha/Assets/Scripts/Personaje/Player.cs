@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
+        Disp = FindObjectOfType<Dispositivo>().dispositivo;
     }
 
     // Start is called before the first frame update

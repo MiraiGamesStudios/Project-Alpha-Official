@@ -51,8 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
         capsule = GetComponent<CapsuleCollider>();
 
-        Disp = GameObject.Find("ControlesBotones").GetComponent<ButonMenus>().dispositivo;
-
+        Disp = FindObjectOfType<Dispositivo>().dispositivo;
     }
 
     // Start is called before the first frame update

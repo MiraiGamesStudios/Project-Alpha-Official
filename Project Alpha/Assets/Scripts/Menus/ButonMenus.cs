@@ -10,39 +10,20 @@ public class ButonMenus : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Controles;
     public GameObject Creditos;
-    public GameObject Reinicio;
-    public GameObject Era1;
-    public GameObject Era2;
-    public GameObject Era3;
-    public GameObject SelectorMovil;
-    public GameObject SelectorPC;
-    public GameObject PreguntaDispositivo;
+    public GameObject PanelEras;
+    public GameObject PanelSeleccionarDispositivo;
+    public GameObject ScriptDispositivo;
 
-    public int dispositivo;
-
-
-    private void Awake()
-    {
-        if(ButonMenus.Instance == null)
-        {
-            ButonMenus.Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main Menu"))
+        {
+            if (FindObjectOfType<Dispositivo>().dispositivoElegido == true)
+            {
+                PanelSeleccionarDispositivo?.SetActive(false);
+                PanelEras?.SetActive(true);
+            }
+        }
         
     }
 
@@ -66,6 +47,7 @@ public class ButonMenus : MonoBehaviour
     public void CambiarEscena(int indice)
     {
         SceneManager.LoadScene(indice);
+        Time.timeScale = 1;
     }
 
     public void ReiniciarPartida(int indice)
@@ -73,29 +55,7 @@ public class ButonMenus : MonoBehaviour
         SceneManager.LoadScene(indice);
     }
 
-    public void ButtonMovil()
-    {
-        SelectorMovil.SetActive(false);
-        SelectorPC.SetActive(false);
-        PreguntaDispositivo.SetActive(false);
-        Era1.SetActive(true);
-        Era2.SetActive(true);
-        Era3.SetActive(true);
-        dispositivo = 1;
-        
-    }
-
-    public void ButtonPC()
-    {
-        SelectorMovil.SetActive(false);
-        SelectorPC.SetActive(false);
-        PreguntaDispositivo.SetActive(false);
-        Era1.SetActive(true);
-        Era2.SetActive(true);
-        Era3.SetActive(true);
-        dispositivo = 0;
-        
-    }
-
     
+
+
 }

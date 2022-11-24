@@ -204,7 +204,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arma: 0
+  armaIzq: 0
+  armaDch: 0
   weapons: []
+  botonArmaIzq: {fileID: 0}
+  botonArmaDch: {fileID: 0}
+  Disp: 0
 --- !u!114 &5238543450139346672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +234,9 @@ MonoBehaviour:
   rayos: {fileID: 0}
   hielo: {fileID: 0}
   joystickMove: {fileID: 0}
+  joystick: {fileID: 0}
+  Disp: 0
+  botonCorrer: {fileID: 0}
 --- !u!114 &7981433064096823129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +261,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8347675
-  m_Height: 3.530463
+  m_Height: 2.740658
   m_Direction: 1
-  m_Center: {x: 0.24263602, y: 1.5359184, z: 0.092131674}
+  m_Center: {x: 0.24263602, y: 1.9308208, z: 0.092131674}
 --- !u!54 &8370595549960880945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -937,6 +945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541101679830335339}
+  - component: {fileID: 6976716730891899264}
   m_Layer: 0
   m_Name: mixamorig:LeftFoot
   m_TagString: Untagged
@@ -960,6 +969,19 @@ Transform:
   m_Father: {fileID: 2600744749353315674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6976716730891899264
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754010143940731537}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0.12}
 --- !u!1 &3949218989640108351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3736446213472181781}
+  - component: {fileID: 4690315265755788739}
   m_Layer: 0
   m_Name: mixamorig:RightFoot
   m_TagString: Untagged
@@ -1633,6 +1656,19 @@ Transform:
   m_Father: {fileID: 6444925807254566706}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4690315265755788739
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8946175048077940516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0.12}
 --- !u!1 &9109636554534886376
 GameObject:
   m_ObjectHideFlags: 0

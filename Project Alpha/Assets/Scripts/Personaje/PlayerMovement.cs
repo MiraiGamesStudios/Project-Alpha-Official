@@ -222,6 +222,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Move(Vector3 direction)
     {
+        
+        //rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
         rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
 

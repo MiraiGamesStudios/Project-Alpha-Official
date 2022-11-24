@@ -5269,6 +5269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3152660986599415834}
+  - component: {fileID: 3835770791969824632}
   m_Layer: 0
   m_Name: mixamorig:LeftFoot
   m_TagString: Untagged
@@ -5292,6 +5293,19 @@ Transform:
   m_Father: {fileID: 7187455994239776908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3835770791969824632
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3654785909597090166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.14
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!1 &3701111799881646064
 GameObject:
   m_ObjectHideFlags: 0
@@ -10533,6 +10547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3510980921456095183}
+  - component: {fileID: 5222292190886158739}
   m_Layer: 0
   m_Name: mixamorig:RightFoot
   m_TagString: Untagged
@@ -10556,6 +10571,19 @@ Transform:
   m_Father: {fileID: 8758947232212211309}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5222292190886158739
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932732398111460221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.14
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!1 &5023561793960097824
 GameObject:
   m_ObjectHideFlags: 0
@@ -16073,10 +16101,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.9093667
-  m_Height: 3.3235579
+  m_Radius: 0.71665585
+  m_Height: 2.727753
   m_Direction: 1
-  m_Center: {x: 0.07282138, y: 1.6699734, z: 0.40738463}
+  m_Center: {x: 0.07282138, y: 1.7111565, z: 0.21467376}
 --- !u!114 &7875247875034299886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16274,7 +16302,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arma: 0
+  armaIzq: 0
+  armaDch: 0
   weapons: []
+  botonArmaIzq: {fileID: 0}
+  botonArmaDch: {fileID: 0}
+  Disp: 0
 --- !u!1 &7102860249676234633
 GameObject:
   m_ObjectHideFlags: 0

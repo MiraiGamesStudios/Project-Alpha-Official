@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject joystick;
 
     public int Disp = 0;
-
     public GameObject botonCorrer;
 
 

@@ -6,6 +6,10 @@ public class Pausa : MonoBehaviour
 {
     public GameObject botonPausa;
     public GameObject menuPausa;
+    public GameObject BotonVolverVolumen;
+    public Dispositivo device;
+
+    public Texture[] textures = new Texture[2];
 
     public void pausa()
     {

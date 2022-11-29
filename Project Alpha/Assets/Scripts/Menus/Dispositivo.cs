@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dispositivo : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class Dispositivo : MonoBehaviour
 
     public GameObject PanelEras;
     public GameObject PanelSeleccionarDispositivo;
+
     public bool dispositivoElegido = false;
 
     public int dispositivo;
+
+    public int Language;
 
 
     private void Awake()
@@ -24,6 +28,11 @@ public class Dispositivo : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void ButtonMovil()

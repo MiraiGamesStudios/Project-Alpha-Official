@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: c66b5539bb02696459302de29a078db5, type: 3}
+  - {fileID: 2100000, guid: 4e08d2ad66d2e3d4592b46305ee33b32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 6770755307914077831}
+  ExplosionParticula: {fileID: 0}
   "da\xF1oCohete": 20
 --- !u!1 &6770755307914077831
 GameObject:

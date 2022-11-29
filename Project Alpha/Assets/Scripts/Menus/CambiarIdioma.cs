@@ -15,6 +15,7 @@ public class CambiarIdioma : MonoBehaviour
     private void Awake()
     {
         Language = FindObjectOfType<Dispositivo>().Language;
+        //English.GetComponent<RawImage>().color = new Color(1, 1, 1, 0.5f);
     }
 
     // Update is called once per frame

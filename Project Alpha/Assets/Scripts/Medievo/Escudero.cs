@@ -28,6 +28,8 @@ public class Escudero : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusEscudero = Status.quieto;
 
+    public bool puedoDañar = false;
+
     #endregion
 
     #region Metodos Unity
@@ -165,7 +167,14 @@ public class Escudero : MonoBehaviour
         life -= daño;
         numerosPantalla(daño, numDaño);
     }
-
+    void golpearOn()
+    {
+        puedoDañar = true;
+    }
+    void golpearOff()
+    {
+        puedoDañar = false;
+    }
     void numerosPantalla(float tamaño, string daño)
     {
         Vector3 posicion = new Vector3(this.transform.position.x + 0.5f + Random.Range(-0.3f, 0.3f), this.transform.position.y + 2.8f + Random.Range(0f, 0.5f), this.transform.position.z + Random.Range(-0.5f, 0.5f));

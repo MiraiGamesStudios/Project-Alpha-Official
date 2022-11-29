@@ -16132,6 +16132,7 @@ MonoBehaviour:
   joystick: {fileID: 0}
   Disp: 0
   botonCorrer: {fileID: 0}
+  speedController: 0
 --- !u!114 &5690577475692899109
 MonoBehaviour:
   m_ObjectHideFlags: 0

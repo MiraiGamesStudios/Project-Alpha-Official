@@ -27,6 +27,8 @@ public class Caballero : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusCaballero = Status.quieto;
 
+    public bool puedoDañar = false;
+
     #endregion
 
     #region Metodos Unity
@@ -165,6 +167,15 @@ public class Caballero : MonoBehaviour
     {
         life -= daño;
         numerosPantalla(daño, numDaño);
+    }
+
+    void golpearOn()
+    {
+        puedoDañar = true;
+    }
+    void golpearOff()
+    {
+        puedoDañar = false;
     }
 
     void numerosPantalla(float tamaño, string daño)

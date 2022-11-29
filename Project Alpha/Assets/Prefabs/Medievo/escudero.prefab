@@ -512,6 +512,7 @@ MonoBehaviour:
   epsilonDistancia: 3
   m_moveSpeed: 1
   statusEscudero: 1
+  "puedoDa\xF1ar": 0
 --- !u!114 &644216076417493368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1848,3 +1849,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febdb16b966b3e444838ca7d7c3b55ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escudero: {fileID: 1660744613791543878}

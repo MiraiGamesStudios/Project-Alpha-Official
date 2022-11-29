@@ -41,13 +41,14 @@ public class PlayerMovement : MonoBehaviour
     public int Disp = 0;
     public GameObject botonCorrer;
 
+    private CharacterController character;
 
     #endregion
 
     #region Metodos Unity
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
 
         capsule = GetComponent<CapsuleCollider>();
 
@@ -63,7 +64,11 @@ public class PlayerMovement : MonoBehaviour
         Physics.gravity *= gravity;
         animator.SetBool("Atacar", true);
 
+        speed = speedInicial;
         speedCambiada = speedInicial;
+
+        animator.SetFloat("Multiplicador", speed / 2);
+
 
         if (Disp == 1)
         {
@@ -71,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
             botonCorrer.SetActive(true);
             cineMchine.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = 400;
         }
+
+        character = GetComponent<CharacterController>();
+        character.detectCollisions = false;
         
     }
 
@@ -89,12 +97,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Disp == 0) //esta en ordenador 
             {
-                calculateMovPC();
+                MoveControllerPC();
+                //calculateMovPC();
                 moveAnimationsPC();
             }
             else //esta en movil/tablet
             {
-                calculateMovJoystick();
+                MoveControllerPhone();
                 movAnimationsAndarMovil();
             }
             
@@ -103,17 +112,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        Move(movementInput);
-    }
+    //private void FixedUpdate()
+    //{
+    //    Move(movementInput);
+    //}
 
     private void OnEnable()
     {
         AtaqueElectrico.AElectricoStun += comenzarCorrutinaStun;
         AtaqueHielo.AHielo += comenzarCorrutinaCongelado;
 
-        TirggerMuros.TriggerMuros += cambiarCamara;
+        TirggerMuros.TriggerMurosDentro += mantenerCamara;
+        TirggerMuros.TriggerMurosExit += camaraExit;
+
     }
 
     private void OnDisable()
@@ -121,19 +132,19 @@ public class PlayerMovement : MonoBehaviour
         AtaqueElectrico.AElectricoStun -= comenzarCorrutinaStun;
         AtaqueHielo.AHielo -= comenzarCorrutinaCongelado;
 
-        TirggerMuros.TriggerMuros -= cambiarCamara;
+        TirggerMuros.TriggerMurosDentro -= cambiarCamara;
+        TirggerMuros.TriggerMurosExit -= camaraExit;
 
     }
     #endregion
 
     #region Movimiento
 
-    void calculateMovPC()
+    void MoveControllerPC()
     {
-
-        Vector3 forward = Vector3.zero; 
+        Vector3 forward = Vector3.zero;
         Vector3 right = Vector3.zero;
-        Vector3 up = Vector3.zero;
+        Vector3 up = new Vector3(0, -gravity, 0);
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -163,23 +174,64 @@ public class PlayerMovement : MonoBehaviour
             right.Normalize();
         }
 
-        //if (SceneManager.GetActiveScene().name == "Escenario")
-        //{
         movementInput = forward + right;
-        //}
-        //else
-        //{
-        //    movementInput = forward + right - new Vector3(0, 0.1f, 0);
-        //}
 
+        character.Move((movementInput.normalized * speed + up)*Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
     }
 
-    void calculateMovJoystick()
+    //void calculateMovPC()
+    //{
+
+    //    Vector3 forward = Vector3.zero; 
+    //    Vector3 right = Vector3.zero;
+    //    Vector3 up = Vector3.zero;
+
+    //    if (Input.GetKey(KeyCode.W))
+    //    {
+    //        forward = cam.transform.forward;
+    //        forward.y = 0;
+    //        forward.Normalize();
+
+
+    //    }
+    //    else if (Input.GetKey(KeyCode.S))
+    //    {
+    //        forward = -cam.transform.forward;
+    //        forward.y = 0;
+    //        forward.Normalize();
+    //    }
+
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        right = cam.transform.right;
+    //        right.y = 0;
+    //        right.Normalize();
+    //    }
+    //    else if (Input.GetKey(KeyCode.A))
+    //    {
+    //        right = -cam.transform.right;
+    //        right.y = 0;
+    //        right.Normalize();
+    //    }
+
+    //    //if (SceneManager.GetActiveScene().name == "Escenario")
+    //    //{
+    //    movementInput = forward + right;
+    //    //}
+    //    //else
+    //    //{
+    //    //    movementInput = forward + right - new Vector3(0, 0.1f, 0);
+    //    //}
+
+    //}
+
+    void MoveControllerPhone()
     {
 
         Vector3 forward = Vector3.zero;
         Vector3 right = Vector3.zero;
-        Vector3 up = Vector3.zero;
+        Vector3 up = new Vector3(0, -gravity, 0);
 
         if (joystickMove.Vertical > 0.15f)
         {
@@ -209,26 +261,23 @@ public class PlayerMovement : MonoBehaviour
             right.Normalize();
         }
 
-        //if (SceneManager.GetActiveScene().name == "Escenario")
-        //{
-            movementInput = forward + right;
-        //}
-        //else
-        //{
-        //    movementInput = forward + right - new Vector3(0, 0.1f, 0);
-        //}
-
-    }
-
-    void Move(Vector3 direction)
-    {
+        movementInput = forward + right;
         
-        //rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
-        rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+        character.Move((movementInput.normalized * speed + up) * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
 
-        animator.SetFloat("Multiplicador", speed / 2);
+
     }
+
+    //void Move(Vector3 direction)
+    //{
+        
+    //    //rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
+    //    rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
+
+        
+    //}
 
     #endregion
 
@@ -332,6 +381,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
         }
 
+        animator.SetFloat("Multiplicador", speed / 2);
+
     }
 
     public void movAnimatorCorrerMovil()
@@ -360,6 +411,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
             animator.SetFloat("Cansancio", 1.0f, 0.1f, Time.deltaTime);
         }
+
+        animator.SetFloat("Multiplicador", speed / 2);
+
     }
 
     public void movAnimationsAndarMovil()
@@ -425,11 +479,14 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
             }
 
+        animator.SetFloat("Multiplicador", speed / 2);
+
+
     }
 
     #endregion
 
-
+    #region Metodos propios
     void cambiarCamara()
     {
         if (!camPosUp)
@@ -452,6 +509,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void mantenerCamara()
+    {
+        cineMchine.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 1;
+
+        cam.transform.position = camArriba.transform.position;
+        cam.transform.rotation = camArriba.transform.rotation;
+
+        character.slopeLimit = 60;
+
+        camPosUp = true;
+    }
+
+    void camaraExit()
+    {
+        cineMchine.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
+
+        cam.transform.position = camAbajo.transform.position;
+        cam.transform.rotation = camAbajo.transform.rotation;
+
+        character.slopeLimit = 10;
+
+
+        camPosUp = false;
+    }
 
     void comenzarCorrutinaStun(int seg)
     {
@@ -475,7 +556,7 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(2.2f);
 
-        capsule.height = 1.0f;
+        character.height = 1.0f;
         HUD.SetActive(false);
         panelDeath.SetActive(true);
 
@@ -513,5 +594,6 @@ public class PlayerMovement : MonoBehaviour
         hielo.SetActive(false);
 
     }
+    #endregion
 
 }

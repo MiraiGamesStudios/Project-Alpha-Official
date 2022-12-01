@@ -57,12 +57,12 @@ Material:
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
     - _Choppiness: 0.01
-    - _Flow_Size: 100
-    - _Flow_Speed: 0.01
+    - _Flow_Size: 15
+    - _Flow_Speed: 0.02
     - _Flow_Strength: 0.01
     - _Foam_Distance: 1.5
     m_Colors:
-    - _Dark_Foam_Color: {r: 0, g: 0.5026634, b: 0.9056604, a: 1}
+    - _Dark_Foam_Color: {r: 0.139854, g: 0.65338844, b: 0.764151, a: 1}
     - _Light_Foam_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Water_Color: {r: 0, g: 0.5529412, b: 1, a: 0}
+    - _Water_Color: {r: 0.10588236, g: 0.70980394, b: 0.854902, a: 0}
   m_BuildTextureStacks: []

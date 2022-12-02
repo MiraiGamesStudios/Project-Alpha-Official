@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.039229132, z: 0.013309036}
-  m_Center: {x: -8.362429e-17, y: 0.0021429483, z: 0.0016545169}
+  m_Size: {x: 0.040087607, y: 0.049825694, z: 0.030263506}
+  m_Center: {x: -0.000851442, y: 0.0074412352, z: -0.0031369564}
 --- !u!1 &395152381084682633
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!95 &2290819915147537689
 Animator:
@@ -926,8 +926,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.012847327, y: 0.029666806, z: 0.013138589}
-  m_Center: {x: 0.00057278713, y: -0.0072203004, z: -0.0015692837}
+  m_Size: {x: 0.016510658, y: 0.029666813, z: 0.01687484}
+  m_Center: {x: 0.0024044518, y: -0.0072203046, z: -0.0034373836}
 --- !u!1 &3101311312328682816
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,8 +972,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0075115794, y: 0.023797004, z: 0.010079321}
-  m_Center: {x: 0.0010689929, y: 0.0068984963, z: -0.0017915448}
+  m_Size: {x: 0.010475738, y: 0.023797004, z: 0.01900145}
+  m_Center: {x: -0.00041309028, y: 0.006898496, z: -0.006252655}
 --- !u!1 &3333899490993095038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,8 +1050,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0075115794, y: 0.023797004, z: 0.010079321}
-  m_Center: {x: 0.0010689929, y: 0.0068984963, z: -0.0017915448}
+  m_Size: {x: 0.010014773, y: 0.023797004, z: 0.020062858}
+  m_Center: {x: 0.0023205949, y: 0.006898495, z: -0.0067833005}
 --- !u!1 &3674514263982498989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1428,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728869030920164605}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.017529186, y: 0.035659023, z: 0.014216713}

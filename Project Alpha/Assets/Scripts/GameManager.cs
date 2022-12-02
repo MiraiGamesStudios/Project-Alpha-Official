@@ -114,11 +114,11 @@ public class GameManager : MonoBehaviour
 
         if (dinosVivos == 0) {round++; spawneados = false;}
             
-        if (round == 5)
+        if (round == 3)
         {
             zona = 1;
             barreras[0].SetActive(false);
-        }else if (round == 10)
+        }else if (round == 6)
         {
             zona = 2;
             barreras[1].SetActive(false);
@@ -141,13 +141,13 @@ public class GameManager : MonoBehaviour
                 alpha = 0;
                 break;
             case 2:
-                velo = 5;
-                trice = 0;
-                alpha = 0;
+                velo = 1;
+                trice = 1;
+                alpha = 1;
                 break;
             case 3:
-                velo = 0;
-                trice = 4;
+                velo = 1;
+                trice = 2;
                 alpha = 0;
                 break;
             case 4:
@@ -157,28 +157,8 @@ public class GameManager : MonoBehaviour
                 break;
             case 5:
                 velo = 2;
-                trice = 1;
-                alpha = 0;
-                break;
-            case 6:
-                velo = 1;
                 trice = 2;
                 alpha = 0;
-                break;
-            case 7:
-                velo = 5;
-                trice = 0;
-                alpha = 0;
-                break;
-            case 8:
-                velo = 0;
-                trice = 4;
-                alpha = 0;
-                break;
-            case 9:
-                velo = 1;
-                trice = 1;
-                alpha = 1;
                 break;
         }
     }

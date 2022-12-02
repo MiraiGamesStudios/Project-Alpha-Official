@@ -9,6 +9,7 @@ public class Dinosaur : MonoBehaviour
     public static event _dañoRecibido dañoRecibido;
 
     public GameManager gm;
+    Rigidbody rb;
 
     public float speed = 4;
     public float life;
@@ -44,6 +45,8 @@ public class Dinosaur : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity = new Vector3(0, 5f, 0);
+        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         quemadura = transform.GetChild(2).gameObject;
 
@@ -66,11 +69,12 @@ public class Dinosaur : MonoBehaviour
 
         // Integrar posicion en avance
         m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
-        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * m_currentV  * m_moveSpeed * Time.deltaTime;
+        
 
         FSMDinosaur();
     }
-
+    
     public void FSMDinosaur()
     {
         switch (statusDinosaur)
@@ -109,10 +113,14 @@ public class Dinosaur : MonoBehaviour
                 //atacar
                 anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+
+                Alinear(player.transform.position);
+                rb.isKinematic = true;
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
                     avancePersonaje = 1.0f;
                     statusDinosaur = Status.corriendo;
+                    rb.isKinematic = false;
                 }
                 break;
 

@@ -11,6 +11,7 @@ public class Mago : MonoBehaviour
     bool restado = true;
 
     public GameManager gm;
+    Rigidbody rb;
 
     private Animator anim;
 
@@ -36,7 +37,7 @@ public class Mago : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -101,6 +102,7 @@ public class Mago : MonoBehaviour
 
             case Status.atacando:
                 //atacar
+                rb.isKinematic = true;
                 Alinear(player.transform.position);
                 anim.SetBool("Atacar", true);
                 //anim.SetFloat("Xaxis", 1.5f, 0.1f, Time.deltaTime);
@@ -108,6 +110,7 @@ public class Mago : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
+                    rb.isKinematic = false;
                     anim.SetBool("Atacar", false);
                     avancePersonaje = 1.0f;
                     statusMago = Status.corriendo;
@@ -116,6 +119,7 @@ public class Mago : MonoBehaviour
 
             case Status.muerto:
                 //morir
+                rb.isKinematic = false;
                 this.tag = "Enemigo";
                 anim.SetLayerWeight(1, 1);
                 eliminarme();

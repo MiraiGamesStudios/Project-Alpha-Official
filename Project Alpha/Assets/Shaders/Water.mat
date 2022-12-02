@@ -57,7 +57,7 @@ Material:
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
     - _Choppiness: 0.01
-    - _Flow_Size: 15
+    - _Flow_Size: 50
     - _Flow_Speed: 0.02
     - _Flow_Strength: 0.01
     - _Foam_Distance: 1.5

@@ -12,12 +12,12 @@ public class Arquero : MonoBehaviour
     bool restado = true;
 
     public GameManagerMedievo gm;
+    Rigidbody rb;
 
     private Animator anim;
 
     public int area = 0;
     public GameObject damageText;
-
 
     GameObject player;
 
@@ -45,7 +45,7 @@ public class Arquero : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -114,6 +114,7 @@ public class Arquero : MonoBehaviour
 
             case Status.atacando:
                 //atacar
+                rb.isKinematic = true;
                 Alinear(player.transform.position);
                 anim.SetBool("Atacar", true);
                 anim.SetFloat("Xaxis", 1.5f, 0.1f, Time.deltaTime);
@@ -122,6 +123,7 @@ public class Arquero : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
+                    rb.isKinematic = false;
                     avancePersonaje = 1.0f;
                     statusArquero = Status.corriendo;
                     anim.SetBool("Atacar", false);
@@ -130,6 +132,7 @@ public class Arquero : MonoBehaviour
 
             case Status.muerto:
                 //morir
+                rb.isKinematic = false;
                 this.tag = "Enemigo";
                 anim.SetLayerWeight(1, 1);
                 eliminarme();

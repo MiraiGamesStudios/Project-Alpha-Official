@@ -59,6 +59,7 @@ public class Dinosaur : MonoBehaviour
     {
         if (life <= 0)
         {
+            anim.SetBool("Atacar", false);
             statusDinosaur = Status.muerto;
             if (restado) {
                 restado = false;
@@ -111,21 +112,25 @@ public class Dinosaur : MonoBehaviour
 
             case Status.atacando:
                 //atacar
-                anim.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-                anim.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                anim.SetBool("Atacar", true);
 
                 Alinear(player.transform.position);
                 rb.isKinematic = true;
+
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
                     avancePersonaje = 1.0f;
                     statusDinosaur = Status.corriendo;
                     rb.isKinematic = false;
+                    anim.SetBool("Atacar", false);
                 }
+
                 break;
 
             case Status.muerto:
                 //morir
+
+                rb.isKinematic = false;
                 muerto = true;
                 quemadura.SetActive(false);
                 eliminarme();

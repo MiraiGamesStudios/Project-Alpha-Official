@@ -12,6 +12,7 @@ public class Worker : MonoBehaviour
     bool restado = true;
 
     public GameManagerContemporaneo gm;
+    Rigidbody rb;
 
     private Animator anim;
 
@@ -44,7 +45,7 @@ public class Worker : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -113,6 +114,7 @@ public class Worker : MonoBehaviour
 
             case Status.atacando:
                 //atacar
+                rb.isKinematic = true;
                 Alinear(player.transform.position);
                 anim.SetBool("Atacar", true);
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
@@ -120,6 +122,7 @@ public class Worker : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
+                    rb.isKinematic = false;
                     avancePersonaje = 1.0f;
                     statusWorker = Status.corriendo;
                 }
@@ -127,7 +130,8 @@ public class Worker : MonoBehaviour
 
             case Status.muerto:
                 //morir
-                anim.SetLayerWeight(2, 1);
+                rb.isKinematic = false;
+
                 eliminarme();
                 anim.SetBool("Morir", true);
                 Destroy(this.gameObject, 3.5f);

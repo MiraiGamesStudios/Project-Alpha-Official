@@ -131,8 +131,8 @@ public class Worker : MonoBehaviour
             case Status.muerto:
                 //morir
                 rb.isKinematic = false;
-
                 eliminarme();
+                anim.SetLayerWeight(2, 1);
                 anim.SetBool("Morir", true);
                 Destroy(this.gameObject, 3.5f);
                 avancePersonaje = 0.0f;

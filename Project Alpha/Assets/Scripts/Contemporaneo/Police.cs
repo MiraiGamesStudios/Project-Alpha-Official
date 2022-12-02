@@ -12,6 +12,7 @@ public class Police : MonoBehaviour
     bool restado = true;
 
     public GameManagerContemporaneo gm;
+    Rigidbody rb;
 
     private Animator anim;
 
@@ -40,7 +41,7 @@ public class Police : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -109,6 +110,7 @@ public class Police : MonoBehaviour
 
             case Status.atacando:
                 //atacar
+                rb.isKinematic = true;
                 Alinear(player.transform.position);
                 anim.SetBool("Atacar", true);
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
@@ -116,6 +118,7 @@ public class Police : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
+                    rb.isKinematic = false;
                     avancePersonaje = 1.0f;
                     statusPolice = Status.corriendo;
                     anim.SetBool("Atacar", false);
@@ -124,6 +127,7 @@ public class Police : MonoBehaviour
 
             case Status.muerto:
                 //morir
+                rb.isKinematic = false;
                 anim.SetLayerWeight(2, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);

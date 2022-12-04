@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water Medievo 1
+  m_Name: Water Cont
   m_Shader: {fileID: -6465566751694194690, guid: 939eafcd32bf56a4e941cb18e0f70689, type: 3}
   m_ValidKeywords:
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
@@ -57,7 +57,7 @@ Material:
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
     - _Choppiness: 0.015
-    - _Flow_Size: 50
+    - _Flow_Size: 80
     - _Flow_Speed: 0.02
     - _Flow_Strength: 0.01
     - _Foam_Distance: 1.5

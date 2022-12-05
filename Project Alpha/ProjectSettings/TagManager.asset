@@ -27,6 +27,7 @@ TagManager:
   - Policia
   - Suit
   - Boss
+  - Suelo
   layers:
   - Default
   - TransparentFX

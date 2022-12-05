@@ -31,6 +31,11 @@ public class Dinosaur : MonoBehaviour
     [SerializeField] public Tipo tipo;
 
     private float avancePersonaje = 0.0f;
+    Vector3 localPosition;
+    Vector3 movPos;
+    CharacterController ch;
+    public bool enSuelo = true;
+    public float grav;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
     private float m_currentV = 0;                   // Posicion de avance actual 
     private readonly float m_interpolation = 10;    // Multiplicador para el paso de integracion
@@ -45,7 +50,9 @@ public class Dinosaur : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity = new Vector3(0, 5f, 0);
+        Physics.gravity = new Vector3(0, 1f, 0);
+        ch = GetComponent<CharacterController>();
+        ch.detectCollisions = false;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         quemadura = transform.GetChild(2).gameObject;
@@ -57,6 +64,7 @@ public class Dinosaur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enSuelo = false;
         if (life <= 0)
         {
             anim.SetBool("Atacar", false);
@@ -68,14 +76,34 @@ public class Dinosaur : MonoBehaviour
            
         }
 
+        localPosition = player.transform.position - transform.position;
+        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+        if (statusDinosaur == Status.corriendo)
+        {
+            movPos = Vector3.MoveTowards(transform.position, player.transform.position, m_moveSpeed
+            * Time.deltaTime);
+            ch.Move(new Vector3(localPosition.x, -grav, localPosition.z) * m_moveSpeed * Time.deltaTime);
+            //transform.position = new Vector3(movPos.x, grav, movPos.z);
+            transform.LookAt(player.transform.position, Vector3.up);
+        }
         // Integrar posicion en avance
-        m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
-        transform.position += transform.forward * m_currentV  * m_moveSpeed * Time.deltaTime;
+        //m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
+        //transform.position += transform.forward * m_currentV  * m_moveSpeed * Time.deltaTime;
+
         
 
         FSMDinosaur();
     }
+    private void FixedUpdate()
+    {
+        //if (statusDinosaur == Status.corriendo)
+        //{
+        //    rb.MovePosition(new Vector3(movPos.x, 0, movPos.z));
+        //    rb.AddForce(new Vector3(0, grav, 0));
+        //}
+    }
     
+
     public void FSMDinosaur()
     {
         switch (statusDinosaur)
@@ -211,6 +239,11 @@ public class Dinosaur : MonoBehaviour
         if (tipo == Tipo.TRex && collider.transform.root.gameObject.tag == "Player")
         {
             target = collider.transform.root.gameObject;
+        }
+
+        if(collider.tag == "Suelo")
+        {
+            enSuelo = true;
         }
 
     }

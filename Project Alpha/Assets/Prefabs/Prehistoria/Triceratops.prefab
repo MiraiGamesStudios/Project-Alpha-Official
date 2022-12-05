@@ -1634,6 +1634,7 @@ GameObject:
   - component: {fileID: 9048359270451246349}
   - component: {fileID: 4230866137944932259}
   - component: {fileID: 1260603972964983848}
+  - component: {fileID: 311916777025306611}
   m_Layer: 0
   m_Name: Triceratops
   m_TagString: Dinosaur
@@ -1732,6 +1733,8 @@ MonoBehaviour:
   muerto: 0
   area: 0
   tipo: 1
+  enSuelo: 1
+  grav: 9.8
   epsilonDistancia: 5
   m_moveSpeed: 3
   statusDinosaur: 1
@@ -1869,6 +1872,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &311916777025306611
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183912658923674830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 5.75
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 5.88, z: 0}
 --- !u!1001 &8336908612121636019
 PrefabInstance:
   m_ObjectHideFlags: 0

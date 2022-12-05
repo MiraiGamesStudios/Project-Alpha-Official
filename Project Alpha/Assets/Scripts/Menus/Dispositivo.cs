@@ -9,6 +9,7 @@ public class Dispositivo : MonoBehaviour
 
     public GameObject PanelEras;
     public GameObject PanelSeleccionarDispositivo;
+    public Button buttonStart;
 
     public bool dispositivoElegido = false;
 
@@ -32,23 +33,34 @@ public class Dispositivo : MonoBehaviour
 
     private void Update()
     {
-        
+        if (!dispositivoElegido)
+        {
+            if(!Input.GetMouseButtonDown(0) && Input.touchCount == 0)
+            {
+                //no ha habido interacción alguna
+                dispositivoElegido = false;
+            }
+            else if(!Input.GetMouseButtonDown(0) && Input.touchCount > 0)
+            {
+                //se ha detecatado interacción con un touch 
+                //se esta jugando desde móvil
+                dispositivo = 1;
+                dispositivoElegido = true;
+            }
+            else
+            {
+                //se ha detecatado interacción con un click 
+                //se esta jugando desde ordenador
+                dispositivo = 0;
+                dispositivoElegido = true;
+            }
+        }
     }
 
-    public void ButtonMovil()
-    {
-
-        PanelSeleccionarDispositivo.SetActive(false);
-        PanelEras.SetActive(true);
-        dispositivo = 1;
-        dispositivoElegido = true;
-    }
-
-    public void ButtonPC()
+    public void ButtonStart()
     {
         PanelSeleccionarDispositivo.SetActive(false);
         PanelEras.SetActive(true);
-        dispositivo = 0;
         dispositivoElegido = true;
     }
 }

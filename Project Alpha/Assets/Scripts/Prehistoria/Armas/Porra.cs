@@ -13,7 +13,7 @@ public class Porra : MonoBehaviour
     {
         if (collider?.GetComponentInParent<Dinosaur>().gameObject.tag == "Dinosaur" && !espera)
         {
-            targetP = collider.GetComponentInParent<Dinosaur>().gameObject;
+            targetP = collider?.GetComponentInParent<Dinosaur>().gameObject;
         }
     }
 }

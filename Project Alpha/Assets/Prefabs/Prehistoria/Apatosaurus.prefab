@@ -890,6 +890,7 @@ GameObject:
   - component: {fileID: 523634785369368639}
   - component: {fileID: 2218847897751409390}
   - component: {fileID: 6194672788077562382}
+  - component: {fileID: 4952961057073402751}
   m_Layer: 0
   m_Name: Apatosaurus
   m_TagString: Dinosaur
@@ -976,6 +977,7 @@ MonoBehaviour:
   muerto: 0
   area: 0
   tipo: 2
+  grav: 9.8
   epsilonDistancia: 5
   m_moveSpeed: 3
   statusDinosaur: 1
@@ -993,7 +995,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &2218847897751409390
 MonoBehaviour:
@@ -1107,6 +1109,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &4952961057073402751
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117448107298281622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 3.15
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 3.29, z: 0}
 --- !u!1 &4131516257709379602
 GameObject:
   m_ObjectHideFlags: 0

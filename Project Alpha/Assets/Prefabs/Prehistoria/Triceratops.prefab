@@ -619,7 +619,7 @@ BoxCollider:
   m_GameObject: {fileID: 4772801070468333408}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0022993658, y: 0.0125815375, z: 0.0029168827}
   m_Center: {x: 0.00008977197, y: 0.0032283186, z: -0.00012069757}
@@ -1368,7 +1368,7 @@ BoxCollider:
   m_GameObject: {fileID: 8079808450402440745}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.015136144, y: 0.03345866, z: 0.016213369}
   m_Center: {x: 0.0011100232, y: 0.008211189, z: -0.0014921873}
@@ -1674,7 +1674,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!95 &8336908613086346258
 Animator:
@@ -1733,7 +1733,6 @@ MonoBehaviour:
   muerto: 0
   area: 0
   tipo: 1
-  enSuelo: 1
   grav: 9.8
   epsilonDistancia: 5
   m_moveSpeed: 3
@@ -1884,12 +1883,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 5.75
-  m_SlopeLimit: 45
+  m_Radius: 2.17
+  m_SlopeLimit: 30
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 5.88, z: 0}
+  m_Center: {x: 0, y: 2.39, z: 0}
 --- !u!1001 &8336908612121636019
 PrefabInstance:
   m_ObjectHideFlags: 0

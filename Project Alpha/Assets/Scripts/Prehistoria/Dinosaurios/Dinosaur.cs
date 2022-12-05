@@ -33,8 +33,8 @@ public class Dinosaur : MonoBehaviour
     private float avancePersonaje = 0.0f;
     Vector3 localPosition;
     Vector3 movPos;
+    public bool encima = false;
     CharacterController ch;
-    public bool enSuelo = true;
     public float grav;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
     private float m_currentV = 0;                   // Posicion de avance actual 
@@ -64,7 +64,6 @@ public class Dinosaur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enSuelo = false;
         if (life <= 0)
         {
             anim.SetBool("Atacar", false);
@@ -78,29 +77,15 @@ public class Dinosaur : MonoBehaviour
 
         localPosition = player.transform.position - transform.position;
         localPosition = localPosition.normalized; // The normalized direction in LOCAL space
-        if (statusDinosaur == Status.corriendo)
+        if (statusDinosaur == Status.corriendo && !encima)
         {
-            movPos = Vector3.MoveTowards(transform.position, player.transform.position, m_moveSpeed
-            * Time.deltaTime);
+            movPos = Vector3.MoveTowards(transform.position, player.transform.position, m_moveSpeed * Time.deltaTime);
+
             ch.Move(new Vector3(localPosition.x, -grav, localPosition.z) * m_moveSpeed * Time.deltaTime);
-            //transform.position = new Vector3(movPos.x, grav, movPos.z);
+
             transform.LookAt(player.transform.position, Vector3.up);
-        }
-        // Integrar posicion en avance
-        //m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
-        //transform.position += transform.forward * m_currentV  * m_moveSpeed * Time.deltaTime;
-
-        
-
+        }        
         FSMDinosaur();
-    }
-    private void FixedUpdate()
-    {
-        //if (statusDinosaur == Status.corriendo)
-        //{
-        //    rb.MovePosition(new Vector3(movPos.x, 0, movPos.z));
-        //    rb.AddForce(new Vector3(0, grav, 0));
-        //}
     }
     
 
@@ -240,11 +225,12 @@ public class Dinosaur : MonoBehaviour
         {
             target = collider.transform.root.gameObject;
         }
-
-        if(collider.tag == "Suelo")
+        if(collider.GetComponentInParent<Dinosaur>().tag == "Dinosaur")
         {
-            enSuelo = true;
+            encima = true;
+            StartCoroutine(quieto());
         }
+
 
     }
 
@@ -287,6 +273,12 @@ public class Dinosaur : MonoBehaviour
         {
             dañoRecibido();
         }
+    }
+
+    IEnumerator quieto()
+    {
+        yield return new WaitForSeconds(0.2f);
+        encima = false;
     }
 
 }

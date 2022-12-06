@@ -797,7 +797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0cd8554992e30f5448540836ac8a1ce6, type: 3}
+  m_Texture: {fileID: 2800000, guid: fa1fdf1dc412fc745af37b4d44610353, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0cd8554992e30f5448540836ac8a1ce6, type: 3}
+  m_Texture: {fileID: 2800000, guid: fa1fdf1dc412fc745af37b4d44610353, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0cd8554992e30f5448540836ac8a1ce6, type: 3}
+  m_Texture: {fileID: 2800000, guid: fa1fdf1dc412fc745af37b4d44610353, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2496,7 +2496,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 624612175}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4479,7 +4479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0cd8554992e30f5448540836ac8a1ce6, type: 3}
+  m_Texture: {fileID: 2800000, guid: fa1fdf1dc412fc745af37b4d44610353, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5642,7 +5642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0cd8554992e30f5448540836ac8a1ce6, type: 3}
+  m_Texture: {fileID: 2800000, guid: fa1fdf1dc412fc745af37b4d44610353, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

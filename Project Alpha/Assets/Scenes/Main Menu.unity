@@ -2857,7 +2857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pulsa START PARA EMPEZAR A JUGAR '
+  m_text: Pulsa start para empezar a jugar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
   m_sharedMaterial: {fileID: -6913950685495543341, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}

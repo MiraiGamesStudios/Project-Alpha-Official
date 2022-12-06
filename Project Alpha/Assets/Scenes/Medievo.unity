@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66648334, g: 0.88288486, b: 0.8857606, a: 1}
+  m_IndirectSpecularColor: {r: 0.66688156, g: 0.88303643, b: 0.8857464, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15045,7 +15045,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 103.25
     m_SpeedMode: 0
-    m_MaxSpeed: 900
+    m_MaxSpeed: 800
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -27661,7 +27661,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760070108}
-  m_LocalRotation: {x: 0.02120614, y: -0.62058383, z: 0.016792951, w: 0.7836734}
+  m_LocalRotation: {x: 0.021206146, y: -0.6205839, z: 0.016792955, w: 0.7836734}
   m_LocalPosition: {x: -154.85072, y: -79.79891, z: -697.766}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28327,7 +28327,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813090631}
-  m_LocalRotation: {x: 0.021206133, y: -0.62058383, z: 0.016792942, w: 0.78367347}
+  m_LocalRotation: {x: 0.021206139, y: -0.6205839, z: 0.016792951, w: 0.7836734}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

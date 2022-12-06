@@ -17,7 +17,7 @@ public class Pausa : MonoBehaviour
         {
             botonPausa.SetActive(false);
             menuPausa.SetActive(true);
-            menuPausaESP.SetActive(true);
+            menuPausaESP.SetActive(true);   
         }
         if (ControladorIdioma.Language == 1)
         {

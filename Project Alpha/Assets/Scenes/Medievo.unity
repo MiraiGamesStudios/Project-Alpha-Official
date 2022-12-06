@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6664335, g: 0.88287723, b: 0.8857586, a: 1}
+  m_IndirectSpecularColor: {r: 0.6667301, g: 0.88296795, b: 0.88573766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9698,7 +9698,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627630222}
-  m_LocalRotation: {x: 0.18011737, y: -0.6042037, z: 0.14263332, w: 0.7629885}
+  m_LocalRotation: {x: 0.18011737, y: -0.6042037, z: 0.14263335, w: 0.7629885}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12574,7 +12574,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853797671}
-  m_LocalRotation: {x: 0.10405769, y: -0.615318, z: 0.082402356, w: 0.77702355}
+  m_LocalRotation: {x: 0.1040577, y: -0.61531794, z: 0.08240235, w: 0.7770236}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15028,6 +15028,7 @@ GameObject:
   - component: {fileID: 1089320640}
   - component: {fileID: 1089320644}
   - component: {fileID: 1089320645}
+  - component: {fileID: 1089320646}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -15157,6 +15158,27 @@ MonoBehaviour:
   menuVolumenESP: {fileID: 429128062}
   menuVolumenENG: {fileID: 1459955215}
   menuPausa: {fileID: 200690776}
+--- !u!114 &1089320646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089320639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b5e1dae4b29a44aa8e6b73e18a4cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuAjustes: {fileID: 0}
+  menuGrafico: {fileID: 0}
+  menuGraficoESP: {fileID: 0}
+  menuGraficoENG: {fileID: 0}
+  menuAudio: {fileID: 0}
+  menuAudioESP: {fileID: 0}
+  menuAudioENG: {fileID: 0}
+  menuPausa: {fileID: 0}
+  ControladorIdioma: {fileID: 0}
 --- !u!1 &1101876974
 GameObject:
   m_ObjectHideFlags: 0
@@ -28208,6 +28230,14 @@ PrefabInstance:
     - target: {fileID: 4025671729494795249, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
       propertyPath: m_TagString
       value: Mago
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269381981406457072, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
+      propertyPath: MaxDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269381981406457072, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4365641392763894091, guid: 27b49be68b4010346adc2390cf31122a, type: 3}
       propertyPath: m_RootOrder

@@ -44,14 +44,32 @@ public class PlayerSounds : MonoBehaviour
     private void StepLWalk()
     {
         //Recto
-        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
+        if (animate.GetFloat("Yaxis") > 0.0f && animate.GetFloat("Yaxis") <= 1.1f && animate.GetFloat("Multiplicador") == 2)
         {
             audioManagement.PlayOneShot(PlayerStepLeft, 0.4f);
-            print("LWalkingrect");
+            print("LWalkRect");
         }
 
-        //Lateral Dcha
-        if (animate.GetFloat("Xaxis") > 0.25f && animate.GetFloat("Xaxis") <= 1.0f)
+
+    }
+
+    private void StepRWalk()
+    {
+
+        //Recto
+        if (animate.GetFloat("Yaxis") > 0.0f && animate.GetFloat("Yaxis") <= 1.1f && animate.GetFloat("Multiplicador") == 2)
+        {
+            audioManagement.PlayOneShot(PlayerStepRight, 0.4f);
+            print("RWalkRect");
+        }
+
+
+    }
+
+    private void StepLLatWalk()
+    {
+        //LateralDcha
+        if (animate.GetFloat("Xaxis") > 0.2f && animate.GetFloat("Xaxis") <= 1.0f)
         {
             audioManagement.PlayOneShot(PlayerStepLeft, 0.4f);
             print("LWalkingdcha");
@@ -65,16 +83,8 @@ public class PlayerSounds : MonoBehaviour
         }
     }
 
-    private void StepRWalk()
+    private void StepRLatWalk()
     {
-        //Recto
-        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
-        {
-            audioManagement.PlayOneShot(PlayerStepRight, 0.4f);
-            print("RWalkingrect");
-        }
-
-        //Lateral Dcha
         if (animate.GetFloat("Xaxis") > 0.2f && animate.GetFloat("Xaxis") <= 1.0f)
         {
             audioManagement.PlayOneShot(PlayerStepRight, 0.4f);
@@ -92,7 +102,7 @@ public class PlayerSounds : MonoBehaviour
     private void StepLRun()
     {
 
-        if (animate.GetFloat("Yaxis") > 1.0f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador") == 4)
+        if (animate.GetFloat("Yaxis") > 1.1f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador") == 4)
         {
             audioManagement.PlayOneShot(PlayerRunStepLeft, 0.4f);
             print("LRunning");
@@ -101,7 +111,7 @@ public class PlayerSounds : MonoBehaviour
 
     private void StepRRun()
     {
-        if (animate.GetFloat("Yaxis") > 1.0f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador") == 4)
+        if (animate.GetFloat("Yaxis") > 1.1f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador") == 4)
         {
             audioManagement.PlayOneShot(PlayerRunStepLeft, 0.4f);
             print("RRunning");

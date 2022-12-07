@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController character;
 
+    public bool corriendo = false;
+    public bool flag = false;
+
     #endregion
 
     #region Metodos Unity
@@ -98,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
             if (Disp == 0) //esta en ordenador 
             {
                 MoveControllerPC();
-                //calculateMovPC();
                 moveAnimationsPC();
             }
             else //esta en movil/tablet
@@ -109,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-
+        VidaStamina.corriendo = corriendo;
     }
 
     //private void FixedUpdate()
@@ -289,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (VidaStamina.outStamina == false) // Si tiene stamina entra
             {
-                if (Input.GetKey("left shift")) //Correr
+                if (Input.GetKey("left shift") || corriendo) //Correr
                 {
                     speed = speedInicial * 2;
                     animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
@@ -387,90 +389,116 @@ public class PlayerMovement : MonoBehaviour
 
     public void movAnimatorCorrerMovil()
     {
-        speed = speedInicial * 2;
-        animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
-        animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
-
-        if (joystickMove.Horizontal > 0.15f)
+        if (!corriendo)
         {
-            animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+            corriendo = true;
         }
-        //De esta forma solo corre si se va hacia delante, de las demás formas solo camina
-
-        if (VidaStamina.outStamina == true) //No tiene stamina, por lo tanto, esta cansado
+        else
         {
-
-            speed = speedInicial / 4;
-            animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
-            animator.SetFloat("Cansancio", 1.0f, 0.1f, Time.deltaTime);
+            corriendo = false;
         }
-
-        animator.SetFloat("Multiplicador", speed / 2);
-
     }
 
     public void movAnimationsAndarMovil()
     {
-            if (joystickMove?.Vertical > 0.15f)
+        if (joystickMove?.Vertical > 0.15f)
+        {
+            if (VidaStamina.outStamina == false) // Si tiene stamina entra
             {
-                speed = speedInicial;
+                if (corriendo) //Correr
+                {
+                    speed = speedInicial * 2;
+                    animator.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
+
+                    if (joystickMove?.Horizontal > 0.15f)
+                    {
+                        animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+                    }
+                    else if (joystickMove?.Horizontal < -0.15f)
+                    {
+                        animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
+                    }
+                    else
+                    {
+
+                        animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+                    }
+                }
+                else // Andar
+                {
+                    corriendo = false;
+                    speed = speedInicial;
+                    animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
+                    animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
+
+                    if (joystickMove?.Horizontal > 0.15f)
+                    {
+                        animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+                    }
+                    else if (joystickMove?.Horizontal < -0.15f)
+                    {
+                        animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
+                    }
+                    else
+                    {
+                        animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+                    }
+                }
+            }
+            else //No tiene stamina, por lo tanto, esta cansado
+            {
+                corriendo = false;
+                speed = speedInicial / 4;
                 animator.SetFloat("Yaxis", 1.0f, 0.1f, Time.deltaTime);
-                animator.SetFloat("Cansancio", 0.0f, 0.1f, Time.deltaTime);
-
-                if (joystickMove?.Horizontal > 0.15f)
-                {
-                    animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-                }
-                else if (joystickMove?.Horizontal < -0.15f)
-                {
-                    animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
-                }
-                else
-                {
-                    animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-                }
+                animator.SetFloat("Cansancio", 1.0f, 0.1f, Time.deltaTime);
             }
-            else if (joystickMove?.Vertical < -0.15) // Caminar hacia atras
+        }
+        else if (joystickMove?.Vertical < -0.15) // Caminar hacia atras
+        {
+            corriendo = false;
+            speed = speedInicial / 4 * 3;
+            animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
+
+            if (joystickMove?.Horizontal > 0.15f)
             {
-                speed = speedInicial / 4 * 3;
-                animator.SetFloat("Yaxis", -1.0f, 0.1f, Time.deltaTime);
-
-                if (joystickMove?.Horizontal > 0.15f)
-                {
-                    animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
-                }
-                else if (joystickMove?.Horizontal < -0.15f)
-                {
-                    animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
-                }
-                else
-                {
-                    animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-                }
-            }
-
-
-            else if (joystickMove?.Horizontal > 0.15f) // Caminar derecha
-            {
-                speed = speedInicial / 4 * 3;
-                animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
             }
-
-
-            else if (joystickMove?.Horizontal < -0.15f) // Caminar izquierda
+            else if (joystickMove?.Horizontal < -0.15f)
             {
-                speed = speedInicial / 4 * 3;
-                animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
             }
-
-
-            else //Idle
+            else
             {
                 animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-                animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
             }
+        }
+
+
+        else if (joystickMove?.Horizontal > 0.15f) // Caminar derecha
+        {
+            corriendo = false;
+            speed = speedInicial / 4 * 3;
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
+        }
+
+
+        else if (joystickMove?.Horizontal < -0.15f) // Caminar izquierda
+        {
+            corriendo = false;
+            speed = speedInicial / 4 * 3;
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
+        }
+
+
+        else //Idle
+        {
+            corriendo = false;
+            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
+            animator.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+        }
 
         animator.SetFloat("Multiplicador", speed / 2);
 

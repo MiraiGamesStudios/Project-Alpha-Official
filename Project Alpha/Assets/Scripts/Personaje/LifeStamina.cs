@@ -35,6 +35,8 @@ public class LifeStamina : MonoBehaviour
     public GameObject fuego;
     public GameObject veneno;
 
+    public bool corriendo;
+
     #endregion
 
     #region Metodos Unity
@@ -59,7 +61,7 @@ public class LifeStamina : MonoBehaviour
             StartCoroutine(waiting(segundosParaRecuperar));
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) || corriendo)
         {
 
             StartCoroutine(staminaLost());

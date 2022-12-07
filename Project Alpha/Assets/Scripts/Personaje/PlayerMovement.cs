@@ -395,15 +395,8 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Xaxis", 1.0f, 0.1f, Time.deltaTime);
         }
-        else if (joystickMove.Horizontal < -0.15f)
-        {
-            animator.SetFloat("Xaxis", -1.0f, 0.1f, Time.deltaTime);
-        }
-        else
-        {
+        //De esta forma solo corre si se va hacia delante, de las demás formas solo camina
 
-            animator.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
-        }
         if (VidaStamina.outStamina == true) //No tiene stamina, por lo tanto, esta cansado
         {
 

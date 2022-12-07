@@ -25,10 +25,10 @@ public class VolumeManager : MonoBehaviour
     void Start()
     {
         volumeSlider.value = 1;
-        volumeMusicSlider.value = 1;
+        volumeMusicSlider.value = MusicAudios[0].volume;
         volumeSFXSlider.value = 1;
         ENGVolumeSlider.value = 1;
-        ENGVolumeMusicSlider.value = 1;
+        ENGVolumeMusicSlider.value = MusicAudios[0].volume;
         ENGVolumeSFXSlider.value = 1;
     }
 

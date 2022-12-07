@@ -17,7 +17,7 @@ public class CavemanSounds : MonoBehaviour
 
     private void StepRTired()
     {
-        if(animate.GetFloat("Multiplicador") == 0.5f)
+        if (animate.GetFloat("Multiplicador") == 0.5f)
         {
             if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
             {
@@ -25,8 +25,6 @@ public class CavemanSounds : MonoBehaviour
                 print("RTired");
             }
         }
-        
-
     }
 
     private void StepLTired()
@@ -44,14 +42,42 @@ public class CavemanSounds : MonoBehaviour
     private void StepLWalking()
     {
         //Recto
-        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f )
+        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.1f)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("LWalkingrect");
+            print("RWalkingrect");
+
+            //Recto
+            //if (animate.GetFloat("Xaxis") > -0.2f && animate.GetFloat("Xaxis") < 0.2f)
+            //{
+            //    audioManagement.PlayOneShot(sounds[1], 0.4f);
+            //    print("LWalkingRect");
+            //}
+
         }
 
-        //Lateral Dcha
-        if (animate.GetFloat("Xaxis") > 0.25f && animate.GetFloat("Xaxis") <= 1.0f )
+
+    }
+
+    private void StepRWalking()
+    {
+
+        //Recto
+        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.1f)
+        {
+            audioManagement.PlayOneShot(sounds[1], 0.4f);
+            print("RWalkingrect");
+
+        }
+
+
+
+    }
+
+    private void StepLLatWalk()
+    {
+        //LateralDcha
+        if (animate.GetFloat("Xaxis") > 0.2f && animate.GetFloat("Xaxis") <= 1.0f)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
             print("LWalkingdcha");
@@ -65,17 +91,8 @@ public class CavemanSounds : MonoBehaviour
         }
     }
 
-    private void StepRWalking()
+    private void StepRLatWalk()
     {
-
-        //Recto
-        if (animate.GetFloat("Yaxis") > 0.11f && animate.GetFloat("Yaxis") <= 1.0f)
-        {
-            audioManagement.PlayOneShot(sounds[1], 0.4f);
-            print("RWalkingrect");
-        }
-
-        //Lateral Dcha
         if (animate.GetFloat("Xaxis") > 0.2f && animate.GetFloat("Xaxis") <= 1.0f)
         {
             audioManagement.PlayOneShot(sounds[1], 0.4f);
@@ -89,10 +106,9 @@ public class CavemanSounds : MonoBehaviour
             print("RWalkingizqda");
         }
     }
-
     private void StepLRunning()
     {
-        if (animate.GetFloat("Yaxis") > 1.0f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador")==4)
+        if (animate.GetFloat("Yaxis") > 1.0f && animate.GetFloat("Yaxis") <= 2.0f && animate.GetFloat("Multiplicador") == 4)
         {
             audioManagement.PlayOneShot(sounds[3], 0.4f);
             print("LRunning");

@@ -112,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         VidaStamina.corriendo = corriendo;
+        botonCorrer.GetComponent<CambiarColor>().corriendo = corriendo;
     }
 
     //private void FixedUpdate()

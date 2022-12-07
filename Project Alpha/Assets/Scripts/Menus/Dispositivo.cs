@@ -35,19 +35,14 @@ public class Dispositivo : MonoBehaviour
     {
         if (!dispositivoElegido)
         {
-            if(!Input.GetMouseButtonDown(0) && Input.touchCount == 0)
-            {
-                //no ha habido interacción alguna
-                dispositivoElegido = false;
-            }
-            else if(!Input.GetMouseButtonDown(0) && Input.touchCount > 0)
+            if(Input.touchCount > 0)
             {
                 //se ha detecatado interacción con un touch 
                 //se esta jugando desde móvil
                 dispositivo = 1;
                 dispositivoElegido = true;
             }
-            else
+            else if(Input.GetMouseButtonDown(0))
             {
                 //se ha detecatado interacción con un click 
                 //se esta jugando desde ordenador

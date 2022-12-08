@@ -16,7 +16,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocAttack()
     {
-        if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") ==1)
+        if (animate.GetFloat("Xaxis") >0.9  && animate.GetBool("Atacar") ==true)
         {
             audioManagement.PlayOneShot(VelocSoundAttack, 0.4f);
             print("VelocAttack");
@@ -25,7 +25,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocDeath()
     {
-        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 1)
+        if (animate.GetFloat("Yaxis") >0.9)
         {
             audioManagement.PlayOneShot(VelocSoundDeath, 0.4f);
             print("VelocDeath");
@@ -35,7 +35,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocStepLRun()
     {
-        if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") <= 1.05 && animate.GetFloat("Xaxis") > 0.9)
         {
             audioManagement.PlayOneShot(VelocSoundStepRun, 0.4f);
             print("VelocLRun");
@@ -44,7 +44,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocStepRRun()
     {
-        if (animate.GetFloat("Xaxis") == 1 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") <= 1.05 && animate.GetFloat("Xaxis") > 0.9)
         {
             audioManagement.PlayOneShot(VelocSoundStepRun2, 0.4f);
             print("VelocRRun");
@@ -53,7 +53,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocStepLWalk()
     {
-        if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") <= 0.55 && animate.GetFloat("Xaxis") > 0.4)
         {
             audioManagement.PlayOneShot(VelocSoundStepWalk, 0.4f);
             print("VelocLWalk");
@@ -62,7 +62,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocStepRWalk()
     {
-        if (animate.GetFloat("Xaxis") == 0.5 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") <= 0.55 && animate.GetFloat("Xaxis") > 0.4)
         {
             audioManagement.PlayOneShot(VelocSoundStepWalk2, 0.4f);
             print("VelocRWalk");
@@ -71,7 +71,7 @@ public class VelociraptorSounds : MonoBehaviour
 
     private void VelocIdle()
     {
-        if (animate.GetFloat("Xaxis") == 0 && animate.GetFloat("Yaxis") == 0)
+        if (animate.GetFloat("Xaxis") < 0.1 && animate.GetFloat("Yaxis") < 0.1)
         {
             audioManagement.Stop();
         }

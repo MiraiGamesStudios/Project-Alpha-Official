@@ -167,14 +167,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.25267994
-        functionName: StepLWalk
+        functionName: StepLLatWalk
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.7595712
-        functionName: StepRWalk
+        functionName: StepRLatWalk
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

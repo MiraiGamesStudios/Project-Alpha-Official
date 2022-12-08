@@ -5,7 +5,8 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public List<GameObject> enemigosDentro;
-
+    public AudioSource exploAudio;
+    public AudioClip boom;
     private void OnTriggerEnter(Collider other)
     {
         if (other?.gameObject.GetComponentInParent<Worker>()?.gameObject.tag == "Worker")
@@ -43,6 +44,7 @@ public class Explosion : MonoBehaviour
     public void hacerGrande()
     {
         this.GetComponent<SphereCollider>().radius = 0.05f;
+        exploAudio.PlayOneShot(boom, 0.4f);
     }
 
     IEnumerator destruir()

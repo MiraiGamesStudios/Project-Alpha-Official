@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -148.57143}
+  m_AnchoredPosition: {x: -2, y: -161}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &43259571
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c09b8cc560020f348822adedabceb858, type: 3}
+  m_Texture: {fileID: 2800000, guid: 376db01ad5693614fb78e900626aa355, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: e7e52984964c84e4ab64cbbff65f3c80, type: 3}
+  m_Texture: {fileID: 2800000, guid: 376db01ad5693614fb78e900626aa355, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "start" to start playing
+  m_text: "Pulsa el bot\xF3n para jugar\nPress the button to play"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
   m_sharedMaterial: {fileID: -6913950685495543341, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
@@ -3247,7 +3247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pulsa "empezar" para empezar a jugar
+  m_text: "Pulsa el bot\xF3n para jugar\nPress the button to play"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
   m_sharedMaterial: {fileID: -6913950685495543341, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
@@ -3341,7 +3341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 35}
+  m_AnchoredPosition: {x: 0, y: 48}
   m_SizeDelta: {x: 591.3, y: 244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!850595691 &740263033

@@ -14,6 +14,14 @@ public class ButonMenus : MonoBehaviour
     public GameObject PanelEras;
     public GameObject PanelSeleccionarDispositivo;
     public GameObject ScriptDispositivo;
+    public AudioSource audioManagement;
+    [SerializeField]
+    public AudioClip buttonSound;
+
+    private void Awake()
+    {
+        audioManagement = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -30,21 +38,25 @@ public class ButonMenus : MonoBehaviour
 
     public void ButtonControles()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         Controles.SetActive(true);
     }
 
     public void ButtonCreditos()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         Creditos.SetActive(true);
     }
 
     public void ButtonHistoria()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         Historia.SetActive(true);
     }
 
     public void ButtonVoler()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         Controles.SetActive(false);
         Creditos.SetActive(false);
         Historia.SetActive(false);
@@ -53,12 +65,14 @@ public class ButonMenus : MonoBehaviour
 
     public void CambiarEscena(int indice)
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         SceneManager.LoadScene(indice);
         Time.timeScale = 1;
     }
 
     public void ReiniciarPartida(int indice)
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         SceneManager.LoadScene(indice);
     }
 

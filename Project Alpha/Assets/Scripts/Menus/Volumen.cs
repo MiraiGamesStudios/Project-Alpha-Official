@@ -9,17 +9,27 @@ public class Volumen : MonoBehaviour
     public GameObject menuVolumenESP;
     public GameObject menuVolumenENG;
     public GameObject menuPausa;
+    public AudioSource audioManagement;
+    [SerializeField]
+    public AudioClip buttonSound;
+
+    private void Awake()
+    {
+        audioManagement = GetComponent<AudioSource>();
+    }
 
     public void pantallaVolumen()
     {
         if (idioma.Language == 0)
         {
+            audioManagement.PlayOneShot(buttonSound, 0.8f);
             menuVolumen.SetActive(true);
             menuVolumenESP.SetActive(true);
             menuPausa.SetActive(false);
         }
         if (idioma.Language == 1)
         {
+            audioManagement.PlayOneShot(buttonSound, 0.8f);
             menuVolumen.SetActive(true);
             menuVolumenENG.SetActive(true);
             menuPausa.SetActive(false);
@@ -30,7 +40,8 @@ public class Volumen : MonoBehaviour
 
         public void volverPausa()
         {
-            menuVolumen.SetActive(false);
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
+        menuVolumen.SetActive(false);
             menuPausa.SetActive(true);
         }
     }

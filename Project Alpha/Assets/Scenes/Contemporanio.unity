@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66658396, g: 0.88289845, b: 0.88573265, a: 1}
+  m_IndirectSpecularColor: {r: 0.6664909, g: 0.8828422, b: 0.8857126, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22111,7 +22111,7 @@ MonoBehaviour:
   PlayerGunAttack: {fileID: 8300000, guid: 46c3978faef16024988b66174b21a527, type: 3}
   PlayerRPGAttack: {fileID: 8300000, guid: 8f1f56c1dd3be53499ca36354d299f2f, type: 3}
   PlayerRPGImpact: {fileID: 8300000, guid: 3cf8c07a45c32b54c994cc8eaaf9edb4, type: 3}
-  PlayerDeathSound: {fileID: 0}
+  PlayerDeathSound: {fileID: 8300000, guid: 40842705f1259064f8fd0eb01ae97d37, type: 3}
 --- !u!82 &563406892
 AudioSource:
   m_ObjectHideFlags: 0
@@ -81630,7 +81630,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048287907}
-  m_LocalRotation: {x: 0.082483254, y: 0.7765441, z: -0.10399333, w: 0.61592305}
+  m_LocalRotation: {x: 0.082483254, y: 0.77654415, z: -0.10399335, w: 0.615923}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

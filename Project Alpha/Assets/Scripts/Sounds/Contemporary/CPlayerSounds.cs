@@ -10,6 +10,7 @@ public class CPlayerSounds : MonoBehaviour
 
     private AudioSource audioManagement;
     private Animator animate;
+    public GameObject audioManager;
 
     private void Awake()
     {
@@ -148,15 +149,37 @@ public class CPlayerSounds : MonoBehaviour
         {
             audioManagement.Stop();
         }
+
+
     }
 
     private void PlayerDeath()
     {
-
+        if (animate.GetBool("Morir") == true)
+        {
+            audioManagement.PlayOneShot(PlayerDeathSound, 0.5f);
+            StartCoroutine(Morirse());
+            
+        }
     }
 
     public void RPGImpact()
+    { 
+            audioManagement.PlayOneShot(PlayerRPGImpact, 0.4f);
+
+        
+    }
+
+    IEnumerator Morirse()
     {
-        audioManagement.PlayOneShot(PlayerRPGImpact, 0.4f);
+
+        
+        yield return new WaitForSeconds(4);
+        audioManager.SetActive(false);
+        //audioManager.GetComponent<AudioListener>.gameObject.SetActive());
+        
+
+        yield return null;
+
     }
 }

@@ -6,7 +6,7 @@ public class PlayerSounds : MonoBehaviour
 {
     [SerializeField]
     private AudioClip PlayerStepLeft, PlayerStepRight, PlayerRunStepLeft, PlayerRunStepRight,
-        PlayerSwordAttack, PlayerCrossbowAttack, PlayerBowAttack, PlayerDeath;
+        PlayerSwordAttack, PlayerCrossbowAttack, PlayerBowAttack, PlayerDeathSound;
 
     private AudioSource audioManagement;
     private Animator animate;
@@ -156,6 +156,15 @@ public class PlayerSounds : MonoBehaviour
         if (animate.GetFloat("Yaxis") > -0.1f && animate.GetFloat("Yaxis") < 0.1f && animate.GetFloat("Xaxis") > -0.1f && animate.GetFloat("Xaxis") < 0.1f)
         {
             audioManagement.Stop();
+        }
+    }
+
+    private void PlayerDeath()
+    {
+        if (animate.GetBool("Morir")==true)
+        {
+            //audioManagement.PlayOneShot(PlayerDeathSound, 0.9f);
+            //dioManagement.isActiveAndEnabled(false);
         }
     }
 

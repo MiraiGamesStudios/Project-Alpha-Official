@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController character;
 
+    public AudioSource audioManagement;
+
     public bool corriendo = false;
     public bool flag = false;
 
@@ -527,6 +529,7 @@ public class PlayerMovement : MonoBehaviour
         character.height = 1.0f;
         HUD.SetActive(false);
         panelDeath.SetActive(true);
+        //dioListener.mute = true;
 
         yield return null;
     }

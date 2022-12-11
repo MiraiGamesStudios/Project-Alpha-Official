@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66619086, g: 0.8827435, b: 0.8857064, a: 1}
+  m_IndirectSpecularColor: {r: 0.66658396, g: 0.88289845, b: 0.88573265, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4224,7 +4224,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1244780805}
   spawnRotacion: {fileID: 984399705}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!4 &116496630 stripped
@@ -5465,7 +5464,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 580506500}
   spawnRotacion: {fileID: 1391179149}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &145304636
@@ -10600,7 +10598,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1817199602}
   spawnRotacion: {fileID: 722420320}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &266193962
@@ -11052,7 +11049,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1328532946}
   spawnRotacion: {fileID: 1248093134}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &270134464
@@ -19936,7 +19932,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1418373826}
   spawnRotacion: {fileID: 984299951}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &518194690
@@ -22042,6 +22037,7 @@ MonoBehaviour:
   fuego: {fileID: 0}
   veneno: {fileID: 0}
   corriendo: 0
+  disparos: {fileID: 563406889}
 --- !u!4 &563406886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cc954217b2ef364d80164a9df652a98, type: 3}
@@ -22094,6 +22090,7 @@ MonoBehaviour:
   shotRate: 0.5
   audioManagement: {fileID: 0}
   PlayerRifleAttack: {fileID: 8300000, guid: 8acfd8fc3ad5efb4d922c568c4e75673, type: 3}
+  noDisparo: 0
 --- !u!114 &563406891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28815,7 +28812,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 232512617}
   spawnRotacion: {fileID: 424482582}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &743233359
@@ -29678,7 +29674,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1587510494}
   spawnRotacion: {fileID: 162969832}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &772054928
@@ -53002,7 +52997,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 634796703}
   spawnRotacion: {fileID: 9099207}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &1285016387
@@ -59246,7 +59240,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1810334520}
   spawnRotacion: {fileID: 86710623}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &1423533193
@@ -61722,7 +61715,6 @@ MonoBehaviour:
   bullet: {fileID: 8590455713398931256, guid: 6a82f391d14175043a39f951b309aa9a, type: 3}
   spawnDireccion: {fileID: 2044535558}
   spawnRotacion: {fileID: 1484882605}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &1487507725
@@ -66334,7 +66326,6 @@ MonoBehaviour:
   bullet: {fileID: 2962072403689614063, guid: 05c8825168e0b15498e03b06bd9030f7, type: 3}
   spawnDireccion: {fileID: 1011298602}
   spawnRotacion: {fileID: 1025132778}
-  player: {fileID: 0}
   shotForce: 1000
   shotRate: 0.5
 --- !u!114 &1624172031
@@ -81639,7 +81630,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048287907}
-  m_LocalRotation: {x: 0.082483254, y: 0.77654415, z: -0.10399335, w: 0.615923}
+  m_LocalRotation: {x: 0.082483254, y: 0.7765441, z: -0.10399333, w: 0.61592305}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

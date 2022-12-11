@@ -20,7 +20,7 @@ public class Bala : MonoBehaviour
             else
             {
                 golpeado = true;
-                collision.gameObject.GetComponentInParent<Worker>().quitarVida(2, "2");
+                collision.gameObject.GetComponentInParent<Worker>().quitarVida(4, "4");
                 Destroy(gameObject);
             }
             
@@ -37,7 +37,7 @@ public class Bala : MonoBehaviour
             else
             {
                 golpeado = true;
-                collision.gameObject.GetComponentInParent<Suit>().quitarVida(2, "2");
+                collision.gameObject.GetComponentInParent<Suit>().quitarVida(4, "4");
                 Destroy(gameObject);
             }
            
@@ -54,7 +54,7 @@ public class Bala : MonoBehaviour
             else
             {
                 golpeado = true;
-                collision.gameObject.GetComponentInParent<Militar>().quitarVida(2, "2");
+                collision.gameObject.GetComponentInParent<Militar>().quitarVida(4, "4");
                 Destroy(gameObject);
             }
         }
@@ -70,7 +70,7 @@ public class Bala : MonoBehaviour
             else
             {
                 golpeado = true;
-                collision.gameObject.GetComponentInParent<Police>().quitarVida(2, "2");
+                collision.gameObject.GetComponentInParent<Police>().quitarVida(4, "4");
                 Destroy(gameObject);
             }
         }
@@ -85,7 +85,7 @@ public class Bala : MonoBehaviour
             else
             {
                 golpeado = true;
-                collision.gameObject.GetComponentInParent<Militar>().quitarVida(2, "2");
+                collision.gameObject.GetComponentInParent<Militar>().quitarVida(4, "4");
                 Destroy(gameObject);
             }
         }

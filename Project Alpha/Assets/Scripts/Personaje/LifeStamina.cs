@@ -37,6 +37,8 @@ public class LifeStamina : MonoBehaviour
 
     public bool corriendo;
 
+    public DisparoPlayerCont disparos;
+
     #endregion
 
     #region Metodos Unity
@@ -246,6 +248,7 @@ public class LifeStamina : MonoBehaviour
             if (lifeSlide.value == 0)
             {
                 death = true;
+                disparos.noDisparo = true;
             }
 
             cantidadPerdida += i;

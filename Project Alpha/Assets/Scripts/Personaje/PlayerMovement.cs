@@ -183,51 +183,6 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
     }
 
-    //void calculateMovPC()
-    //{
-
-    //    Vector3 forward = Vector3.zero; 
-    //    Vector3 right = Vector3.zero;
-    //    Vector3 up = Vector3.zero;
-
-    //    if (Input.GetKey(KeyCode.W))
-    //    {
-    //        forward = cam.transform.forward;
-    //        forward.y = 0;
-    //        forward.Normalize();
-
-
-    //    }
-    //    else if (Input.GetKey(KeyCode.S))
-    //    {
-    //        forward = -cam.transform.forward;
-    //        forward.y = 0;
-    //        forward.Normalize();
-    //    }
-
-    //    if (Input.GetKey(KeyCode.D))
-    //    {
-    //        right = cam.transform.right;
-    //        right.y = 0;
-    //        right.Normalize();
-    //    }
-    //    else if (Input.GetKey(KeyCode.A))
-    //    {
-    //        right = -cam.transform.right;
-    //        right.y = 0;
-    //        right.Normalize();
-    //    }
-
-    //    //if (SceneManager.GetActiveScene().name == "Escenario")
-    //    //{
-    //    movementInput = forward + right;
-    //    //}
-    //    //else
-    //    //{
-    //    //    movementInput = forward + right - new Vector3(0, 0.1f, 0);
-    //    //}
-
-    //}
 
     void MoveControllerPhone()
     {
@@ -271,16 +226,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-
-    //void Move(Vector3 direction)
-    //{
-        
-    //    //rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
-    //    rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cam.transform.forward), 0.2f);
-
-        
-    //}
 
     #endregion
 

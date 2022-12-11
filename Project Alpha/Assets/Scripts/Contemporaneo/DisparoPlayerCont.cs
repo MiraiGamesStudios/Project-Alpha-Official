@@ -23,6 +23,7 @@ public class DisparoPlayerCont : MonoBehaviour
     public AudioSource audioManagement;
     [SerializeField]
     public AudioClip PlayerRifleAttack;
+    public bool noDisparo;
 
 
     private void Awake()
@@ -31,38 +32,46 @@ public class DisparoPlayerCont : MonoBehaviour
     }
     public void disparoPistola()
     {
-        
-        newBullet = Instantiate(bulletP, spawnDireccionP.position, spawnRotacionP.rotation);
-        newBullet.GetComponent<Rigidbody>().useGravity = false;
-        this.gameObject.GetComponent<CPlayerSounds>().GunAttack();
-        newBullet.transform.localScale = new Vector3(50, 50, 50);
-        newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionP.forward * shotForce);
-        //StartCoroutine(caida(newBullet));
+        if (!noDisparo)
+        {
+            newBullet = Instantiate(bulletP, spawnDireccionP.position, spawnRotacionP.rotation);
+            newBullet.GetComponent<Rigidbody>().useGravity = false;
+            this.gameObject.GetComponent<CPlayerSounds>().GunAttack();
+            newBullet.transform.localScale = new Vector3(50, 50, 50);
+            newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionP.forward * shotForce);
+            //StartCoroutine(caida(newBullet));
 
-        Destroy(newBullet, 5);
+            Destroy(newBullet, 5);
+        }
     }
 
     public void disparoRifle()
     {
-        audioManagement.PlayOneShot(PlayerRifleAttack, 0.6f);
-        newBullet = Instantiate(bulletR, spawnDireccionRi.position, spawnRotacionRi.rotation);
-        newBullet.GetComponent<Rigidbody>().useGravity = false;
-        this.gameObject.GetComponent<CPlayerSounds>().RifleAttack();
-        newBullet.transform.localScale = new Vector3(50, 50, 50);
-        newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRi.forward * shotForce);
+        if (!noDisparo)
+        {
+            audioManagement.PlayOneShot(PlayerRifleAttack, 0.6f);
+            newBullet = Instantiate(bulletR, spawnDireccionRi.position, spawnRotacionRi.rotation);
+            newBullet.GetComponent<Rigidbody>().useGravity = false;
+            this.gameObject.GetComponent<CPlayerSounds>().RifleAttack();
+            newBullet.transform.localScale = new Vector3(50, 50, 50);
+            newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRi.forward * shotForce);
 
-        Destroy(newBullet, 5);
+            Destroy(newBullet, 5);
+        }
     }
 
     public void disparoLanza()
     {
-        newBullet = Instantiate(rocket, spawnDireccionRo.position, spawnRotacionRo.rotation);
-        newBullet.GetComponent<Rigidbody>().useGravity = false;
-        this.gameObject.GetComponent<CPlayerSounds>().RPGAttack();
-        newBullet.transform.localScale = new Vector3(50, 50, 50);
-        newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRo.forward * shotForce);
-        //StartCoroutine(caida(newBullet));
+        if (!noDisparo)
+        {
+            newBullet = Instantiate(rocket, spawnDireccionRo.position, spawnRotacionRo.rotation);
+            newBullet.GetComponent<Rigidbody>().useGravity = false;
+            this.gameObject.GetComponent<CPlayerSounds>().RPGAttack();
+            newBullet.transform.localScale = new Vector3(50, 50, 50);
+            newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRo.forward * shotForce);
+            //StartCoroutine(caida(newBullet));
 
-        Destroy(newBullet, 5);
+            Destroy(newBullet, 5);
+        }
     }
 }

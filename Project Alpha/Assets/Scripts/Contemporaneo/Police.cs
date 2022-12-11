@@ -137,7 +137,7 @@ public class Police : MonoBehaviour
             case Status.muerto:
                 //morir
                 rb.isKinematic = false;
-                anim.SetLayerWeight(2, 1);
+                anim.SetLayerWeight(1, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
                 StartCoroutine(morir());

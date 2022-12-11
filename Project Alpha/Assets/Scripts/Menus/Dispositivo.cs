@@ -17,9 +17,14 @@ public class Dispositivo : MonoBehaviour
 
     public int Language;
 
+    public AudioSource audioManagement;
+    [SerializeField]
+    public AudioClip buttonSound;
+
 
     private void Awake()
     {
+        audioManagement = GetComponent<AudioSource>();
         if (Dispositivo.Instance == null)
         {
             Dispositivo.Instance = this;
@@ -54,6 +59,7 @@ public class Dispositivo : MonoBehaviour
 
     public void ButtonStart()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         PanelSeleccionarDispositivo.SetActive(false);
         PanelEras.SetActive(true);
         dispositivoElegido = true;

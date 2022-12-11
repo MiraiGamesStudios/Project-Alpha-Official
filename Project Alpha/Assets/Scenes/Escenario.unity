@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.6667179, g: 0.8828867, b: 0.8857263, a: 1}
+  m_IndirectSpecularColor: {r: 0.66595376, g: 0.88266134, b: 0.88569814, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17768,6 +17769,8 @@ Transform:
   m_GameObject: {fileID: 1119359721}
   m_LocalRotation: {x: 0.016809672, y: 0.7831903, z: -0.021193353, w: 0.62119335}
   m_LocalPosition: {x: -122.058624, y: 6.5470877, z: -85.72279}
+  m_LocalRotation: {x: 0.016809635, y: 0.7831903, z: -0.021193305, w: 0.6211934}
+  m_LocalPosition: {x: -97.058624, y: 5.847088, z: -79.92279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20307,6 +20310,7 @@ GameObject:
   - component: {fileID: 1312736795}
   - component: {fileID: 1312736796}
   - component: {fileID: 1312736797}
+  - component: {fileID: 1312736798}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -20449,6 +20453,8 @@ MonoBehaviour:
   menuPausaESP: {fileID: 566428605}
   menuPausaENG: {fileID: 1704921070}
   ControladorIdioma: {fileID: 1406243287}
+  audioManagement: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 09f2ce2bf4b80f74e830f42b4112e80a, type: 3}
 --- !u!114 &1312736796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20466,6 +20472,8 @@ MonoBehaviour:
   menuVolumenESP: {fileID: 622778675}
   menuVolumenENG: {fileID: 583511667}
   menuPausa: {fileID: 1527059809}
+  audioManagement: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 09f2ce2bf4b80f74e830f42b4112e80a, type: 3}
 --- !u!114 &1312736797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20489,6 +20497,104 @@ MonoBehaviour:
   menuAudioENG: {fileID: 583511667}
   menuPausa: {fileID: 1527059809}
   ControladorIdioma: {fileID: 1406243287}
+  audioManagement: {fileID: 0}
+  buttonSound: {fileID: 8300000, guid: 09f2ce2bf4b80f74e830f42b4112e80a, type: 3}
+--- !u!82 &1312736798
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312736789}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1326270023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21499,6 +21605,8 @@ MonoBehaviour:
   - {fileID: 1530468621}
   - {fileID: 1527059809}
   - {fileID: 185695036}
+  audioManagement: {fileID: 0}
+  buttonSound: {fileID: 0}
 --- !u!4 &1406243288
 Transform:
   m_ObjectHideFlags: 0
@@ -31510,6 +31618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3296193459180701452}
   m_LocalRotation: {x: 0.016809663, y: 0.7831903, z: -0.02119334, w: 0.62119347}
+  m_LocalRotation: {x: 0.016809626, y: 0.7831903, z: -0.021193294, w: 0.62119347}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

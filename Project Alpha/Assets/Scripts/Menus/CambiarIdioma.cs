@@ -11,11 +11,16 @@ public class CambiarIdioma : MonoBehaviour
 
     public GameObject[] PanelesIdioma = new GameObject[5];
 
+    public AudioSource audioManagement;
+    [SerializeField]
+    public AudioClip buttonSound;
+
     // Start is called before the first frame update
     private void Awake()
     {
         Language = FindObjectOfType<Dispositivo>().Language;
         //English.GetComponent<RawImage>().color = new Color(1, 1, 1, 0.5f);
+        audioManagement = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +31,7 @@ public class CambiarIdioma : MonoBehaviour
 
     public void EngButton()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         //Spanish.SetActive(true);
         //English.SetActive(false);
         Spanish.GetComponent<RawImage>().color = new Color(1, 1, 1, 0.5f);
@@ -36,6 +42,7 @@ public class CambiarIdioma : MonoBehaviour
 
     public void SpanishButton()
     {
+        audioManagement.PlayOneShot(buttonSound, 0.8f);
         //English.SetActive(true);
         //Spanish.SetActive(false);
         Spanish.GetComponent<RawImage>().color = new Color(1, 1, 1, 1);

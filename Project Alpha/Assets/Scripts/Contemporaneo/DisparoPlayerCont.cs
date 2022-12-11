@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DisparoPlayerCont : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject bulletP;
+    public GameObject bulletR;
     public GameObject rocket;
 
     public Transform spawnDireccionP;
@@ -21,8 +22,8 @@ public class DisparoPlayerCont : MonoBehaviour
 
     public void disparoPistola()
     {
-        
-        newBullet = Instantiate(bullet, spawnDireccionP.position, spawnRotacionP.rotation);
+
+        newBullet = Instantiate(bulletP, spawnDireccionP.position, spawnRotacionP.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         this.gameObject.GetComponent<CPlayerSounds>().GunAttack();
         newBullet.transform.localScale = new Vector3(50, 50, 50);
@@ -34,12 +35,12 @@ public class DisparoPlayerCont : MonoBehaviour
 
     public void disparoRifle()
     {
-        newBullet = Instantiate(bullet, spawnDireccionRi.position, spawnRotacionRi.rotation);
+
+        newBullet = Instantiate(bulletR, spawnDireccionRi.position, spawnRotacionRi.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         this.gameObject.GetComponent<CPlayerSounds>().RifleAttack();
         newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccionRi.forward * shotForce);
-        //StartCoroutine(caida(newBullet));
 
         Destroy(newBullet, 5);
     }
@@ -55,5 +56,4 @@ public class DisparoPlayerCont : MonoBehaviour
 
         Destroy(newBullet, 5);
     }
-
 }

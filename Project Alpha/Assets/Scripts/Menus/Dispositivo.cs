@@ -44,14 +44,14 @@ public class Dispositivo : MonoBehaviour
             {
                 //se ha detecatado interacción con un touch 
                 //se esta jugando desde móvil
-                dispositivo = 0;
+                dispositivo = 1;
                 dispositivoElegido = true;
             }
             else if (Input.GetMouseButtonDown(0))
             {
                 //se ha detecatado interacción con un click 
                 //se esta jugando desde ordenador
-                dispositivo = 1;
+                dispositivo = 0;
                 dispositivoElegido = true;
             }
         }
@@ -64,28 +64,4 @@ public class Dispositivo : MonoBehaviour
         PanelEras.SetActive(true);
     }
 
-    public void Dispositivos()
-    {
-        print("HOLA");
-        
-        if (!dispositivoElegido)
-        {
-            print("HOLA2");
-            if (Input.touchCount > 0)
-            {
-
-                //se ha detectado interacción con un touch 
-                //se esta jugando desde móvil
-                dispositivo = 0;
-                dispositivoElegido = true;
-            }
-            else if (Input.GetMouseButtonDown(0))
-            {
-                //se ha detectado interacción con un click 
-                //se esta jugando desde ordenador
-                dispositivo = 1;
-                dispositivoElegido = true;
-            }
-        }
-    }
 }

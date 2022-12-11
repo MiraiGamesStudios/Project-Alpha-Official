@@ -55,7 +55,7 @@ public class Disparo : MonoBehaviour
     {
         newBullet = Instantiate(bulletB, spawnDireccion.position, spawnRotacionVirote.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
-        newBullet.transform.localScale = new Vector3(50, 50, 50);
+        //newBullet.transform.localScale = new Vector3(50, 50, 50);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
         StartCoroutine(caida(newBullet));
         

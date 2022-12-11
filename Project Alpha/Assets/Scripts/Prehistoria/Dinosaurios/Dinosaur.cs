@@ -55,6 +55,7 @@ public class Dinosaur : MonoBehaviour
         ch = GetComponent<CharacterController>();
         ch.detectCollisions = false;
         rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
         anim = GetComponent<Animator>();
         quemadura = transform.GetChild(2).gameObject;
 
@@ -119,7 +120,6 @@ public class Dinosaur : MonoBehaviour
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 if (this.EstaEnObjetivo(player.transform.position))
                 {
-                    avancePersonaje = 0.0f;
                     statusDinosaur = Status.atacando;
                 }
                 break;
@@ -133,9 +133,8 @@ public class Dinosaur : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
-                    avancePersonaje = 1.0f;
                     statusDinosaur = Status.corriendo;
-                    rb.isKinematic = false;
+                    //rb.isKinematic = false;
                     anim.SetBool("Atacar", false);
                 }
 

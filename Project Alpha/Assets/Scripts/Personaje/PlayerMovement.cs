@@ -393,6 +393,7 @@ public class PlayerMovement : MonoBehaviour
         if (!corriendo)
         {
             corriendo = true;
+            print("corriendo");
         }
         else
         {

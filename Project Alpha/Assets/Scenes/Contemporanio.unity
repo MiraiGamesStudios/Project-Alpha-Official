@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66588813, g: 0.8826336, b: 0.8856912, a: 1}
+  m_IndirectSpecularColor: {r: 0.6660115, g: 0.88267374, b: 0.8857114, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8675,15 +8675,15 @@ RectTransform:
   m_GameObject: {fileID: 220665966}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5000001, y: 4.5, z: 1}
+  m_LocalScale: {x: 1.5, y: 4.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1021464574}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 823.00024, y: -382}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -183, y: 123}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220665969
@@ -30350,7 +30350,7 @@ RectTransform:
   - {fileID: 1888102730}
   - {fileID: 264479202}
   m_Father: {fileID: 1021464574}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -40013,9 +40013,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 220665967}
   - {fileID: 1397373637}
   - {fileID: 798196480}
+  - {fileID: 220665967}
   m_Father: {fileID: 1069185940}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57167,7 +57167,7 @@ RectTransform:
   - {fileID: 1323101062}
   - {fileID: 160139965}
   m_Father: {fileID: 1021464574}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -66105,6 +66105,7 @@ GameObject:
   - component: {fileID: 1645463826}
   - component: {fileID: 1645463825}
   - component: {fileID: 1645463824}
+  - component: {fileID: 1645463828}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -66279,6 +66280,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1645463828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645463823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c5acb1fbdc21a4eae61c12ed16a2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Disp: 0
+  cm: {fileID: 0}
 --- !u!1001 &1646809132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80897,7 +80912,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048287907}
-  m_LocalRotation: {x: 0.082483254, y: 0.77654415, z: -0.10399335, w: 0.615923}
+  m_LocalRotation: {x: 0.082483254, y: 0.7765441, z: -0.10399333, w: 0.61592305}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

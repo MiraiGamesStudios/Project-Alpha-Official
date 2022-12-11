@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetInteger("ArmaElegida", 0);
 
-        //Physics.gravity *= gravity;
+        Physics.gravity *= -gravity;
         animator.SetBool("Atacar", true);
 
         speed = speedInicial;

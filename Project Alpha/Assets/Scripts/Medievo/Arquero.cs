@@ -41,6 +41,8 @@ public class Arquero : MonoBehaviour
     Vector3 localPosition;
     public float grav;
 
+    bool bajarMuerte;
+
     #endregion
 
     #region Metodos Unity
@@ -50,6 +52,7 @@ public class Arquero : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
         player = GameObject.FindGameObjectWithTag("Player");
         ch = GetComponent<CharacterController>();
         ch.detectCollisions = false;
@@ -130,7 +133,7 @@ public class Arquero : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
-                    rb.isKinematic = false;
+                    //rb.isKinematic = false;
                     statusArquero = Status.corriendo;
                     anim.SetBool("Atacar", false);
                 }
@@ -207,9 +210,13 @@ public class Arquero : MonoBehaviour
     }
     IEnumerator morir()
     {
-        yield return new WaitForSeconds(1f);
-        ch.center = new Vector3(0, 1.7f, 0);
-        transform.position -= new Vector3(0, 0.3f, 0);
+        if (!bajarMuerte)
+        {
+            yield return new WaitForSeconds(1f);
+            ch.center = new Vector3(0, 1.7f, 0);
+            transform.position -= new Vector3(0, 0.3f, 0);
+            bajarMuerte = true;
+        }
         yield return null;
     }
 

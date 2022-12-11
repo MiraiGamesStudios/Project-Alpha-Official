@@ -33,6 +33,12 @@ public class Police : MonoBehaviour
 
     public bool golpeadoExplosion = false;
 
+    CharacterController ch;
+    Vector3 localPosition;
+    public float grav;
+
+    bool bajarMuerte;
+
     #endregion
 
     #region Metodos Unity
@@ -42,7 +48,10 @@ public class Police : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
         player = GameObject.FindGameObjectWithTag("Player");
+        ch = GetComponent<CharacterController>();
+        ch.detectCollisions = false;
 
     }
 
@@ -60,9 +69,13 @@ public class Police : MonoBehaviour
 
         }
 
-        // Integrar posicion en avance
-        m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
-        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+        localPosition = player.transform.position - transform.position;
+        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+        if (statusPolice == Status.corriendo)
+        {
+            ch.Move(new Vector3(localPosition.x, -grav, localPosition.z) * m_moveSpeed * Time.deltaTime);
+            transform.LookAt(player.transform.position, Vector3.up);
+        }
 
         FSMPolice();
     }
@@ -91,8 +104,6 @@ public class Police : MonoBehaviour
                 if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
                 {
                     statusPolice = Status.corriendo;
-                    //this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled;
-                    //this.gameObject.GetComponent<DinosaurNavMesh>().enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().enabled;
                 }
                 break;
 
@@ -103,7 +114,6 @@ public class Police : MonoBehaviour
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 if (this.EstaEnObjetivo(player.transform.position))
                 {
-                    avancePersonaje = 0.0f;
                     statusPolice = Status.atacando;
                 }
                 break;
@@ -118,8 +128,7 @@ public class Police : MonoBehaviour
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
-                    rb.isKinematic = false;
-                    avancePersonaje = 1.0f;
+                    //rb.isKinematic = false;
                     statusPolice = Status.corriendo;
                     anim.SetBool("Atacar", false);
                 }
@@ -131,6 +140,7 @@ public class Police : MonoBehaviour
                 anim.SetLayerWeight(2, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
+                StartCoroutine(morir());
                 Destroy(this.gameObject, 3.5f);
                 avancePersonaje = 0.0f;
                 break;
@@ -193,6 +203,17 @@ public class Police : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         golpeadoExplosion = false;
+    }
+    IEnumerator morir()
+    {
+        if (!bajarMuerte)
+        {
+            yield return new WaitForSeconds(1f);
+            ch.center = new Vector3(0, 1.7f, 0);
+            transform.position -= new Vector3(0, 0.3f, 0);
+            bajarMuerte = true;
+        }
+        yield return null;
     }
     #endregion
 }

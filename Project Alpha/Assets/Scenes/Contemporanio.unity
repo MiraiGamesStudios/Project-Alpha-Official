@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66618073, g: 0.88274, b: 0.88569665, a: 1}
+  m_IndirectSpecularColor: {r: 0.66620183, g: 0.8825998, b: 0.8856706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3837,6 +3837,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 1886100223}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &112640195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3887,7 +3888,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -4005,6 +4006,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &112640204
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112640181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &112801657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4153,6 +4172,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusPolice: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &116496627
 Animator:
   serializedVersion: 4
@@ -4184,7 +4204,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -4325,6 +4345,24 @@ MonoBehaviour:
   RunStepRight: {fileID: 8300000, guid: 652b5b6d0d5b1c8419cccb882e419299, type: 3}
   PoliceGunAttack: {fileID: 8300000, guid: 48073318730257a4691996053cd3019e, type: 3}
   PoliceDeathSound: {fileID: 0}
+--- !u!143 &116496633
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116496625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &118462283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,6 +5407,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusMilitar: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &145304632
 Animator:
   serializedVersion: 4
@@ -5400,7 +5439,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -5541,6 +5580,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &145304638
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145304630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &148345026
 GameObject:
   m_ObjectHideFlags: 0
@@ -9549,6 +9606,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 1889440242}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &245208337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9599,7 +9657,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -9717,6 +9775,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &245208346
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245208323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &249495390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10545,6 +10621,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusMilitar: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &266193963
 Animator:
   serializedVersion: 4
@@ -10576,7 +10653,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -10695,6 +10772,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &266193967
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266193956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &268128181
 GameObject:
   m_ObjectHideFlags: 0
@@ -10977,6 +11072,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusPolice: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &270134465
 Animator:
   serializedVersion: 4
@@ -11008,7 +11104,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -13000,6 +13096,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 520334231}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &308998473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13050,7 +13147,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -13168,6 +13265,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &308998482
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308998459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &310828297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16500,6 +16615,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42b900a42e1636747bacb895eed86006, type: 3}
+--- !u!143 &415776162
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430923258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &418126166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19822,6 +19955,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusMilitar: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &518194691
 Animator:
   serializedVersion: 4
@@ -19853,7 +19987,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -19972,6 +20106,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &518194695
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160579385}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &519012905
 GameObject:
   m_ObjectHideFlags: 0
@@ -23798,6 +23950,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 544175624}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &614393899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23868,7 +24021,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -23986,6 +24139,24 @@ MonoBehaviour:
   SuitImpactSound: {fileID: 0}
   SuitAttackSound: {fileID: 0}
   SuitDeathSound: {fileID: 0}
+--- !u!143 &614393907
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614393885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &615445744
 GameObject:
   m_ObjectHideFlags: 0
@@ -25011,6 +25182,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 1068011204}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!54 &636402672
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25022,7 +25194,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -25140,6 +25312,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &636402676
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636402668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &637513630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28643,6 +28833,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusPolice: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &743233360
 Animator:
   serializedVersion: 4
@@ -28674,7 +28865,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -28793,6 +28984,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &743233364
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89852050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &745677981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29486,6 +29695,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusMilitar: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &772054929
 Animator:
   serializedVersion: 4
@@ -29517,7 +29727,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -47459,6 +47669,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 2024095093}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1180763346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47529,7 +47740,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -47647,6 +47858,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1180763354
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180763332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1184136235
 GameObject:
   m_ObjectHideFlags: 0
@@ -48343,6 +48572,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 445948924}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1196834759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48393,7 +48623,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -48511,6 +48741,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1196834768
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196834745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1198030569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51984,6 +52232,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 1678356534}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1276920730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52034,7 +52283,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -52152,6 +52401,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1276920739
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276920716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1278365465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ec79a36377177ed4e88d3751fbeed533, type: 3}
@@ -52751,6 +53018,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusPolice: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &1285016388
 Animator:
   serializedVersion: 4
@@ -52782,7 +53050,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -52901,6 +53169,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1285016392
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774550600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1287838809
 GameObject:
   m_ObjectHideFlags: 0
@@ -54277,6 +54563,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 483571228}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1331655588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54327,7 +54614,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -54445,6 +54732,24 @@ MonoBehaviour:
   WorkerImpactSound: {fileID: 0}
   WorkerAttackSound: {fileID: 0}
   WorkerDeathSound: {fileID: 0}
+--- !u!143 &1331655597
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331655574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1334035986
 GameObject:
   m_ObjectHideFlags: 0
@@ -55309,6 +55614,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 1430821096}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1355523568
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55359,7 +55665,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -55477,6 +55783,24 @@ MonoBehaviour:
   WorkerImpactSound: {fileID: 0}
   WorkerAttackSound: {fileID: 0}
   WorkerDeathSound: {fileID: 0}
+--- !u!143 &1355523577
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355523554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1355706461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57152,6 +57476,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 486771170}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1393213869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57222,7 +57547,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -57340,6 +57665,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1393213877
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393213855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &1395732141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58375,6 +58718,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 2058046419}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1418022694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58425,7 +58769,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -58543,6 +58887,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1418022703
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418022680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1418173232
 GameObject:
   m_ObjectHideFlags: 0
@@ -58899,6 +59261,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusMilitar: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &1423533194
 Animator:
   serializedVersion: 4
@@ -58930,7 +59293,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -61373,6 +61736,7 @@ MonoBehaviour:
   m_moveSpeed: 3
   statusMilitar: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!54 &1487507726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61384,10 +61748,10 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1487507727
 MonoBehaviour:
@@ -61504,6 +61868,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1487507729
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487507723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1487691054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64438,6 +64820,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 544780881}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!54 &1578565360
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64449,7 +64832,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -64567,6 +64950,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1578565363
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578565357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1579270312
 GameObject:
   m_ObjectHideFlags: 0
@@ -65439,6 +65840,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.038252123, y: 0.02172562, z: 0.027479459}
   m_Center: {x: -9.050883e-13, y: -0.00008978889, z: 0.013582217}
+--- !u!143 &1608263936
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710764122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1610933066 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ec79a36377177ed4e88d3751fbeed533, type: 3}
@@ -65928,6 +66347,7 @@ MonoBehaviour:
   m_moveSpeed: 2
   statusPolice: 0
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!95 &1624172032
 Animator:
   serializedVersion: 4
@@ -65959,7 +66379,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -66078,6 +66498,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1624172036
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302489904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1626301714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69167,6 +69605,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 919132149318529527}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!54 &1730695475
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -69178,7 +69617,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -69301,6 +69740,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &1730695480
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730695473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1731271029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77040,6 +77497,7 @@ MonoBehaviour:
   statusWorker: 0
   arma: {fileID: 385874848}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!65 &1957190102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77090,7 +77548,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -77208,6 +77666,24 @@ MonoBehaviour:
   WorkerImpactSound: {fileID: 0}
   WorkerAttackSound: {fileID: 0}
   WorkerDeathSound: {fileID: 0}
+--- !u!143 &1957190111
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957190088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1957677713
 GameObject:
   m_ObjectHideFlags: 0
@@ -78574,6 +79050,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9630662, z: 0.6478439}
   m_Center: {x: -0.000000006394437, y: 0.21218441, z: 0.027725048}
+--- !u!143 &1979480125
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873585409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1980563191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84231,7 +84725,7 @@ Rigidbody:
   m_Mass: 45
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -84258,6 +84752,7 @@ MonoBehaviour:
   statusSuit: 0
   arma: {fileID: 737586977}
   golpeadoExplosion: 0
+  grav: 9.8
 --- !u!114 &2129931964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84371,6 +84866,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &2129931966
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129931958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &2130195564
 GameObject:
   m_ObjectHideFlags: 0

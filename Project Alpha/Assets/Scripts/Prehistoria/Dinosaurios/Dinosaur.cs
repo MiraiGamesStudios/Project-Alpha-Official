@@ -31,10 +31,11 @@ public class Dinosaur : MonoBehaviour
     [SerializeField] public Tipo tipo;
 
     private float avancePersonaje = 0.0f;
-    Vector3 localPosition;
+    
     Vector3 movPos;
     public bool encima = false;
     CharacterController ch;
+    Vector3 localPosition;
     public float grav;
     [SerializeField] private float epsilonDistancia = 3f; // Distancia minima para alcanzar objetivo
     private float m_currentV = 0;                   // Posicion de avance actual 

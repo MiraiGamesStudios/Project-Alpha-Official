@@ -30,6 +30,10 @@ public class Mago : MonoBehaviour
     public enum Status { quieto, deambulando, corriendo, atacando, muerto };
     public Status statusMago = Status.deambulando;
 
+    CharacterController ch;
+    Vector3 localPosition;
+    public float grav;
+
     #endregion
 
     #region Metodos Unity
@@ -39,6 +43,8 @@ public class Mago : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
+        ch = GetComponent<CharacterController>();
+        ch.detectCollisions = false;
 
     }
 
@@ -57,8 +63,13 @@ public class Mago : MonoBehaviour
         }
 
         // Integrar posicion en avance
-        m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
-        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+        localPosition = player.transform.position - transform.position;
+        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+        if (statusMago == Status.corriendo)
+        {
+            ch.Move(new Vector3(localPosition.x, -grav, localPosition.z) * m_moveSpeed * Time.deltaTime);
+            transform.LookAt(player.transform.position, Vector3.up);
+        }
 
         FSMMago();
     }
@@ -95,7 +106,6 @@ public class Mago : MonoBehaviour
                 anim.SetFloat("Yaxis", 2.0f, 0.1f, Time.deltaTime);
                 if (this.EstaEnObjetivo(player.transform.position))
                 {
-                    avancePersonaje = 0.0f;
                     statusMago = Status.atacando;
                 }
                 break;
@@ -112,7 +122,6 @@ public class Mago : MonoBehaviour
                 {
                     rb.isKinematic = false;
                     anim.SetBool("Atacar", false);
-                    avancePersonaje = 1.0f;
                     statusMago = Status.corriendo;
                 }
                 break;
@@ -124,6 +133,7 @@ public class Mago : MonoBehaviour
                 anim.SetLayerWeight(1, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
+                StartCoroutine(morir());
                 Destroy(this.gameObject, 3.5f);
                 avancePersonaje = 0.0f;
                 break;
@@ -176,6 +186,13 @@ public class Mago : MonoBehaviour
         textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
         textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
         Destroy(textGO, 1);
+    }
+    IEnumerator morir()
+    {
+        yield return new WaitForSeconds(1f);
+        ch.center = new Vector3(0, 1.7f, 0);
+        transform.position -= new Vector3(0, 0.3f, 0);
+        yield return null;
     }
 
     #endregion

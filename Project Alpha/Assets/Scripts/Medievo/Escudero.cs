@@ -31,6 +31,10 @@ public class Escudero : MonoBehaviour
 
     public bool puedoDañar = false;
 
+    CharacterController ch;
+    Vector3 localPosition;
+    public float grav;
+
     #endregion
 
     #region Metodos Unity
@@ -40,6 +44,8 @@ public class Escudero : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
+        ch = GetComponent<CharacterController>();
+        ch.detectCollisions = false;
 
     }
 
@@ -57,9 +63,13 @@ public class Escudero : MonoBehaviour
 
         }
 
-        // Integrar posicion en avance
-        m_currentV = Mathf.Lerp(m_currentV, avancePersonaje, Time.deltaTime * m_interpolation);
-        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+        localPosition = player.transform.position - transform.position;
+        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+        if (statusEscudero == Status.corriendo)
+        {
+            ch.Move(new Vector3(localPosition.x, -grav, localPosition.z) * m_moveSpeed * Time.deltaTime);
+            transform.LookAt(player.transform.position, Vector3.up);
+        }
 
         FSMEscudero();
     }
@@ -88,8 +98,6 @@ public class Escudero : MonoBehaviour
                 if (Vector3.Distance(this.transform.position, player.transform.position) < 30)
                 {
                     statusEscudero = Status.corriendo;
-                    //this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().naveMeshAgent.enabled;
-                    //this.gameObject.GetComponent<DinosaurNavMesh>().enabled = !this.gameObject.GetComponent<DinosaurNavMesh>().enabled;
                 }
                 break;
 
@@ -100,7 +108,6 @@ public class Escudero : MonoBehaviour
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
                 if (this.EstaEnObjetivo(player.transform.position))
                 {
-                    avancePersonaje = 0.0f;
                     statusEscudero = Status.atacando;
                 }
                 break;
@@ -116,7 +123,6 @@ public class Escudero : MonoBehaviour
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {
                     rb.isKinematic = false;
-                    avancePersonaje = 1.0f;
                     statusEscudero = Status.corriendo;
                     anim.SetBool("Atacar", false);
                 }
@@ -129,6 +135,7 @@ public class Escudero : MonoBehaviour
                 anim.SetLayerWeight(2, 1);
                 eliminarme();
                 anim.SetBool("Morir", true);
+                StartCoroutine(morir());
                 Destroy(this.gameObject, 3.5f);
                 avancePersonaje = 0.0f;
                 break;
@@ -187,6 +194,13 @@ public class Escudero : MonoBehaviour
         textGO.GetComponentInChildren<TextMeshPro>().SetText(daño);
         textGO.GetComponentInChildren<TextMeshPro>().fontSize = tamaño;
         Destroy(textGO, 1);
+    }
+    IEnumerator morir()
+    {
+        yield return new WaitForSeconds(1f);
+        ch.center = new Vector3(0, 1.7f, 0);
+        transform.position -= new Vector3(0, 0.3f, 0);
+        yield return null;
     }
     #endregion
 }

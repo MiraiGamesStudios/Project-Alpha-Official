@@ -130,16 +130,16 @@ public class CPlayerSounds : MonoBehaviour
     {
         if (animate.GetBool("Atacar") == true)
         {
-            audioManagement.PlayOneShot(PlayerGunAttack, 0.4f);
+            audioManagement.PlayOneShot(PlayerGunAttack, 0.3f);
         }
     }
 
     public void RifleAttack()
     {
-        if (animate.GetBool("Atacar") == true)
-        {
-            audioManagement.PlayOneShot(PlayerRifleAttack, 0.4f);
-        }
+        //if (animate.GetBool("Atacar") == true)
+        //{
+        //    audioManagement.PlayOneShot(PlayerRifleAttack, 0.1f);
+        //}
     }
 
     private void PlayerIdle()

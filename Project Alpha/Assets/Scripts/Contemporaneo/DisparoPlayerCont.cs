@@ -20,9 +20,18 @@ public class DisparoPlayerCont : MonoBehaviour
 
     GameObject newBullet;
 
+    public AudioSource audioManagement;
+    [SerializeField]
+    public AudioClip PlayerRifleAttack;
+
+
+    private void Awake()
+    {
+        audioManagement = GetComponent<AudioSource>();
+    }
     public void disparoPistola()
     {
-
+        
         newBullet = Instantiate(bulletP, spawnDireccionP.position, spawnRotacionP.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         this.gameObject.GetComponent<CPlayerSounds>().GunAttack();
@@ -35,7 +44,7 @@ public class DisparoPlayerCont : MonoBehaviour
 
     public void disparoRifle()
     {
-
+        audioManagement.PlayOneShot(PlayerRifleAttack, 0.6f);
         newBullet = Instantiate(bulletR, spawnDireccionRi.position, spawnRotacionRi.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         this.gameObject.GetComponent<CPlayerSounds>().RifleAttack();

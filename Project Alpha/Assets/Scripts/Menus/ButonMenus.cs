@@ -10,6 +10,7 @@ public class ButonMenus : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Controles;
     public GameObject Creditos;
+    public GameObject Historia;
     public GameObject PanelEras;
     public GameObject PanelSeleccionarDispositivo;
     public GameObject ScriptDispositivo;
@@ -37,10 +38,16 @@ public class ButonMenus : MonoBehaviour
         Creditos.SetActive(true);
     }
 
+    public void ButtonHistoria()
+    {
+        Historia.SetActive(true);
+    }
+
     public void ButtonVoler()
     {
         Controles.SetActive(false);
         Creditos.SetActive(false);
+        Historia.SetActive(false);
 
     }
 

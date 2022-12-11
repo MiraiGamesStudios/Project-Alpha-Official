@@ -31,31 +31,53 @@ public class Dispositivo : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (!dispositivoElegido)
-        {
-            if(Input.touchCount > 0)
-            {
-                //se ha detecatado interacción con un touch 
-                //se esta jugando desde móvil
-                dispositivo = 1;
-                dispositivoElegido = true;
-            }
-            else if(Input.GetMouseButtonDown(0))
-            {
-                //se ha detecatado interacción con un click 
-                //se esta jugando desde ordenador
-                dispositivo = 0;
-                dispositivoElegido = true;
-            }
-        }
-    }
+    //private void Update()
+    //{
+    //    if (!dispositivoElegido)
+    //    {
+    //        if(Input.touchCount > 0)
+    //        {
+    //            //se ha detecatado interacción con un touch 
+    //            //se esta jugando desde móvil
+    //            dispositivo = 1;
+    //            dispositivoElegido = true;
+    //        }
+    //        else if(Input.GetMouseButtonDown(0))
+    //        {
+    //            //se ha detecatado interacción con un click 
+    //            //se esta jugando desde ordenador
+    //            dispositivo = 0;
+    //            dispositivoElegido = true;
+    //        }
+    //    }
+    //}
 
     public void ButtonStart()
     {
         PanelSeleccionarDispositivo.SetActive(false);
         PanelEras.SetActive(true);
         dispositivoElegido = true;
+        Dispositivos();
+    }
+
+    private void Dispositivos()
+    {
+        if (!dispositivoElegido)
+        {
+            if (Input.touchCount > 0)
+            {
+                //se ha detectado interacción con un touch 
+                //se esta jugando desde móvil
+                dispositivo = 1;
+                dispositivoElegido = true;
+            }
+            else if (Input.GetMouseButtonDown(0))
+            {
+                //se ha detectado interacción con un click 
+                //se esta jugando desde ordenador
+                dispositivo = 0;
+                dispositivoElegido = true;
+            }
+        }
     }
 }

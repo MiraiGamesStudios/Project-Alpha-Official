@@ -6266,13 +6266,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Hi traveler, I'm Wilder!\r\n\r\nrecently, I created the first time
-    machine in history, but my mastermind didn't do all the calculations correctly
-    and the machine took me to a parallel universe, thus creating the well-known
-    \"Butterfly Effect\". Now I've realized that I need to find my time machine and
-    set it up the right way, although I don't know if I'll get it right the first
-    time. The only problem is that all living things in this reality seem hostile.\r\n
-    I will have to be careful if I want to return to my home."
+  m_text: "\xA1Hi traveler, I'm Wilder!\r\n\r\nRecently I managed to create the first
+    time machine in history, but my mastermind made some mistakes  while doing the
+    calculations and the machine took me to a parallel universe, \r\ncreating the
+    well-known \"Butterfly Effect\". Now I've realized that I need to find my time
+    machine and set it up the right way, although I don't know if I'll make it the
+    first time. The only problem is that all living beings in this reality seem hostile,\r\nI
+    will have to be careful if I want to return home."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
   m_sharedMaterial: {fileID: -6913950685495543341, guid: 690a9c166a4c2b3498dba98ca6c0db43, type: 2}
@@ -9674,7 +9674,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 409717343}
         m_TargetAssemblyTypeName: ButonMenus, Assembly-CSharp
-        m_MethodName: ButtonCreditos
+        m_MethodName: ButtonHistoria
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

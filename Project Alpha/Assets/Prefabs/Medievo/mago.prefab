@@ -848,7 +848,7 @@ MonoBehaviour:
   epsilonDistancia: 3
   m_moveSpeed: 1
   statusMago: 1
-  grav: 0
+  grav: 9.8
 --- !u!82 &4269381981406457072
 AudioSource:
   m_ObjectHideFlags: 0

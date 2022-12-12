@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_moveSpeed: 1
   statusCaballero: 1
   "puedoDa\xF1ar": 0
-  grav: 0
+  grav: 9.8
 --- !u!114 &-1025983456251331562
 MonoBehaviour:
   m_ObjectHideFlags: 0

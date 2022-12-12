@@ -22,14 +22,14 @@ public class TirggerMuros : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            TriggerMurosDentro();
+            other.GetComponent<PlayerMovement>().mantenerCamara();
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            TriggerMurosExit();
+            other.GetComponent<PlayerMovement>().camaraExit();
         }
     }
 }

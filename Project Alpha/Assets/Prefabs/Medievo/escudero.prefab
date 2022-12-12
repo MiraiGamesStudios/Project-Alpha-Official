@@ -514,6 +514,7 @@ MonoBehaviour:
   m_moveSpeed: 1
   statusEscudero: 1
   "puedoDa\xF1ar": 0
+  grav: 9.8
 --- !u!114 &644216076417493368
 MonoBehaviour:
   m_ObjectHideFlags: 0

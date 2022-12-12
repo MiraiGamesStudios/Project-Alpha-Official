@@ -81,6 +81,7 @@ public class Arquero : MonoBehaviour
             transform.LookAt(player.transform.position, Vector3.up);
         }
 
+
         FSMArquero();
     }
 
@@ -187,7 +188,7 @@ public class Arquero : MonoBehaviour
 
     void DispararFlecha()
     {
-        if(anim.GetBool("Atacar") == true)
+        if(anim.GetBool("Atacar") == true && anim.GetBool("Morir") == false)
         {
             disparoArco(pos, rot, bullet);
         }

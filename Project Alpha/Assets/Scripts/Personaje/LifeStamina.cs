@@ -38,6 +38,7 @@ public class LifeStamina : MonoBehaviour
     public bool corriendo;
 
     public DisparoPlayerCont disparos;
+    public Disparo disparosMedieval;
 
     #endregion
 
@@ -249,6 +250,7 @@ public class LifeStamina : MonoBehaviour
             {
                 death = true;
                 disparos.noDisparo = true;
+                disparosMedieval.haMuerto = true;
             }
 
             cantidadPerdida += i;

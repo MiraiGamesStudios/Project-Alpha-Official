@@ -230,7 +230,7 @@ MonoBehaviour:
   pos: {fileID: 6519642282142186284}
   rot: {fileID: 2307912326665723570}
   bullet: {fileID: 8694064352296962276, guid: 47bba883e6c03194795572043bbf2bdd, type: 3}
-  grav: 0
+  grav: 9.8
 --- !u!114 &5259902496321252915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,7 +1564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7912324706381973426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.494, y: 1.733, z: 1.613}
+  m_LocalPosition: {x: -0.831, y: 1.733, z: 1.992}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []

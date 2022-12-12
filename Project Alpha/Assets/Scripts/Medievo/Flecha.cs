@@ -7,7 +7,7 @@ public class Flecha : MonoBehaviour
     private bool golpeado = false;
     public int tipoFlecha;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         
         if(collision?.gameObject.GetComponentInParent<Caballero>()?.gameObject.tag == "Caballero" && golpeado == false)
@@ -70,6 +70,8 @@ public class Flecha : MonoBehaviour
         {
             golpeado = true;
         }
+
+        this.gameObject.SetActive(false);
 
     }
 }

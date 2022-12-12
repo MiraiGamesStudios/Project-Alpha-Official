@@ -14,6 +14,7 @@ public class Disparo : MonoBehaviour
     public float shotRate = 0.5f;
 
     GameObject newBullet;
+    public bool haMuerto;
 
     void Update()
     {
@@ -42,24 +43,32 @@ public class Disparo : MonoBehaviour
 
     public void disparoArco()
     {
-        newBullet = Instantiate(bulletA, spawnDireccion.position, spawnRotacion.rotation);
-        newBullet.GetComponent<Rigidbody>().useGravity = false;
-        newBullet.transform.localScale = new Vector3(50, 50, 50);
-        newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
-        StartCoroutine(caida(newBullet));
+        if (!haMuerto)
+        {
+            newBullet = Instantiate(bulletA, spawnDireccion.position, spawnRotacion.rotation);
+            newBullet.GetComponent<Rigidbody>().useGravity = false;
+            newBullet.transform.localScale = new Vector3(50, 50, 50);
+            newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
+            StartCoroutine(caida(newBullet));
+
+            Destroy(newBullet, 5);
+        }
         
-        Destroy(newBullet, 5);
     }
 
     public void disparoBallesta()
     {
-        newBullet = Instantiate(bulletB, spawnDireccion.position, spawnRotacionVirote.rotation);
-        newBullet.GetComponent<Rigidbody>().useGravity = false;
-        //newBullet.transform.localScale = new Vector3(50, 50, 50);
-        newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
-        StartCoroutine(caida(newBullet));
+        if (!haMuerto)
+        {
+            newBullet = Instantiate(bulletB, spawnDireccion.position, spawnRotacionVirote.rotation);
+            newBullet.GetComponent<Rigidbody>().useGravity = false;
+            //newBullet.transform.localScale = new Vector3(50, 50, 50);
+            newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
+            StartCoroutine(caida(newBullet));
+
+            Destroy(newBullet, 5);
+        }
         
-        Destroy(newBullet, 5);
     }
 
     IEnumerator caida(GameObject go)

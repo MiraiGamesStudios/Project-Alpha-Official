@@ -117,18 +117,10 @@ public class PlayerMovement : MonoBehaviour
         botonCorrer.GetComponent<CambiarColor>().corriendo = corriendo;
     }
 
-    //private void FixedUpdate()
-    //{
-    //    Move(movementInput);
-    //}
-
     private void OnEnable()
     {
         AtaqueElectrico.AElectricoStun += comenzarCorrutinaStun;
         AtaqueHielo.AHielo += comenzarCorrutinaCongelado;
-
-        TirggerMuros.TriggerMurosDentro += mantenerCamara;
-        TirggerMuros.TriggerMurosExit += camaraExit;
 
     }
 
@@ -136,9 +128,6 @@ public class PlayerMovement : MonoBehaviour
     {
         AtaqueElectrico.AElectricoStun -= comenzarCorrutinaStun;
         AtaqueHielo.AHielo -= comenzarCorrutinaCongelado;
-
-        TirggerMuros.TriggerMurosDentro -= cambiarCamara;
-        TirggerMuros.TriggerMurosExit -= camaraExit;
 
     }
     #endregion
@@ -479,7 +468,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void mantenerCamara()
+    public void mantenerCamara()
     {
         cineMchine.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 1;
 
@@ -491,7 +480,7 @@ public class PlayerMovement : MonoBehaviour
         camPosUp = true;
     }
 
-    void camaraExit()
+    public void camaraExit()
     {
         cineMchine.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
 
@@ -522,15 +511,12 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Morir", true);
         animator.SetLayerWeight(2, 1);
 
-        //GetComponent<Event_pegar>().enabled = false;
-
         yield return new WaitForSeconds(2.2f);
 
         character.height = 1.0f;
         HUD.SetActive(false);
         panelDeath.SetActive(true);
-        //dioListener.mute = true;
-
+        
         yield return null;
     }
 

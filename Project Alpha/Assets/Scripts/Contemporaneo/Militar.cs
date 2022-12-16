@@ -125,6 +125,7 @@ public class Militar : MonoBehaviour
                 anim.SetBool("Atacar", true);
                 anim.SetFloat("Xaxis", 0.0f, 0.1f, Time.deltaTime);
                 anim.SetFloat("Yaxis", 0.0f, 0.1f, Time.deltaTime);
+                ch.Move(new Vector3(0, -grav, 0) * m_moveSpeed * Time.deltaTime);
 
                 if (!this.EstaEnObjetivo(player.transform.position))
                 {

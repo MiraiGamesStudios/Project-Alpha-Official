@@ -15,6 +15,22 @@ public class DisparoCont : MonoBehaviour
  
     public void disparo()
     {
+        print("HOLA");
+        newBullet = Instantiate(bullet, spawnDireccion.position, spawnRotacion.rotation);
+        newBullet.GetComponent<Rigidbody>().useGravity = false;
+        //newBullet.transform.localScale = new Vector3(50, 50, 50);
+        newBullet.GetComponent<Rigidbody>().AddForce(spawnDireccion.forward * shotForce);
+        StartCoroutine(caida(newBullet));
+
+        Destroy(newBullet, 5);
+    }
+    void RfileAttack()
+    {
+
+    }
+    void disparoRifle()
+    {
+        print("HOLA");
         newBullet = Instantiate(bullet, spawnDireccion.position, spawnRotacion.rotation);
         newBullet.GetComponent<Rigidbody>().useGravity = false;
         //newBullet.transform.localScale = new Vector3(50, 50, 50);
